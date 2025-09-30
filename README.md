@@ -11,10 +11,13 @@ See **[QUICKSTART.md](QUICKSTART.md)** for a 3-step setup guide.
 ```
 3d-ddf/
 ├── docs/              # Documentation and guides
-├── projects/          # Individual 3D projects and animations
-│   ├── dadosfera-logo/      # Main logo animation with helicopter camera
-│   ├── dadosfera-explosions/ # Explosion effects animation  
-│   └── crystal-scene/        # Crystal scene still render
+├── projects/          
+│   └── dadosfera/    # Complete dadosfera 3D branding project
+│       ├── blender/           # Blender project files
+│       ├── renders/           # Rendered outputs
+│       │   ├── frames/        # Animation frames
+│       │   └── stills/        # Single renders
+│       └── exports/           # Final video exports
 ├── tests/             # Test suite for MCP integration
 ├── scripts/           # Utility scripts (planned)
 └── blender-mcp/       # MCP server (submodule)
@@ -26,16 +29,17 @@ See **[QUICKSTART.md](QUICKSTART.md)** for a 3-step setup guide.
 - **Guides**: [MCP Usage](docs/guides/blender-mcp-usage.md) | [Rendering](docs/guides/rendering-guide.md)
 - **Tests**: [Test Suite](tests/README.md)
 
-## 🎨 Projects
+## 🎨 Project: Dadosfera 3D Branding
 
-### Dadosfera Logo Animation
-A 10-second helicopter-style camera orbit animation featuring the "dadosfera" 3D text with metallic cyan glow and crystalline composition. [See project →](projects/dadosfera-logo/)
+A comprehensive 3D animated branding project featuring the **"dadosfera"** logo with multiple rendering techniques. [See project →](projects/dadosfera/)
 
-### Dadosfera Explosions
-Red explosion effects animation with 8 animated spheres appearing throughout the scene. [See project →](projects/dadosfera-explosions/)
-
-### Crystal Scene
-Photorealistic still render of a crystal sphere surrounded by metallic geometric shapes. [See project →](projects/crystal-scene/)
+**Includes:**
+- 🎬 10-second helicopter-style camera orbit animation
+- 💎 Photorealistic crystal scene with metallic materials
+- 💥 8 animated red explosion effects
+- ✨ 15 glowing particle effects
+- 🎨 Dual rendering: Cycles (ray-traced) & EEVEE (real-time)
+- 📹 5 video exports + 13 rendered frames
 
 ## ⚡ Features
 
