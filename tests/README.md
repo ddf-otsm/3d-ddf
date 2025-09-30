@@ -36,7 +36,7 @@ Tests the ability to create a cube in Blender and verify it with comprehensive B
 
 ```bash
 # From project root
-python3 tests/test_blender_mcp_cube.py
+python3 tests/integration/test_blender_mcp_cube.py
 ```
 
 ### Expected Output
@@ -126,11 +126,17 @@ The test demonstrates getting comprehensive feedback from Blender:
 - Make sure the addon is up to date
 - Check that the Blender MCP server is version 1.2 or higher
 
+## Test Structure
+
+- `integration/` - Integration tests with Blender MCP
+- `results/` - Test results and reports
+- `fixtures/test_scenes/` - Test data and Blender scenes
+
 ## Adding New Tests
 
 To add a new test:
 
-1. Create a new file: `tests/test_<feature_name>.py`
+1. Create a new file: `tests/integration/test_<feature_name>.py`
 2. Use the `BlenderMCPTester` class from `test_blender_mcp_cube.py`
 3. Follow the pattern:
    - Connect
