@@ -21,7 +21,7 @@ This repository integrates Blender with Cursor AI using the Model Context Protoc
 
 ### 2. MCP Server Configuration
 
-The MCP server is already configured in `.cursor/mcp.json` for this project.
+The MCP server is already configured in `.cursor/mcp.json` for this project. It runs the local blender-mcp from the submodule, so no PyPI installation is needed.
 
 ### 3. Start Using Blender with Cursor
 
@@ -67,6 +67,11 @@ You can configure the Blender connection with these environment variables:
 
 ## Troubleshooting
 
+- **MCP showing red or "no tools"**: 
+  1. Make sure Blender is open with the addon installed and enabled
+  2. In Blender, click "Connect to Claude" in the BlenderMCP sidebar panel
+  3. Restart Cursor after the Blender server is running
+  4. The MCP needs Blender to be running to connect properly
 - **Connection issues**: Make sure the Blender addon server is running (click "Connect to Claude" in Blender)
 - **MCP not showing**: Restart Cursor after adding the MCP configuration
 - **Timeout errors**: Try simplifying your requests or breaking them into smaller steps
