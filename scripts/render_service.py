@@ -188,8 +188,12 @@ class RenderService:
             self.scene.cycles.adaptive_threshold = 0.01
             self.scene.cycles.tile_size = 2048
             
+            # Performance optimizations
+            self.scene.render.use_persistent_data = True  # Reuse data between frames
+            
             self.log(f"   Samples: {quality['samples']}")
             self.log(f"   Denoising: OpenImageDenoise")
+            self.log(f"   Persistent data: Enabled (faster animation)")
             
         else:  # EEVEE
             self.scene.render.engine = 'BLENDER_EEVEE_NEXT'
