@@ -161,6 +161,12 @@ class RenderService:
                 preferences = bpy.context.preferences
                 cycles_prefs = preferences.addons['cycles'].preferences
                 cycles_prefs.compute_device_type = 'METAL'
+                
+                # Enable MetalRT hardware ray-tracing (M3+ optimization)
+                if hasattr(cycles_prefs, 'metal_rt'):
+                    cycles_prefs.metal_rt = 'ON'
+                    self.log(f"   ✅ MetalRT: Enabled (Hardware ray-tracing)")
+                
                 cycles_prefs.get_devices()
                 
                 gpu_count = 0
