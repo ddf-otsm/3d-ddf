@@ -1,0 +1,13 @@
+# Current → New naming convention: dadosfera_{version}_{date}_{quality}_{type}.mp4
+
+# ALPHA RELEASE (Latest - proper render with materials)
+dadosfera_ALPHA_PARTIAL.mp4 → dadosfera_alpha_20250930_1080p_partial_8sec.mp4
+
+# OLD RENDERS (viewport captures - no materials)
+dadosfera_final_with_explosions.mp4 → dadosfera_deprecated_20250930_1080p_viewport_nomat.mp4
+dadosfera_rendered_alpha_FINAL0001-0240.mp4 → dadosfera_deprecated_20250930_1080p_viewport2.mp4
+dadosfera_rendered_alpha0001-0240.mp4 → dadosfera_deprecated_20250930_1080p_viewport1.mp4
+dadosfera_preview.mp4 → dadosfera_deprecated_20250930_720p_preview.mp4
+dadosfera_camera_animation.mp4 → dadosfera_deprecated_20250930_360p_test.mp4
+dadosfera_animation_preview_fast.mp4 → dadosfera_deprecated_20250930_360p_viewport.mp4
+test_camera_ultrafast.mp4 → dadosfera_deprecated_20250930_270p_test.mp4

@@ -13,3 +13,4 @@ echo "Press Ctrl+C to stop monitoring"
 echo ""
 
 tail -f "$LOG_FILE"
+
