@@ -10,6 +10,7 @@ import time
 import argparse
 from pathlib import Path
 from typing import Dict, Any
+from datetime import datetime
 
 # ============================================================================
 # CONFIGURATION PRESETS
@@ -131,6 +132,9 @@ class RenderService:
         
         self.output_dir = self.project_root / "projects/dadosfera/renders" / output_name
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        
+        self.exports_dir = self.project_root / "projects/dadosfera/exports"
+        self.exports_dir.mkdir(parents=True, exist_ok=True)
         
         self.log_file = self.project_root / "render_logs" / f"render_{timestamp}.log"
         self.log_file.parent.mkdir(parents=True, exist_ok=True)
@@ -415,6 +419,70 @@ class RenderService:
         self.log(f"Output:    {self.output_dir}")
         self.log(f"Log:       {self.log_file}")
     
+    def encode_video(self):
+        """Encode rendered frames to video using FFmpeg"""
+        self.log("\n" + "="*70)
+        self.log("🎬 ENCODING VIDEO")
+        self.log("="*70)
+        
+        # Build output video filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+        video_name = f"dadosfera_{self.args.engine}_{self.args.quality}_{timestamp}.mp4"
+        video_path = self.exports_dir / video_name
+        
+        # FFmpeg command
+        frame_pattern = str(self.output_dir / "frame_%04d.png")
+        
+        import subprocess
+        
+        ffmpeg_cmd = [
+            'ffmpeg',
+            '-y',  # Overwrite output file
+            '-framerate', '24',
+            '-i', frame_pattern,
+            '-c:v', 'libx264',
+            '-preset', 'medium',
+            '-crf', '18',  # High quality (lower = better, 18 = visually lossless)
+            '-pix_fmt', 'yuv420p',
+            '-movflags', '+faststart',  # Enable streaming
+            str(video_path)
+        ]
+        
+        self.log(f"   Input:  {frame_pattern}")
+        self.log(f"   Output: {video_path}")
+        self.log(f"   Codec:  H.264 (CRF 18, high quality)")
+        self.log(f"\n   Running FFmpeg...")
+        
+        try:
+            result = subprocess.run(
+                ffmpeg_cmd,
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            
+            # Get video file size
+            video_size_mb = video_path.stat().st_size / (1024 * 1024)
+            
+            self.log("\n✅ VIDEO ENCODED SUCCESSFULLY!")
+            self.log(f"   File: {video_path}")
+            self.log(f"   Size: {video_size_mb:.1f} MB")
+            
+            return video_path
+            
+        except subprocess.CalledProcessError as e:
+            self.log(f"\n❌ FFmpeg encoding failed!")
+            self.log(f"   Error: {e.stderr}")
+            self.log(f"\n⚠️  Frames are still available at: {self.output_dir}")
+            self.log(f"   You can manually encode with:")
+            self.log(f"   ffmpeg -framerate 24 -i {frame_pattern} -c:v libx264 -crf 18 {video_path}")
+            return None
+        except FileNotFoundError:
+            self.log(f"\n❌ FFmpeg not found!")
+            self.log(f"   Please install FFmpeg: brew install ffmpeg")
+            self.log(f"\n⚠️  Frames are still available at: {self.output_dir}")
+            return None
+    
     def render(self):
         """Execute the render"""
         try:
@@ -431,6 +499,9 @@ class RenderService:
             bpy.ops.render.render('EXEC_DEFAULT', animation=True, write_still=True)
             
             self.log("\n🎉 Render service execution complete!")
+            
+            # Automatically encode to video
+            self.encode_video()
             
         except Exception as e:
             self.log(f"\n❌ RENDER ERROR: {e}")
