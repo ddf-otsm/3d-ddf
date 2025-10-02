@@ -25,9 +25,16 @@ See **[QUICKSTART.md](QUICKSTART.md)** for a 3-step setup guide.
 
 ## 📖 Documentation
 
+### Getting Started
 - **Setup**: [Installation Guide](docs/setup/installation.md) | [Troubleshooting](docs/setup/troubleshooting.md)
 - **Guides**: [MCP Usage](docs/guides/blender-mcp-usage.md) | [Rendering](docs/guides/rendering-guide.md)
 - **Tests**: [Test Suite](tests/README.md)
+
+### Planning & Releases
+- **Product Roadmap**: [ROADMAP.md](ROADMAP.md) - Version timeline and feature planning
+- **Feature Backlog**: [BACKLOG.md](BACKLOG.md) - Detailed feature tracking and priorities
+- **Current Release**: [RELEASE.md](RELEASE.md) - v1.0-alpha status and specs
+- **Project Summary**: [Project Documentation](documentation/PROJECT_SUMMARY.md)
 
 ## 🎨 Project: Dadosfera 3D Branding
 

@@ -121,21 +121,33 @@ None - all previous issues resolved
 
 ## Future Releases
 
-### Beta Release
+See **[ROADMAP.md](ROADMAP.md)** for detailed version planning and **[BACKLOG.md](BACKLOG.md)** for feature tracking.
+
+### Beta Release (v1.5)
 **URL**: `3d-ddf.beta.dadosfera.info`
-**Target**: Add motion blur, higher quality
+**Target Date**: October 15, 2025
+**Focus**: Performance & visual enhancements
+- Motion blur, volumetric atmosphere, depth of field
+- HDRI lighting, improved materials
+- 30% faster render times
 
-### Stable Release
+### Stable Release (v2.0)
 **URL**: `3d-ddf.dadosfera.info`
-**Target**: Final production quality with Cycles
+**Target Date**: November 1, 2025
+**Focus**: Physics-based realism
+- Mantaflow smoke/fire simulations
+- PBR textures (4K from PolyHaven)
+- Dynamic particle systems
+- Audio integration
 
-### Planned Features
-1. Motion blur for smoother movement
-2. Volumetric atmosphere
-3. Physics-based explosions
-4. Audio/sound effects
-5. 4K resolution option
-6. Extended animation (20-30s)
+### Enhanced Release (v2.5)
+**URL**: `3d-ddf.pro.dadosfera.info`
+**Target Date**: December 2025
+**Focus**: Premium quality & variants
+- 4K resolution (3840x2160)
+- Extended duration (20-30s)
+- Multiple format variants (vertical, square, GIF)
+- Advanced VFX
 
 ## Distribution
 
