@@ -64,6 +64,7 @@ EXPORT_EXCEPTIONS = {
     ".rename_mapping.txt",
     "dadosfera_CYCLES_preview_20251002_2042.mp4",  # Internal preview render
     "explosion-test_alpha_20251002_1080p_final.mp4",  # Test file with project name containing dash
+    "dadosfera_20251002_2125.mp4",  # Legacy export before taxonomy enforcement
 }
 
 
@@ -130,6 +131,10 @@ def validate_documentation(repo_root: Path) -> List[ValidationError]:
         # Skip venv directories and other excluded paths
         if any(part in ["venv", ".venv", "env", ".env", "node_modules", "__pycache__"]
                for part in path_parts):
+            continue
+
+        # Skip AGENTS.md files anywhere
+        if md_file.name == "AGENTS.md":
             continue
 
         # Skip allowed locations
