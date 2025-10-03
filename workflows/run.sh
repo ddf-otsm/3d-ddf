@@ -576,15 +576,35 @@ cmd_status() {
     
     echo ""
     
-    # Check recent renders
+    # Check recent renders with full paths
     print_info "Recent render outputs:"
-    ls -lht "${PROJECTS_DIR}/dadosfera/renders" 2>/dev/null | head -5 || true
+    local dadosfera_renders="${PROJECT_ROOT}/projects/dadosfera/renders"
+    if [ -d "${dadosfera_renders}" ]; then
+        ls -lht "${dadosfera_renders}" 2>/dev/null | head -5 || true
+    fi
+    local explosion_renders="${PROJECT_ROOT}/projects/explosion-test/renders"
+    if [ -d "${explosion_renders}" ]; then
+        ls -lht "${explosion_renders}" 2>/dev/null | head -5 || true
+    fi
     
     echo ""
     
     # Check logs
     print_info "Recent logs:"
     ls -lht "${LOGS_DIR}"/*.log 2>/dev/null | head -3 || print_warning "No recent logs"
+    
+    echo ""
+    
+    # Add recent exported videos
+    print_info "Recent exported videos:"
+    local dadosfera_exports="${PROJECT_ROOT}/projects/dadosfera/exports"
+    if [ -d "${dadosfera_exports}" ]; then
+        find "${dadosfera_exports}" -name "*.mp4" -mmin -1440 -ls 2>/dev/null | tail -5 || true
+    fi
+    local explosion_exports="${PROJECT_ROOT}/projects/explosion-test/exports"
+    if [ -d "${explosion_exports}" ]; then
+        find "${explosion_exports}" -name "*.mp4" -mmin -1440 -ls 2>/dev/null | tail -5 || true
+    fi
 }
 
 cmd_version() {

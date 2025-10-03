@@ -130,12 +130,16 @@ class RenderService:
         if args.output_name:
             output_name = args.output_name
         else:
-            output_name = f"{args.engine.lower()}_{args.quality}_{args.materials}_{timestamp}"
+            output_name = f"frames_{args.engine.lower()}_{args.quality}_{args.materials}_{timestamp}"
 
         self.output_dir = self.project_root / "projects/dadosfera/renders" / output_name
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        self.exports_dir = self.project_root / "projects/dadosfera/exports"
+        # Make exports_dir dynamic
+        if 'explosion' in output_name.lower():
+            self.exports_dir = self.project_root / "projects/explosion-test/exports"
+        else:
+            self.exports_dir = self.project_root / "projects/dadosfera/exports"
         self.exports_dir.mkdir(parents=True, exist_ok=True)
 
         self.log_file = self.project_root / "logs" / f"render_{timestamp}.log"
@@ -436,7 +440,7 @@ class RenderService:
 
         # Build output video filename
         timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-        video_name = f"dadosfera_{self.args.engine}_{self.args.quality}_{timestamp}.mp4"
+        video_name = f"{self.args.engine}_{self.args.quality}_{timestamp}_dadosfera.mp4"
         video_path = self.exports_dir / video_name
 
         # FFmpeg command
@@ -522,7 +526,6 @@ class RenderService:
 # ============================================================================
 # MAIN EXECUTION
 # ============================================================================
-
 
 if __name__ == "__main__":
     args = parse_args()

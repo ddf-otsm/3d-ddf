@@ -6,3 +6,4 @@ repos:
         entry: python3 scripts/validate_taxonomy.py
         language: system
         pass_filenames: false
+
