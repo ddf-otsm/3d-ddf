@@ -125,35 +125,26 @@ class RenderService:
         self.scene = bpy.context.scene
         self.project_root = Path("/Users/luismartins/local_repos/3d-ddf")
 
-        # Generate timestamp FIRST for proper taxonomy
+        # Generate output name
         timestamp = time.strftime("%Y%m%d_%H%M")
-        
-        # Determine project name from blend file or output_name
-        if args.output_name and 'explosion' in args.output_name.lower():
-            self.project_name = "explosion_test"
-            project_dir = "explosion-test"
-        else:
-            self.project_name = "dadosfera"
-            project_dir = "dadosfera"
-        
-        # Generate output folder name: {timestamp}_{engine}_{quality}_{materials}
         if args.output_name:
             output_name = args.output_name
         else:
-            output_name = f"{timestamp}_{args.engine.lower()}_{args.quality}_{args.materials}"
-        
-        self.output_dir = self.project_root / f"projects/{project_dir}/renders" / output_name
+            output_name = f"frames_{args.engine.lower()}_{args.quality}_{args.materials}_{timestamp}"
+
+        self.output_dir = self.project_root / "projects/dadosfera/renders" / output_name
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Set exports directory based on project
-        self.exports_dir = self.project_root / f"projects/{project_dir}/exports"
+
+        # Make exports_dir dynamic
+        if 'explosion' in output_name.lower():
+            self.exports_dir = self.project_root / "projects/explosion-test/exports"
+        else:
+            self.exports_dir = self.project_root / "projects/dadosfera/exports"
         self.exports_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Log file: {timestamp}_render.log
-        self.log_file = self.project_root / "logs" / f"{timestamp}_render.log"
+
+        self.log_file = self.project_root / "logs" / f"render_{timestamp}.log"
         self.log_file.parent.mkdir(parents=True, exist_ok=True)
-        
-        self.timestamp = timestamp
+
         self.start_time = None
         self.frame_times = []
 
@@ -447,8 +438,9 @@ class RenderService:
         self.log("🎬 ENCODING VIDEO")
         self.log("=" * 70)
 
-        # Build output video filename: {project}_{engine}_{quality}_{timestamp}.mp4
-        video_name = f"{self.project_name}_{self.args.engine}_{self.args.quality}_{self.timestamp}.mp4"
+        # Build output video filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+        video_name = f"{self.args.engine}_{self.args.quality}_{timestamp}_dadosfera.mp4"
         video_path = self.exports_dir / video_name
 
         # FFmpeg command
