@@ -17,6 +17,10 @@ projects/dadosfera/
 │   ├── dadosfera_alpha_*.mp4
 │   └── dadosfera_deprecated_*.mp4
 │
+├── logs/                       # Render logs and system logs
+│   ├── render_*.log
+│   └── dadosfera_FINAL_*.log
+│
 └── documentation/              # Project documentation
     └── PROJECT_SUMMARY.md
 ```

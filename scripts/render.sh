@@ -160,7 +160,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo "✅ RENDER COMPLETE!"
     echo ""
     echo "📂 Check: projects/dadosfera/renders/"
-    echo "📝 Log:   render_logs/"
+    echo "📝 Log:   logs/"
     echo ""
     echo "🎬 Next step: Encode to video"
     echo "   cd projects/dadosfera/renders/[output_dir]"

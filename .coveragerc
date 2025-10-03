@@ -1,0 +1,35 @@
+[run]
+source =
+    scripts/
+    integrations/
+    blender-mcp/src/
+omit =
+    */tests/*
+    */test_*.py
+    */__pycache__/*
+    */conftest.py
+    */conftest.py
+    */migrations/*
+    */setup.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if self.debug:
+    if settings.DEBUG
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+    if __name__ == .__main__.:
+
+show_missing = True
+skip_covered = False
+
+[html]
+directory = htmlcov
+
+[xml]
+output = coverage.xml
+
+

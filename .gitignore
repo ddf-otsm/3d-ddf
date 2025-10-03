@@ -1,6 +1,6 @@
-# ============================================================================
-# PYTHON
-# ============================================================================
+# 3D-DDF Project .gitignore
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -25,178 +25,91 @@ MANIFEST
 
 # Virtual environments
 venv/
-ENV/
 env/
-.venv/
+ENV/
+.venv
 
-# ============================================================================
-# IDE & EDITORS
-# ============================================================================
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.cursor/
-
-# ============================================================================
-# macOS
-# ============================================================================
 .DS_Store
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
 
-# ============================================================================
-# BLENDER
-# ============================================================================
-
-# Blender backup files
+# Blender
 *.blend1
 *.blend2
-*.blend3
-
-# Blender auto-save
 *.blend@
+__MACOSX/
 
-# Blender cache
-*.bphys
-*.bphys_temp
-*.bobj
-*.bphys_cache/
-
-# ============================================================================
-# RENDERS & EXPORTS (LARGE BINARY FILES)
-# ============================================================================
-
-# Rendered frames (PNG/JPG sequences) - Can be 100s of MB to GBs
-projects/*/renders/*
-!projects/*/renders/.gitkeep
-!projects/*/renders/README.md
-
-# Video exports - Binary files, 5-50 MB each
-projects/*/exports/*.mp4
-projects/*/exports/*.mov
-projects/*/exports/*.avi
-projects/*/exports/*.mkv
-projects/*/exports/*.webm
-!projects/*/exports/README.md
-!projects/*/exports/.gitkeep
-
-# Sample/preview stills only - Keep a few small preview images
-# Uncomment if you want to keep some preview images in git:
-# !projects/*/renders/stills/*.png
-# !projects/*/exports/*_preview_*.jpg
-
-# ============================================================================
-# LOGS & TEMP FILES
-# ============================================================================
-
-# Render logs
-*.log
-render_logs/
-*.log.*
-
-# Temp files
+# Render outputs (keep structured exports)
+render_live.log
+render_photorealistic.log
 *.tmp
-*.temp
+
+# Reports
+reports/*.txt
+!reports/.gitkeep
+
+# Caches
+.cache/
 *.cache
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.log
 *.bak
-*.backup
+*.tmp
+*~
 
-# ============================================================================
-# VIDEO & MEDIA FILES (GENERAL)
-# ============================================================================
+# Images (but keep README.md files)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.ico
+*.svg
+*.webp
+*.tiff
+*.tif
 
-# Video formats
+# Videos (but keep README.md files)
 *.mp4
-*.mov
 *.avi
+*.mov
 *.mkv
+*.webm
 *.flv
 *.wmv
-*.m4v
-*.webm
-*.ogv
+*.mpg
+*.mpeg
 
-# Audio formats
-*.mp3
-*.wav
-*.aac
-*.flac
-*.ogg
-*.m4a
-
-# Image sequences (if scattered)
-frame_*.png
-frame_*.jpg
-render_*.png
-render_*.jpg
-
-# ============================================================================
-# BLENDER SIMULATION CACHES (v2.0+)
-# ============================================================================
-
-# Fluid/Smoke simulation caches (can be 100s of GB)
-blendcache_*/
-*.bobj.gz
-*.bphys
-
-# Point cache
-*.pc2
-
-# ============================================================================
-# 3D ASSET FILES (OPTIONAL - Uncomment if needed)
-# ============================================================================
-
-# Large 3D models (if importing external assets)
-# *.fbx
-# *.obj
-# *.dae
-# *.gltf
-# *.glb
-# *.stl
-
-# Large textures (if importing external)
-# textures/*.exr
-# textures/*.hdr
-# textures/*_4k.png
-# textures/*_8k.png
-
-# ============================================================================
-# PROJECT SPECIFIC
-# ============================================================================
-
-# Render service output
-render_output/
-output/
-temp_renders/
-
-# Documentation builds (if using Sphinx or similar)
-docs/_build/
-docs/.doctrees/
-
-# Test outputs
-test_output/
-test_renders/
-
-# ============================================================================
-# EXCEPTIONS (Files to KEEP in git)
-# ============================================================================
-
-# Keep .blend files (source files, relatively small)
-!*.blend
-
-# Keep documentation
+# Keep documentation files in all directories
+# README.md for human-readable docs
+# AGENTS.md for AI agent navigation and content discovery
+!**/README.md
 !README.md
-!*.md
+!**/AGENTS.md
+!AGENTS.md
 
-# Keep project structure markers
+# Jenkins
+.jenkins/
+*.jenkins
+
+# Node modules (if using any JS tools)
+node_modules/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# pytest
+.pytest_cache/
+
+# Keep empty directories
 !.gitkeep
-
-# Keep small preview images (< 1 MB)
-# Uncomment if you have small preview images:
-# !*_preview_small.jpg
-# !*_thumbnail.png

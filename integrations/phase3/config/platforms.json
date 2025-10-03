@@ -1,0 +1,144 @@
+{
+  "unity": {
+    "name": "Unity Asset Store",
+    "description": "Official Unity Asset Store with game-ready assets",
+    "base_url": "https://assetstore.unity.com",
+    "api_url": "https://assetstore.unity.com/api",
+    "supported_formats": [".fbx", ".blend", ".obj", ".dae", ".3ds", ".max"],
+    "license": "Unity Asset Store License",
+    "complexity": 3,
+    "requires_auth": true,
+    "auth_type": "unity_id",
+    "rate_limit": 2000,
+    "special_features": ["game_ready", "optimized", "prefabs"],
+    "categories": {
+      "3D Models": {
+        "description": "Static 3D models for environments and props",
+        "subcategories": ["Buildings", "Nature", "Furniture", "Vehicles", "Weapons"]
+      },
+      "Characters": {
+        "description": "Animated character models with rigs",
+        "subcategories": ["Humanoid", "Creatures", "Robots", "Fantasy"]
+      },
+      "Environments": {
+        "description": "Complete environment packages",
+        "subcategories": ["Urban", "Nature", "Sci-Fi", "Fantasy", "Medieval"]
+      },
+      "Vehicles": {
+        "description": "Vehicle models with animations",
+        "subcategories": ["Cars", "Trucks", "Motorcycles", "Boats", "Aircraft"]
+      },
+      "Weapons": {
+        "description": "Weapon models and accessories",
+        "subcategories": ["Guns", "Swords", "Bows", "Explosives", "Shields"]
+      }
+    },
+    "quality_levels": {
+      "Free": {
+        "description": "Free assets with basic quality",
+        "max_polygons": 5000,
+        "texture_resolution": "1024x1024",
+        "license_restrictions": "Unity Asset Store License"
+      },
+      "Standard": {
+        "description": "Paid assets with good quality",
+        "max_polygons": 15000,
+        "texture_resolution": "2048x2048",
+        "license_restrictions": "Unity Asset Store License"
+      },
+      "Premium": {
+        "description": "High-quality professional assets",
+        "max_polygons": 50000,
+        "texture_resolution": "4096x4096",
+        "license_restrictions": "Unity Asset Store License"
+      }
+    },
+    "export_settings": {
+      "scale_factor": 1.0,
+      "apply_scale": true,
+      "bake_animations": true,
+      "optimize_meshes": true,
+      "export_materials": true,
+      "export_textures": true
+    },
+    "integration_features": {
+      "prefab_support": true,
+      "component_import": true,
+      "script_import": true,
+      "shader_import": true,
+      "animation_import": true
+    }
+  },
+  "mixamo": {
+    "name": "Adobe Mixamo",
+    "description": "Character animation platform with auto-rigging",
+    "base_url": "https://mixamo.com",
+    "api_url": "https://mixamo.com/api",
+    "supported_formats": [".fbx", ".bvh", ".dae"],
+    "license": "Adobe License",
+    "complexity": 3,
+    "requires_auth": true,
+    "auth_type": "adobe_id",
+    "rate_limit": 1000,
+    "special_features": ["character_animation", "auto_rigging", "motion_capture"],
+    "categories": {
+      "Locomotion": {
+        "description": "Walking, running, and movement animations",
+        "subcategories": ["Walk", "Run", "Jog", "Sprint", "Crouch", "Crawl"]
+      },
+      "Combat": {
+        "description": "Fighting and combat animations",
+        "subcategories": ["Punch", "Kick", "Block", "Dodge", "Attack", "Defend"]
+      },
+      "Idle": {
+        "description": "Standing and idle animations",
+        "subcategories": ["Idle", "Idle_2", "Idle_3", "Bored", "Alert", "Tired"]
+      },
+      "Emotional": {
+        "description": "Emotional expression animations",
+        "subcategories": ["Happy", "Sad", "Angry", "Surprised", "Fearful", "Confused"]
+      },
+      "Sports": {
+        "description": "Sports and athletic animations",
+        "subcategories": ["Jump", "Dive", "Roll", "Climb", "Swim", "Dance"]
+      }
+    },
+    "character_types": {
+      "humanoid": {
+        "description": "Standard human character rig",
+        "bone_count": 54,
+        "rig_type": "standard",
+        "facial_rig": false
+      },
+      "creature": {
+        "description": "Non-human creature rigs",
+        "bone_count": 30,
+        "rig_type": "custom",
+        "facial_rig": false
+      },
+      "robot": {
+        "description": "Mechanical character rigs",
+        "bone_count": 25,
+        "rig_type": "mechanical",
+        "facial_rig": false
+      }
+    },
+    "animation_settings": {
+      "default_fps": 30,
+      "bone_mapping": "mixamo_standard",
+      "scale_factor": 0.01,
+      "root_motion": true,
+      "in_place": false,
+      "loop_animation": true,
+      "mirror_animation": true
+    },
+    "integration_features": {
+      "auto_rigging": true,
+      "bone_mapping": true,
+      "animation_retargeting": true,
+      "facial_animation": false,
+      "finger_animation": true,
+      "root_motion": true
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Render Export Metadata",
+  "description": "Schema for 3D render export metadata",
+  "type": "object",
+  "required": ["project", "exports"],
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "exports": {
+      "type": "array",
+      "description": "List of export files",
+      "items": {
+        "type": "object",
+        "required": ["filename", "version", "date", "resolution", "quality", "type"],
+        "properties": {
+          "filename": {
+            "type": "string",
+            "pattern": "^[a-z]+_(alpha|beta|rc|stable|deprecated)_\\d{8}_(270p|360p|480p|720p|1080p|1440p|4k)_[a-z0-9_]+\\.mp4$"
+          },
+          "version": {
+            "type": "string",
+            "enum": ["alpha", "beta", "rc", "stable", "deprecated"]
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$"
+          },
+          "resolution": {
+            "type": "string",
+            "pattern": "^\\d{3,4}x\\d{3,4}$"
+          },
+          "quality": {
+            "type": "string",
+            "enum": ["270p", "360p", "480p", "720p", "1080p", "1440p", "4k"]
+          },
+          "type": {
+            "type": "string"
+          },
+          "render_engine": {
+            "type": "string",
+            "enum": ["Cycles", "EEVEE", "EEVEE_NEXT", "Workbench"]
+          },
+          "render_preset": {
+            "type": "string"
+          },
+          "render_time_minutes": {
+            "type": "number",
+            "minimum": 0
+          },
+          "samples": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "denoiser": {
+            "type": "string"
+          },
+          "size_mb": {
+            "type": "number",
+            "minimum": 0
+          },
+          "frame_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "fps": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          },
+          "blend_file": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["draft", "preview", "published", "archived", "deprecated"]
+          }
+        }
+      }
+    },
+    "metadata_version": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

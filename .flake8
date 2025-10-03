@@ -1,0 +1,40 @@
+[flake8]
+# Ignore certain directories that don't need linting
+exclude =
+    .git,
+    __pycache__,
+    *.pyc,
+    .pytest_cache,
+    .mypy_cache,
+    .venv,
+    venv,
+    env,
+    .tox,
+    dist,
+    build,
+    *.egg-info,
+    # Project specific ignores
+    projects/*,
+    docs/*,
+    blender-mcp/src/*,
+    integrations/*/assets/*,
+    integrations/*/docs/*,
+    scripts/deprecated/*,
+    reports/*,
+    render_logs/*
+
+# Configuration for code style
+max-line-length = 120
+extend-ignore = E203,W503,E402,C901,F401,F541,F841,F821
+max-complexity = 20
+
+# Per-file ignores for specific patterns
+per-file-ignores =
+    # Test files can have longer lines for readability
+    tests/*:E501
+    # Scripts might have some long lines for logging/output
+    scripts/*:E501
+    # Ignore unused imports in mock/test files
+    scripts/explosions/*:F401
+    # Ignore complexity in validation scripts
+    scripts/validate_*:C901

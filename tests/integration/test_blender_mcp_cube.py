@@ -2,12 +2,18 @@
 """
 Test suite for Blender MCP cube creation
 Tests the ability to create objects and verify them with Blender data feedback
+
+⚠️  REQUIRES: Live Blender instance with MCP server running
+Run this test only when Blender is open with MCP addon connected.
 """
 
+import pytest
 import json
 import socket
 import time
-from typing import Dict, Any
+from typing import Dict, Any, Optional
+
+pytestmark = pytest.mark.blender  # Mark all tests in this module as requiring Blender
 
 
 class BlenderMCPTester:
@@ -16,7 +22,7 @@ class BlenderMCPTester:
     def __init__(self, host: str = "localhost", port: int = 9876):
         self.host = host
         self.port = port
-        self.sock = None
+        self.sock: Optional[socket.socket] = None
     
     def connect(self) -> bool:
         """Connect to Blender MCP server"""
@@ -29,19 +35,22 @@ class BlenderMCPTester:
             print(f"❌ Connection failed: {e}")
             return False
     
-    def send_command(self, command_type: str, params: Dict[str, Any] = None) -> Dict[str, Any]:
+    def send_command(self, command_type: str, params: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Send a command to Blender and get response"""
+        if self.sock is None:
+            raise ConnectionError("Not connected to Blender")
+
         if params is None:
             params = {}
-        
+
         command = {
             "type": command_type,
             "params": params
         }
-        
+
         command_json = json.dumps(command) + "\n"
         self.sock.sendall(command_json.encode())
-        
+
         response = self.sock.recv(65536).decode()
         return json.loads(response)
     

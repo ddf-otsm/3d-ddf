@@ -1,0 +1,82 @@
+{
+  "$schema": "./metadata.schema.json",
+  "project": "dadosfera",
+  "exports": [
+    {
+      "filename": "dadosfera_stable_20251001_1080p_final.mp4",
+      "version": "stable",
+      "date": "2025-10-01",
+      "time": "21:21",
+      "resolution": "1920x1080",
+      "quality": "1080p",
+      "type": "final",
+      "render_engine": "Cycles",
+      "render_preset": "production_photorealistic",
+      "render_time_minutes": 90,
+      "samples": 256,
+      "denoiser": "OpenImageDenoise",
+      "size_mb": 9.1,
+      "frame_count": 240,
+      "fps": 24,
+      "duration_seconds": 10,
+      "features": [
+        "photorealistic",
+        "motion_blur",
+        "volumetrics",
+        "cycles_production"
+      ],
+      "notes": "Final production render with full photorealistic settings",
+      "blend_file": "../blender_files/dadosfera_animation_v1.blend",
+      "status": "published"
+    },
+    {
+      "filename": "dadosfera_alpha_20251001_1080p_preview.mp4",
+      "version": "alpha",
+      "date": "2025-10-01",
+      "time": "14:09",
+      "resolution": "1920x1080",
+      "quality": "1080p",
+      "type": "preview",
+      "render_engine": "Cycles",
+      "render_preset": "photorealistic",
+      "render_time_minutes": 26,
+      "samples": 128,
+      "denoiser": "OpenImageDenoise",
+      "size_mb": 0.291,
+      "frame_count": 240,
+      "fps": 24,
+      "duration_seconds": 10,
+      "features": [
+        "photorealistic",
+        "cycles"
+      ],
+      "notes": "Earlier alpha preview render with cycles",
+      "blend_file": "../blender_files/dadosfera_animation_v1.blend",
+      "status": "archived"
+    },
+    {
+      "filename": "dadosfera_alpha_20250930_1080p_partial_8sec.mp4",
+      "version": "alpha",
+      "date": "2025-09-30",
+      "resolution": "1920x1080",
+      "quality": "1080p",
+      "type": "partial",
+      "render_engine": "EEVEE_NEXT",
+      "render_time_minutes": 8,
+      "size_mb": 3.6,
+      "frame_count": 194,
+      "fps": 24,
+      "duration_seconds": 8,
+      "features": [
+        "materials",
+        "lighting",
+        "explosions"
+      ],
+      "notes": "Alpha release partial render (missing final 46 frames)",
+      "blend_file": "../blender_files/dadosfera_animation_v1.blend",
+      "status": "archived"
+    }
+  ],
+  "metadata_version": "1.0",
+  "last_updated": "2025-10-02"
+}

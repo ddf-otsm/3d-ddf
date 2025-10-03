@@ -1,0 +1,118 @@
+{
+  "opengameart": [
+    {
+      "title": "OpenGameArt character Asset 1",
+      "url": "https://opengameart.org/content/character-1",
+      "format": ".blend",
+      "license": "CC0",
+      "download_url": "https://opengameart.org/files/character-1.blend",
+      "thumbnail": "https://opengameart.org/sites/default/files/character-1.png",
+      "author": "OpenGameArt User",
+      "category": "3D Models",
+      "tags": [
+        "character",
+        "free",
+        "cc0"
+      ],
+      "file_size": "2.5MB",
+      "downloads": 150,
+      "rating": 4.2
+    },
+    {
+      "title": "OpenGameArt character Asset 2",
+      "url": "https://opengameart.org/content/character-2",
+      "format": ".fbx",
+      "license": "CC-BY",
+      "download_url": "https://opengameart.org/files/character-2.fbx",
+      "thumbnail": "https://opengameart.org/sites/default/files/character-2.png",
+      "author": "OpenGameArt User",
+      "category": "3D Models",
+      "tags": [
+        "character",
+        "free",
+        "cc-by"
+      ],
+      "file_size": "1.8MB",
+      "downloads": 89,
+      "rating": 4.0
+    }
+  ],
+  "free3d": [
+    {
+      "title": "Free3D character Model 1",
+      "url": "https://free3d.com/3d-models/character-1",
+      "format": ".obj",
+      "license": "Free",
+      "download_url": "https://free3d.com/download/character-1.obj",
+      "thumbnail": "https://free3d.com/thumbnails/character-1.jpg",
+      "author": "Free3D User",
+      "category": "3D Models",
+      "tags": [
+        "character",
+        "free",
+        "downloadable"
+      ],
+      "file_size": "3.2MB",
+      "downloads": 234,
+      "rating": 4.5
+    },
+    {
+      "title": "Free3D character Model 2",
+      "url": "https://free3d.com/3d-models/character-2",
+      "format": ".3ds",
+      "license": "Free",
+      "download_url": "https://free3d.com/download/character-2.3ds",
+      "thumbnail": "https://free3d.com/thumbnails/character-2.jpg",
+      "author": "Free3D User",
+      "category": "3D Models",
+      "tags": [
+        "character",
+        "free",
+        "downloadable"
+      ],
+      "file_size": "1.9MB",
+      "downloads": 156,
+      "rating": 4.3
+    }
+  ],
+  "blendswap": [
+    {
+      "title": "BlendSwap character Blend 1",
+      "url": "https://blendswap.com/blend/character-1",
+      "format": ".blend",
+      "license": "CC0",
+      "download_url": "https://blendswap.com/download/character-1.blend",
+      "thumbnail": "https://blendswap.com/thumbnails/character-1.jpg",
+      "author": "BlendSwap User",
+      "category": "3D Models",
+      "tags": [
+        "character",
+        "blender",
+        "free"
+      ],
+      "file_size": "4.1MB",
+      "downloads": 78,
+      "rating": 4.7
+    }
+  ],
+  "sketchfab_public": [
+    {
+      "title": "Sketchfab Public character 1",
+      "url": "https://sketchfab.com/3d-models/character-1",
+      "format": ".gltf",
+      "license": "CC0",
+      "download_url": "https://sketchfab.com/models/character-1/download",
+      "thumbnail": "https://media.sketchfab.com/urls/character-1.jpg",
+      "author": "Sketchfab User",
+      "category": "3D Models",
+      "tags": [
+        "character",
+        "public",
+        "free"
+      ],
+      "file_size": "2.8MB",
+      "downloads": 312,
+      "rating": 4.6
+    }
+  ]
+}

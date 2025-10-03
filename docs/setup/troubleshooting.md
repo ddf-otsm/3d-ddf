@@ -2,6 +2,35 @@
 
 ## Common Issues
 
+### Blender Not Found
+
+**Symptoms:**
+- `blender: command not found` error
+- Tests fail with "Blender not detected"
+- Can't run `blender --version`
+
+**Solutions:**
+
+1. **Check if Blender is installed:**
+   ```bash
+   python scripts/detect_blender.py
+   ```
+
+2. **If not found, install Blender:**
+   - See **[Blender Installation Guide](./blender-installation.md)**
+   - Quick install: `brew install --cask blender` (macOS)
+
+3. **If installed but not in PATH:**
+   ```bash
+   # macOS - Add to PATH
+   echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
+   source ~/.zshrc
+   
+   # Verify
+   which blender
+   blender --version
+   ```
+
 ### MCP showing red or "no tools"
 
 **Solutions:**

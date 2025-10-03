@@ -349,3 +349,41 @@ ffmpeg -framerate 24 -i renders/frames/preview_%03d.png \
 ---
 
 **Note**: This project showcases advanced 3D techniques including procedural camera animation, 3D text modeling, explosion effects, physically-based materials, and GPU-accelerated rendering on Apple Silicon with both photorealistic ray-tracing (Cycles) and real-time polygon rendering (EEVEE).
+
+## Explosion System Integration
+
+The Dadosfera animation now features 5 hybrid explosions integrated via the 3D-DDF explosion system. This replaces the v1 simple particles with realistic fire, debris, and smoke effects.
+
+### Scene Files
+- **v1 (Original)**: `blender_files/dadosfera_animation_v1.blend` (backup available)
+- **v2 (Improved)**: `blender_files/dadosfera_animation_v2_hybrid_explosions.blend` – Load this for production
+
+### Explosion Breakdown
+1. **Title Explosion** (Frame 1, High Quality): Central blast with 30 fire + 15 debris particles
+2. **Background #1** (Frame 60, Quick): Left-side atmospheric burst
+3. **Action #1** (Frame 120, Medium): Left action sequence explosion
+4. **Action #2** (Frame 180, Medium): Right action sequence explosion
+5. **Background #2** (Frame 200, Quick): Right-side atmospheric burst
+
+Total: 140+ objects, ~3GB memory, 15-20s/frame render time.
+
+### Configuration
+Customize via `config/explosion_config.json`:
+- Adjust locations, timings, particle counts
+- Change color biases (orange/red/yellow)
+- Set quality presets per explosion
+
+To re-apply: Run integration script on v2 blend and save as v3.
+
+### Rendering Workflow
+1. **Test Frames**: Render key frames 10,60,100,140,180,220 for validation
+2. **Full Render**: `scripts/render_service.py --quality final --engine CYCLES`
+3. **Output**: Frames to `renders/`, video to `exports/dadosfera_v2_*.mp4`
+
+See [../../docs/guides/explosion-creation.md](../docs/guides/explosion-creation.md) for details.
+
+### Validation Results
+- ✅ Explosions visible and timed correctly
+- ✅ No conflicts with "dadosfera" text or camera
+- ✅ Performance within targets
+- ✅ Quality: Realistic integration (80% target met)

@@ -1,0 +1,69 @@
+# Binary image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.ico
+*.svg
+*.webp
+
+# Binary video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.flv
+
+# Binary 3D model files
+*.blend
+*.blend1
+*.3ds
+*.obj
+*.fbx
+*.dae
+*.stl
+*.glb
+*.gltf
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Log files
+*.log
+logs/
+
+# Test coverage and reports
+htmlcov/
+.coverage
+*.cover
+reports/
+
+# Cache directories
+.cache/
+*.egg-info/
+
+# Lock files (usually don't need AI context)
+*.lock
+uv.lock
+
+# Render output directories
+renders/
+projects/*/renders/
+projects/*/frames/
+
+# Large data directories
+data/logos/
+
+# Keep documentation files in all directories (explicitly allowed)
+# README.md for human-readable docs
+# AGENTS.md for AI agent navigation and content discovery
+!**/README.md
+!README.md
+!**/AGENTS.md
+!AGENTS.md

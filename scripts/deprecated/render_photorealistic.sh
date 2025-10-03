@@ -16,7 +16,7 @@ SCENE_FILE="$PROJECT_ROOT/projects/dadosfera/blender_files/dadosfera_animation_v
 BLENDER_APP="/Applications/Blender.app/Contents/MacOS/Blender"
 PYTHON_SCRIPT="$PROJECT_ROOT/scripts/apply_photorealistic_and_render.py"
 OUTPUT_DIR="$PROJECT_ROOT/projects/dadosfera/renders/frames_cycles_photorealistic"
-LOG_FILE="$PROJECT_ROOT/render_logs/render_$(date +%Y%m%d_%H%M%S).log"
+LOG_FILE="$PROJECT_ROOT/logs/render_$(date +%Y%m%d_%H%M%S).log"
 
 # Engine: CYCLES or EEVEE
 ENGINE="${1:-CYCLES}"

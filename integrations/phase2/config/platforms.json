@@ -1,0 +1,107 @@
+{
+  "platforms": {
+    "sketchfab": {
+      "name": "Sketchfab",
+      "description": "3D model marketplace with VR/AR content",
+      "base_url": "https://sketchfab.com",
+      "api_url": "https://api.sketchfab.com/v3",
+      "supported_formats": [".gltf", ".glb", ".blend", ".fbx", ".obj", ".dae"],
+      "license_types": ["CC0", "CC-BY", "CC-BY-SA", "Commercial"],
+      "complexity": 2,
+      "requires_auth": true,
+      "auth_type": "api_key",
+      "rate_limit": 1000,
+      "search_endpoints": {
+        "models": "/models",
+        "categories": "/categories",
+        "users": "/users"
+      },
+      "features": [
+        "VR/AR support",
+        "High-quality models",
+        "Community driven",
+        "Downloadable content"
+      ]
+    },
+    "clara": {
+      "name": "Clara.io",
+      "description": "Online 3D modeling and collaboration platform",
+      "base_url": "https://clara.io",
+      "api_url": "https://clara.io/api",
+      "supported_formats": [".blend", ".fbx", ".obj", ".dae", ".3ds"],
+      "license_types": ["Free", "Royalty Free", "Commercial"],
+      "complexity": 2,
+      "requires_auth": true,
+      "auth_type": "oauth",
+      "rate_limit": 500,
+      "search_endpoints": {
+        "models": "/models",
+        "library": "/library",
+        "collections": "/collections"
+      },
+      "features": [
+        "Online modeling",
+        "Collaborative editing",
+        "Cloud storage",
+        "Real-time rendering"
+      ]
+    }
+  },
+  "workflow": {
+    "phases": [
+      {
+        "name": "authentication",
+        "description": "Set up authentication for platforms",
+        "order": 1
+      },
+      {
+        "name": "discovery",
+        "description": "Discover and understand platforms",
+        "order": 2
+      },
+      {
+        "name": "setup",
+        "description": "Set up working environment",
+        "order": 3
+      },
+      {
+        "name": "download",
+        "description": "Download assets from platforms",
+        "order": 4
+      },
+      {
+        "name": "import",
+        "description": "Import assets into Blender",
+        "order": 5
+      },
+      {
+        "name": "organize",
+        "description": "Organize assets in collections",
+        "order": 6
+      },
+      {
+        "name": "verify",
+        "description": "Verify integration and generate reports",
+        "order": 7
+      }
+    ]
+  },
+  "authentication": {
+    "required_credentials": {
+      "sketchfab": {
+        "type": "api_key",
+        "env_var": "SKETCHFAB_API_KEY",
+        "description": "Sketchfab API key for accessing models"
+      },
+      "clara": {
+        "type": "oauth_token",
+        "env_var": "CLARA_IO_TOKEN",
+        "description": "Clara.io OAuth token for API access"
+      }
+    },
+    "setup_instructions": {
+      "sketchfab": "1. Create account at sketchfab.com\n2. Go to API settings\n3. Generate API key\n4. Set SKETCHFAB_API_KEY environment variable",
+      "clara": "1. Create account at clara.io\n2. Go to developer settings\n3. Generate OAuth token\n4. Set CLARA_IO_TOKEN environment variable"
+    }
+  }
+}

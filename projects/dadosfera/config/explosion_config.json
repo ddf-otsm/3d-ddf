@@ -1,0 +1,143 @@
+{
+  "explosion_config": {
+    "description": "Explosion configuration for Dadosfera project - 8 explosions with proper timing",
+    "scene_duration": 300,
+    "frame_rate": 24,
+    "scene_duration_seconds": 12.5,
+    "explosion_count": 8,
+    "quality_preset": "medium",
+    "render_settings": {
+      "samples": 256,
+      "resolution": [1920, 1080],
+      "output_format": "PNG"
+    }
+  },
+  "explosions": [
+    {
+      "id": "explosion_01",
+      "name": "Scene_Explosion_01",
+      "description": "Main action explosion - Title sequence",
+      "location": [0.0, 0.0, 0.0],
+      "start_frame": 50,
+      "duration": 90,
+      "intensity": 1.0,
+      "quality_preset": "medium",
+      "fire_particles": 25,
+      "debris_particles": 12,
+      "color_bias": "orange",
+      "render_samples": 256
+    },
+    {
+      "id": "explosion_02",
+      "name": "Scene_Explosion_02",
+      "description": "Secondary action explosion",
+      "location": [-3.0, 2.0, 0.5],
+      "start_frame": 70,
+      "duration": 75,
+      "intensity": 0.9,
+      "quality_preset": "medium",
+      "fire_particles": 20,
+      "debris_particles": 10,
+      "color_bias": "red",
+      "render_samples": 256
+    },
+    {
+      "id": "explosion_03",
+      "name": "Scene_Explosion_03",
+      "description": "Building collapse explosion",
+      "location": [4.0, -1.0, 1.0],
+      "start_frame": 90,
+      "duration": 120,
+      "intensity": 1.2,
+      "quality_preset": "high",
+      "fire_particles": 35,
+      "debris_particles": 18,
+      "color_bias": "yellow",
+      "render_samples": 512
+    },
+    {
+      "id": "explosion_04",
+      "name": "Scene_Explosion_04",
+      "description": "Vehicle explosion",
+      "location": [-2.0, 4.0, 0.3],
+      "start_frame": 110,
+      "duration": 60,
+      "intensity": 0.8,
+      "quality_preset": "medium",
+      "fire_particles": 22,
+      "debris_particles": 11,
+      "color_bias": "orange",
+      "render_samples": 256
+    },
+    {
+      "id": "explosion_05",
+      "name": "Scene_Explosion_05",
+      "description": "Ground impact explosion",
+      "location": [1.0, -3.0, 0.1],
+      "start_frame": 130,
+      "duration": 80,
+      "intensity": 0.7,
+      "quality_preset": "medium",
+      "fire_particles": 18,
+      "debris_particles": 9,
+      "color_bias": "red",
+      "render_samples": 256
+    },
+    {
+      "id": "explosion_06",
+      "name": "Scene_Explosion_06",
+      "description": "Aerial explosion",
+      "location": [0.0, 0.0, 8.0],
+      "start_frame": 150,
+      "duration": 100,
+      "intensity": 1.1,
+      "quality_preset": "high",
+      "fire_particles": 30,
+      "debris_particles": 15,
+      "color_bias": "white",
+      "render_samples": 512
+    },
+    {
+      "id": "explosion_07",
+      "name": "Scene_Explosion_07",
+      "description": "Chain reaction explosion",
+      "location": [-4.0, 1.0, 0.2],
+      "start_frame": 170,
+      "duration": 70,
+      "intensity": 0.9,
+      "quality_preset": "medium",
+      "fire_particles": 24,
+      "debris_particles": 12,
+      "color_bias": "orange",
+      "render_samples": 256
+    },
+    {
+      "id": "explosion_08",
+      "name": "Scene_Explosion_08",
+      "description": "Final climax explosion",
+      "location": [3.0, -2.0, 0.8],
+      "start_frame": 190,
+      "duration": 110,
+      "intensity": 1.3,
+      "quality_preset": "high",
+      "fire_particles": 32,
+      "debris_particles": 16,
+      "color_bias": "yellow",
+      "render_samples": 512
+    }
+  ],
+  "validation_frames": [10, 60, 100, 140, 180, 220],
+  "performance_targets": {
+    "render_time_per_frame": "<15 seconds",
+    "memory_usage": "<4GB",
+    "particle_count_total": "<200",
+    "quality_rating": ">4.5/5"
+  },
+  "production_notes": [
+    "Explosion timing: frames 50, 70, 90, 110, 130, 150, 170, 190",
+    "Total scene duration: 300 frames (12.5 seconds at 24fps)",
+    "Quality presets: 2x Medium, 2x High for optimal balance",
+    "Each explosion creates 3 objects: Fire particles, Debris particles, Smoke volume",
+    "Total objects: 24 (8 explosions × 3 objects each)"
+  ]
+}

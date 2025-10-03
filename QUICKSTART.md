@@ -1,5 +1,18 @@
 # Quick Start Guide - Blender MCP with Cursor
 
+## 🛠️ Initial Setup (One-time)
+
+### Step 0: Setup Development Environment
+```bash
+# Create virtual environment and install dependencies
+./setup_venv.sh
+
+# Activate it
+source venv/bin/activate  # macOS/Linux
+```
+
+See [Virtual Environment Setup](docs/setup/VENV_SETUP.md) for details.
+
 ## 🚀 Getting Started in 3 Steps
 
 ### Step 1: Install Blender Addon (One-time setup)
@@ -25,6 +38,19 @@ Try asking me:
 - "Add a blue cube next to it"
 - "Make the scene lighting cinematic"
 
+## 🔍 Check Blender Installation (Before Setup)
+
+```bash
+# Detect Blender on your system
+python scripts/detect_blender.py
+
+# Or manually check
+which blender        # macOS/Linux
+blender --version    # All platforms
+```
+
+**Don't have Blender?** See [Installation Guide](docs/setup/blender-installation.md)
+
 ## ❗ Troubleshooting
 
 **MCP showing red or "no tools"?**
@@ -33,10 +59,14 @@ Try asking me:
 - ✓ Did you click "Connect to Claude" in Blender?
 - ✓ Did you restart Cursor after connecting?
 
+**"blender: command not found"?**
+- Run `python scripts/detect_blender.py` to find Blender
+- See [Blender Installation Guide](docs/setup/blender-installation.md)
+
 **Still not working?**
 1. Check Blender BlenderMCP panel shows "Connected"
 2. Restart Cursor
-3. Try again
+3. See [Troubleshooting Guide](docs/setup/troubleshooting.md)
 
 ## 📝 Notes
 

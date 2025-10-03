@@ -46,7 +46,7 @@ PROJECT_ROOT = Path("/Users/luismartins/local_repos/3d-ddf")
 FRAMES_DIR = PROJECT_ROOT / "projects/dadosfera/renders/frames_cycles_photorealistic"
 FRAMES_DIR.mkdir(parents=True, exist_ok=True)
 
-LOG_FILE = PROJECT_ROOT / "render_logs" / f"render_photorealistic_{int(time.time())}.log"
+LOG_FILE = PROJECT_ROOT / "logs" / f"render_photorealistic_{int(time.time())}.log"
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 # ============================================================================

@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Pre-commit hook to validate complete project taxonomy
+# Install: cp scripts/hooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+#
+
+echo "🔍 Validating project taxonomy (docs + exports)..."
+
+# Run the comprehensive validation script
+python3 scripts/validate_taxonomy.py
+
+# Capture exit code
+exit_code=$?
+
+if [ $exit_code -ne 0 ]; then
+    echo ""
+    echo "⚠️  Commit blocked: Project taxonomy validation failed"
+    echo "   Fix the issues above or run: git commit --no-verify (not recommended)"
+    echo ""
+    echo "💡 To validate manually: python3 scripts/validate_taxonomy.py"
+    exit 1
+fi
+
+echo ""
+exit 0

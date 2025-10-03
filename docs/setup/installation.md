@@ -2,10 +2,33 @@
 
 ## Prerequisites
 
-- **Blender 3.0 or newer** installed on macOS
+- **Blender 3.0 or newer** installed ([Installation guide](./blender-installation.md))
 - **Python 3.10 or newer**
 - **uv package manager** (already installed ✓)
 - **Cursor** IDE
+
+### 🔍 Check Blender Installation
+
+Before proceeding, verify Blender is installed:
+
+```bash
+# Automated detection (recommended)
+python scripts/detect_blender.py
+
+# Manual check
+which blender        # macOS/Linux
+blender --version    # All platforms
+```
+
+**Expected Output:**
+```
+✅ Found 1 Blender installation(s):
+[1] Blender 4.0.2
+    Path:       /Applications/Blender.app
+    Executable: /Applications/Blender.app/Contents/MacOS/Blender
+```
+
+**If Blender is not found**, follow the **[Blender Installation Guide](./blender-installation.md)** first.
 
 ## Setup Steps
 

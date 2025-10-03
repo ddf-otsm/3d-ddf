@@ -147,7 +147,7 @@ projects/dadosfera/renders/
 ├── eevee_draft_default_20251001_1445/
 └── ...
 
-render_logs/
+logs/
 ├── render_20251001_1430.log
 ├── render_20251001_1500.log
 └── ...

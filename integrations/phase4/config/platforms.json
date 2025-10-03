@@ -1,0 +1,228 @@
+{
+  "cgtrader": {
+    "name": "CGTrader",
+    "description": "Professional 3D marketplace with commercial assets",
+    "base_url": "https://www.cgtrader.com",
+    "api_url": "https://www.cgtrader.com/api",
+    "supported_formats": [".blend", ".fbx", ".obj", ".dae", ".3ds", ".max", ".c4d"],
+    "license": "Commercial License",
+    "complexity": 4,
+    "requires_auth": true,
+    "auth_type": "api_key",
+    "rate_limit": 500,
+    "special_features": ["commercial_license", "high_poly", "professional_quality", "texture_packs"],
+    "categories": {
+      "Architecture": {
+        "description": "Architectural models and environments",
+        "subcategories": ["Buildings", "Interiors", "Landscapes", "Urban", "Historical"]
+      },
+      "Characters": {
+        "description": "Character models with professional rigging",
+        "subcategories": ["Humanoid", "Creatures", "Robots", "Fantasy", "Historical"]
+      },
+      "Vehicles": {
+        "description": "Vehicle models with detailed interiors",
+        "subcategories": ["Cars", "Trucks", "Motorcycles", "Boats", "Aircraft", "Spacecraft"]
+      },
+      "Nature": {
+        "description": "Natural environment assets",
+        "subcategories": ["Trees", "Rocks", "Water", "Sky", "Terrain", "Weather"]
+      },
+      "Furniture": {
+        "description": "Furniture and interior props",
+        "subcategories": ["Chairs", "Tables", "Beds", "Storage", "Decorative", "Lighting"]
+      }
+    },
+    "quality_levels": {
+      "Standard": {
+        "description": "Professional quality assets",
+        "max_polygons": 25000,
+        "texture_resolution": "2048x2048",
+        "price_range": "$50-$200",
+        "license_restrictions": "Commercial License"
+      },
+      "Premium": {
+        "description": "High-quality professional assets",
+        "max_polygons": 50000,
+        "texture_resolution": "4096x4096",
+        "price_range": "$200-$500",
+        "license_restrictions": "Commercial License"
+      },
+      "Ultra": {
+        "description": "Ultra-high-quality professional assets",
+        "max_polygons": 100000,
+        "texture_resolution": "8192x8192",
+        "price_range": "$500+",
+        "license_restrictions": "Commercial License"
+      }
+    },
+    "export_settings": {
+      "scale_factor": 1.0,
+      "apply_scale": true,
+      "bake_animations": true,
+      "optimize_meshes": true,
+      "export_materials": true,
+      "export_textures": true,
+      "export_uvs": true,
+      "export_normals": true
+    },
+    "integration_features": {
+      "commercial_license": true,
+      "high_poly_support": true,
+      "texture_packs": true,
+      "professional_quality": true,
+      "metadata_rich": true
+    }
+  },
+  "turbosquid": {
+    "name": "TurboSquid",
+    "description": "Industry-standard 3D marketplace",
+    "base_url": "https://www.turbosquid.com",
+    "api_url": "https://www.turbosquid.com/api",
+    "supported_formats": [".blend", ".fbx", ".obj", ".dae", ".3ds", ".max", ".c4d", ".ma"],
+    "license": "Commercial License",
+    "complexity": 4,
+    "requires_auth": true,
+    "auth_type": "api_key",
+    "rate_limit": 300,
+    "special_features": ["commercial_license", "industry_standard", "professional_quality", "rigged_models"],
+    "categories": {
+      "Architecture": {
+        "description": "Architectural and building models",
+        "subcategories": ["Buildings", "Interiors", "Landscapes", "Urban", "Historical"]
+      },
+      "Characters": {
+        "description": "Character models with professional rigging",
+        "subcategories": ["Humanoid", "Creatures", "Robots", "Fantasy", "Historical"]
+      },
+      "Vehicles": {
+        "description": "Vehicle models with detailed specifications",
+        "subcategories": ["Cars", "Trucks", "Motorcycles", "Boats", "Aircraft", "Spacecraft"]
+      },
+      "Nature": {
+        "description": "Natural environment and organic assets",
+        "subcategories": ["Trees", "Rocks", "Water", "Sky", "Terrain", "Weather"]
+      },
+      "Furniture": {
+        "description": "Furniture and interior design assets",
+        "subcategories": ["Chairs", "Tables", "Beds", "Storage", "Decorative", "Lighting"]
+      }
+    },
+    "quality_levels": {
+      "Standard": {
+        "description": "Industry-standard professional assets",
+        "max_polygons": 30000,
+        "texture_resolution": "2048x2048",
+        "price_range": "$75-$250",
+        "license_restrictions": "Commercial License"
+      },
+      "Premium": {
+        "description": "High-end professional assets",
+        "max_polygons": 75000,
+        "texture_resolution": "4096x4096",
+        "price_range": "$250-$750",
+        "license_restrictions": "Commercial License"
+      },
+      "Ultra": {
+        "description": "Ultra-high-end professional assets",
+        "max_polygons": 150000,
+        "texture_resolution": "8192x8192",
+        "price_range": "$750+",
+        "license_restrictions": "Commercial License"
+      }
+    },
+    "export_settings": {
+      "scale_factor": 1.0,
+      "apply_scale": true,
+      "bake_animations": true,
+      "optimize_meshes": true,
+      "export_materials": true,
+      "export_textures": true,
+      "export_uvs": true,
+      "export_normals": true
+    },
+    "integration_features": {
+      "commercial_license": true,
+      "industry_standard": true,
+      "professional_quality": true,
+      "rigged_models": true,
+      "metadata_rich": true
+    }
+  },
+  "unreal": {
+    "name": "Unreal Marketplace",
+    "description": "Official Unreal Engine marketplace",
+    "base_url": "https://www.unrealengine.com/marketplace",
+    "api_url": "https://www.unrealengine.com/api",
+    "supported_formats": [".fbx", ".obj", ".dae", ".abc"],
+    "license": "Unreal Engine License",
+    "complexity": 4,
+    "requires_auth": true,
+    "auth_type": "epic_id",
+    "rate_limit": 200,
+    "special_features": ["unreal_optimized", "real_time_ready", "professional_quality", "blueprint_ready"],
+    "categories": {
+      "Environment": {
+        "description": "Environment and level design assets",
+        "subcategories": ["Buildings", "Landscapes", "Props", "Lighting", "Effects"]
+      },
+      "Characters": {
+        "description": "Character models optimized for Unreal",
+        "subcategories": ["Humanoid", "Creatures", "Robots", "Fantasy", "Historical"]
+      },
+      "Vehicles": {
+        "description": "Vehicle models with Unreal integration",
+        "subcategories": ["Cars", "Trucks", "Motorcycles", "Boats", "Aircraft", "Spacecraft"]
+      },
+      "Props": {
+        "description": "Interactive and static props",
+        "subcategories": ["Furniture", "Weapons", "Tools", "Decorative", "Interactive"]
+      },
+      "Effects": {
+        "description": "Visual effects and particles",
+        "subcategories": ["Fire", "Water", "Smoke", "Explosions", "Magic", "Weather"]
+      }
+    },
+    "quality_levels": {
+      "Standard": {
+        "description": "Unreal-optimized standard assets",
+        "max_polygons": 15000,
+        "texture_resolution": "2048x2048",
+        "price_range": "$30-$100",
+        "license_restrictions": "Unreal Engine License"
+      },
+      "Premium": {
+        "description": "High-quality Unreal assets",
+        "max_polygons": 40000,
+        "texture_resolution": "4096x4096",
+        "price_range": "$100-$300",
+        "license_restrictions": "Unreal Engine License"
+      },
+      "Ultra": {
+        "description": "Ultra-high-quality Unreal assets",
+        "max_polygons": 80000,
+        "texture_resolution": "8192x8192",
+        "price_range": "$300+",
+        "license_restrictions": "Unreal Engine License"
+      }
+    },
+    "export_settings": {
+      "scale_factor": 0.01,
+      "apply_scale": true,
+      "bake_animations": true,
+      "optimize_meshes": true,
+      "export_materials": true,
+      "export_textures": true,
+      "export_uvs": true,
+      "export_normals": true,
+      "unreal_optimized": true
+    },
+    "integration_features": {
+      "unreal_optimized": true,
+      "real_time_ready": true,
+      "blueprint_ready": true,
+      "professional_quality": true,
+      "epic_approved": true
+    }
+  }
+}

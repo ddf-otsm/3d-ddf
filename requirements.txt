@@ -1,0 +1,30 @@
+# 3D-DDF Project Requirements
+# Install with: pip install -r requirements.txt
+
+# Core Python packages
+pathlib2>=2.3.0
+
+# Testing framework
+pytest>=6.0.0
+pytest-cov>=2.12.0
+pytest-mock>=3.6.0
+
+# Git hooks and code quality
+pre-commit>=2.20.0
+
+# Data processing (for integrations)
+numpy>=1.20.0
+pandas>=1.3.0
+
+# Web scraping (for asset integrations)
+requests>=2.25.0
+beautifulsoup4>=4.9.0
+lxml>=4.6.0
+
+# Advanced features (optional)
+scikit-learn>=1.0.0
+joblib>=1.0.0
+
+# Note: Blender's 'bpy' module is not available via pip
+# It's only accessible within Blender's Python environment
+# Scripts that use bpy should be run with: blender --background --python script.py

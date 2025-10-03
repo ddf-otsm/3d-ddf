@@ -1,0 +1,68 @@
+{
+  "platforms": {
+    "opengameart": {
+      "name": "OpenGameArt.org",
+      "description": "Open source game assets with various licenses",
+      "base_url": "https://opengameart.org",
+      "api_url": "https://opengameart.org/api",
+      "supported_formats": [".blend", ".fbx", ".obj", ".dae", ".3ds"],
+      "license_types": ["CC0", "CC-BY", "CC-BY-SA"],
+      "complexity": 1,
+      "requires_auth": false,
+      "rate_limit": 100,
+      "search_endpoints": {
+        "assets": "/api/assets",
+        "categories": "/api/categories"
+      }
+    },
+    "free3d": {
+      "name": "Free3D",
+      "description": "Free 3D models for various projects",
+      "base_url": "https://free3d.com",
+      "supported_formats": [".blend", ".fbx", ".obj", ".3ds", ".max"],
+      "license_types": ["Free", "Royalty Free"],
+      "complexity": 1,
+      "requires_auth": false,
+      "rate_limit": 50,
+      "search_endpoints": {
+        "models": "/search",
+        "categories": "/categories"
+      }
+    }
+  },
+  "workflow": {
+    "phases": [
+      {
+        "name": "discovery",
+        "description": "Discover and understand platforms",
+        "order": 1
+      },
+      {
+        "name": "setup",
+        "description": "Set up working environment",
+        "order": 2
+      },
+      {
+        "name": "download",
+        "description": "Download assets from platforms",
+        "order": 3
+      },
+      {
+        "name": "import",
+        "description": "Import assets into Blender",
+        "order": 4
+      },
+      {
+        "name": "organize",
+        "description": "Organize assets in collections",
+        "order": 5
+      },
+      {
+        "name": "verify",
+        "description": "Verify integration and generate reports",
+        "order": 6
+      }
+    ]
+  }
+}
+
