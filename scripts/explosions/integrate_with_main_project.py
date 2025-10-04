@@ -115,9 +115,15 @@ def integrate_explosion_with_dadosfera():
     print(f"📊 Total objects created: {len(created_explosions)}")
 
     if BLENDER_AVAILABLE:
-        v2_path = ("/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/"
-                   "blender_files/dadosfera_animation_v2_hybrid_explosions.blend")
-        bpy.ops.wm.save_as_mainfile(filepath=v2_path)
+        # Resolve project root dynamically
+        env_project_root = os.environ.get("PROJECT_ROOT")
+        if env_project_root:
+            project_root = Path(env_project_root).resolve()
+        else:
+            project_root = Path(__file__).resolve().parents[2]
+
+        v2_path = project_root / "projects/dadosfera/blender_files/dadosfera_animation_v2_hybrid_explosions.blend"
+        bpy.ops.wm.save_as_mainfile(filepath=str(v2_path))
         print(f"💾 Saved integrated scene to {v2_path}")
 
     return created_explosions

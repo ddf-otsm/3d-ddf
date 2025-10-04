@@ -1,8 +1,11 @@
 #!/bin/bash
 # Encode rendered PNG frames to final video
 
-FRAMES_DIR="/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_alpha"
-OUTPUT="/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/exports/dadosfera_ALPHA_RELEASE.mp4"
+# Resolve project root dynamically
+PROJECT_ROOT="${PROJECT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
+
+FRAMES_DIR="$PROJECT_ROOT/projects/dadosfera/renders/frames_alpha"
+OUTPUT="$PROJECT_ROOT/projects/dadosfera/exports/dadosfera_ALPHA_RELEASE.mp4"
 
 echo "🎬 Checking frame render progress..."
 

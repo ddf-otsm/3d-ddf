@@ -1,7 +1,10 @@
 #!/bin/bash
 # Check render progress for dadosfera alpha release
 
-RENDER_FILE="/Users/luismartins/local_repos/3d-ddf/projects/dadosfera-explosions/exports/dadosfera_rendered_alpha.mp4"
+# Resolve project root dynamically
+PROJECT_ROOT="${PROJECT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
+
+RENDER_FILE="$PROJECT_ROOT/projects/dadosfera-explosions/exports/dadosfera_rendered_alpha.mp4"
 
 echo "🎬 Checking render progress..."
 echo ""

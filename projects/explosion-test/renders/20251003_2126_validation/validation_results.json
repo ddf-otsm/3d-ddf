@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-10-03T21:26:54.642003",
+  "blend_file": "projects/explosion-test/blender_files/explosion_test_scene.blend",
+  "frames": [
+    1,
+    50,
+    110
+  ],
+  "quality": {
+    "samples": 256,
+    "resolution_x": 1920,
+    "resolution_y": 1080,
+    "engine": "CYCLES",
+    "device": "GPU"
+  },
+  "results": [
+    {
+      "frame": 1,
+      "success": false,
+      "render_time": null,
+      "total_time": 1.0840930938720703,
+      "output": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/frame_0001.png",
+      "error": "Command '['/Applications/Blender.app/Contents/MacOS/Blender', 'projects/explosion-test/blender_files/explosion_test_scene.blend', '--background', '--python', '/Users/luismartins/local_repos/3d-ddf/scripts/explosions/_temp_validation_render.py', '--', '1', '/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/frame_0001.png', '/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/quality_settings.json']' returned non-zero exit status 1."
+    },
+    {
+      "frame": 50,
+      "success": false,
+      "render_time": null,
+      "total_time": 0.49837779998779297,
+      "output": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/frame_0050.png",
+      "error": "Command '['/Applications/Blender.app/Contents/MacOS/Blender', 'projects/explosion-test/blender_files/explosion_test_scene.blend', '--background', '--python', '/Users/luismartins/local_repos/3d-ddf/scripts/explosions/_temp_validation_render.py', '--', '50', '/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/frame_0050.png', '/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/quality_settings.json']' returned non-zero exit status 1."
+    },
+    {
+      "frame": 110,
+      "success": false,
+      "render_time": null,
+      "total_time": 0.5068359375,
+      "output": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/frame_0110.png",
+      "error": "Command '['/Applications/Blender.app/Contents/MacOS/Blender', 'projects/explosion-test/blender_files/explosion_test_scene.blend', '--background', '--python', '/Users/luismartins/local_repos/3d-ddf/scripts/explosions/_temp_validation_render.py', '--', '110', '/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/frame_0110.png', '/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2126/quality_settings.json']' returned non-zero exit status 1."
+    }
+  ],
+  "summary": {
+    "total_frames": 3,
+    "successful": 0,
+    "failed": 3,
+    "success_rate": 0.0,
+    "avg_render_time": 0,
+    "total_time": 2.0904572010040283
+  }
+}

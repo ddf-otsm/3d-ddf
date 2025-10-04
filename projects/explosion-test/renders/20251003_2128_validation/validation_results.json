@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-10-03T21:28:41.538977",
+  "blend_file": "projects/explosion-test/blender_files/hybrid_quick_test.blend",
+  "frames": [
+    1,
+    50
+  ],
+  "quality": {
+    "samples": 256,
+    "resolution_x": 1920,
+    "resolution_y": 1080,
+    "engine": "CYCLES",
+    "device": "GPU"
+  },
+  "results": [
+    {
+      "frame": 1,
+      "success": true,
+      "render_time": 7.856242895126343,
+      "total_time": 7.856242895126343,
+      "output": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2128/frame_0001.png",
+      "error": null
+    },
+    {
+      "frame": 50,
+      "success": true,
+      "render_time": 22.271631002426147,
+      "total_time": 22.271631002426147,
+      "output": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/validation_20251003_2128/frame_0050.png",
+      "error": null
+    }
+  ],
+  "summary": {
+    "total_frames": 2,
+    "successful": 2,
+    "failed": 0,
+    "success_rate": 1.0,
+    "avg_render_time": 15.063936948776245,
+    "total_time": 30.129191160202026
+  }
+}

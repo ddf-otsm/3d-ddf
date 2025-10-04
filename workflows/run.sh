@@ -9,7 +9,9 @@ set -e  # Exit on error
 # =============================================================================
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-BLENDER="/Applications/Blender.app/Contents/MacOS/Blender"
+# Detect Blender path dynamically; allow override via env
+BLENDER_DEFAULT="/Applications/Blender.app/Contents/MacOS/Blender"
+BLENDER="${BLENDER:-${BLENDER_DEFAULT}}"
 PYTHON="python3"
 
 # Paths

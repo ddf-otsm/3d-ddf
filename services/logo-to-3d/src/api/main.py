@@ -5,7 +5,7 @@ from typing import AsyncGenerator
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse
 
 from ..core.config import init_settings, settings
 from ..core.exceptions import LogoTo3DException
@@ -139,4 +139,47 @@ if __name__ == "__main__":
         reload=settings.debug,
         log_level=settings.log_level.lower(),
     )
+# Minimal UI for quick testing: simple HTML form to submit a name
+@app.get("/", response_class=HTMLResponse)
+async def index_page():
+    return """
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>Logo to 3D - Quick Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+    form { display: flex; gap: 0.5rem; }
+    input, button { padding: 0.6rem 0.8rem; font-size: 1rem; }
+    .result { margin-top: 1rem; }
+  </style>
+  <script>
+    async function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      if (!name) { alert('Please enter a name.'); return; }
+      const res = await fetch('/api/v1/text-to-3d', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: name })
+      });
+      const data = await res.json();
+      document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+  </head>
+<body>
+  <h1>Logo to 3D - Quick Demo</h1>
+  <p>Type a name; the server will generate a basic 3D model and trigger a Blender render pipeline.</p>
+  <form onsubmit=\"submitForm(event)\">
+    <input id=\"name\" name=\"name\" placeholder=\"Enter name (e.g., Dadosfera)\" />
+    <button type=\"submit\">Generate</button>
+  </form>
+  <pre class=\"result\" id=\"result\"></pre>
+</body>
+</html>
+"""
+
 

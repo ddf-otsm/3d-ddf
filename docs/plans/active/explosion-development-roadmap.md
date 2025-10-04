@@ -212,6 +212,10 @@ scripts/explosions/
 4. Save as new version: `dadosfera_animation_v2_hybrid_explosions.blend`
 5. Render test frames
 
+Note: Saving now uses dynamic `PROJECT_ROOT` resolution in `scripts/explosions/integrate_with_main_project.py` (no hardcoded user paths).
+
+Task moved to: `docs/projects/dadosfera/prioritized/TASKS.md#integrate-explosions-into-dadosfera`
+
 **Validation**:
 - [ ] Old explosions removed
 - [ ] New explosions in place
@@ -647,4 +651,87 @@ Total: 20 actions
 - Comparison: Updated side-by-side video (`explosion_comparison_v1_vs_v2_clean.mp4`).
 
 **Status**: 🟢 100% COMPLETE – v1.5-beta is polished, tested, and ready. No further missing items; improvements fully executed.
+
+---
+
+## 📦 Consolidated Tasks from Related Plans
+
+> **Tasks received from**:  
+> - `explosion-content-consolidation.md` (archived 2025-10-03)  
+> - `explosion-realism-improvements.md` (archived 2025-10-03)
+
+### Content Consolidation Tasks (from explosion-content-consolidation.md)
+
+**Status**: ✅ Mostly Complete - Documentation reconciliation pending
+
+#### Completed
+- ✅ Moved individual explosion scripts from `scripts/` to `projects/explosion-test/scripts/`
+- ✅ Moved the `scripts/explosions/` module to `projects/explosion-test/scripts/explosions/`
+- ✅ Moved explosion tests from `tests/unit/` and `tests/explosions/` to `projects/explosion-test/tests/`
+- ✅ Updated imports in project-local files from `scripts.explosions.*` → `explosions.*`
+- ✅ Adjusted `projects/explosion-test/README.md` structure and usage examples (Blender + CLI)
+- ✅ Updated references in top-level `README.md` and selected docs to point to the project-scoped paths
+
+#### Pending
+- [ ] Reconcile documentation paths to a single canonical location (project-scoped vs root-level):
+  - Ensure consistency across:
+    - `projects/explosion-test/README.md`
+    - `docs/guides/explosion-creation.md`
+    - `docs/plans/finished/EXPLOSION_PLANS_OVERVIEW.md`
+    - `docs/project/CHANGELOG.md`
+- [ ] Verify all moved files exist and are committed
+- [ ] Ensure import mechanics are robust in Blender and CLI contexts
+- [ ] Update CI and local test commands to target `projects/explosion-test/tests/`
+- [ ] Search + update any remaining `scripts/explosions/` references if project-local approach is chosen
+- [ ] Validate that `render_service.py` integrations reference the new locations when applicable
+
+### Realism Improvements (from explosion-realism-improvements.md)
+
+**Status**: ✅ Core Complete - Enhancements tracked for future iterations
+
+#### Completed
+- ✅ Ultra-realistic explosions implemented (60 fire + 40 debris particles)
+- ✅ Render performance measured: ~23s/frame (2.9x slower than hybrid but 3x more realistic)
+- ✅ Visual quality improved: +40-55% realism across all test frames
+- ✅ User feedback collected: 4.6/5 realism rating (vs 3.8/5 for hybrid)
+- ✅ Production ready: Approved for hero shots with performance recommendations
+- ✅ Created `fix_explosion_realism.py` and `create_improved_realistic_explosions.py` scripts
+- ✅ Comprehensive testing and comparison reports generated
+
+#### Future Enhancements (Priority 2-3)
+- [ ] **Material Optimization**: Optimize materials for 30-40% performance improvement
+- [ ] **Animation Refinement**: Refine particle animations for realism
+- [ ] **Lighting Adjustment**: Fine-tune lighting for dramatic effect
+- [ ] **Camera Work**: Add camera shake and movement for realism
+- [ ] **Physics Simulation**: Add more realistic physics simulation
+- [ ] **Sound Integration**: Add explosion sound effects
+- [ ] **Environmental Effects**: Add environmental impact (dust, debris)
+- [ ] **Multiple Explosion Types**: Create different explosion types
+
+#### Performance Targets Achieved
+- Render Time: ~23s/frame (ultra-realistic) vs target <5 minutes ✅
+- Memory Usage: ~3.4GB peak vs target <8GB ✅
+- Visual Quality: 85-90% realism vs target achieved ✅
+- User Satisfaction: 4.6/5 rating vs target >4.5/5 ✅
+
+#### Recommendations
+1. Use ultra-realistic system for key explosion sequences
+2. Use hybrid system for background effects (better performance)
+3. Implement LOD system for automatic quality switching
+4. Optimize materials for 30-40% performance improvement
+
+---
+
+## Dependencies
+- **Depends on**:
+  - `scripts/explosions/` (explosion implementation scripts)
+  - `projects/explosion-test/` (test project and validation)
+  - `projects/explosion-test/VALIDATION_CHECKLIST.md` (validation framework - created 2025-10-03)
+- **Required by**:
+  - `docs/projects/dadosfera/prioritized/TASKS.md` (integration into main project)
+  - `docs/plans/active/logo-to-3d-service.md` (receives explosions in name pipeline)
+- **Consolidates** (2025-10-03):
+  - `explosion-realism-improvements.md` → See "Realism Improvements" section above
+  - `explosion-content-consolidation.md` → See "Content Consolidation" section above
+- **See also**: `docs/plans/active/DEPENDENCY_MAP.md` (full dependency graph)
 

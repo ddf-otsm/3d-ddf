@@ -12,16 +12,16 @@ Key Features:
 - **GPU Optimized**: Designed for M3 Max with MetalRT acceleration
 
 ## Prerequisites
-- Blender 4.5.3+ (installed via `/Applications/Blender.app`)
+- Blender 4.5.3+ (set `$BLENDER`, e.g., `/Applications/Blender.app/Contents/MacOS/Blender` on macOS)
 - Python 3.10+ with required packages (see `integrations/requirements.txt`)
 - Access to the 3D-DDF workspace
 
 ## Step-by-Step Guide
 
 ### 1. Setup
-1. Navigate to the project root: `cd /Users/luismartins/local_repos/3d-ddf`
+1. Navigate to the project root: `cd ${PROJECT_ROOT}`
 2. Activate the environment: `source integrations/env.final` (or equivalent)
-3. Open Blender: `/Applications/Blender.app/Contents/MacOS/Blender`
+3. Open Blender: `$BLENDER`
 
 ### 2. Load Scene
 - For testing: Open `projects/explosion-test/blender_files/hybrid_quick_test.blend`
@@ -31,8 +31,8 @@ Key Features:
 Use the production script for automated creation:
 
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
-/Applications/Blender.app/Contents/MacOS/Blender your_scene.blend --background --python scripts/explosions/integrate_with_main_project.py
+cd ${PROJECT_ROOT}
+$BLENDER your_scene.blend --background --python scripts/explosions/integrate_with_main_project.py
 ```
 
 This will:
@@ -91,8 +91,8 @@ Example for a single large explosion:
 Use the unified render service:
 
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
-/Applications/Blender.app/Contents/MacOS/Blender your_scene.blend --background \
+cd ${PROJECT_ROOT}
+$BLENDER your_scene.blend --background \
   -o "projects/dadosfera/renders/my_render/####" \
   -f 1-240 \
   -P scripts/render_service.py \
@@ -111,9 +111,11 @@ The render service auto-encodes videos:
 
 Manual encoding if needed:
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}
 scripts/encode_frames_to_video.sh projects/dadosfera/renders/my_render/ projects/dadosfera/exports/my_video.mp4
 ```
+
+> Platform notes: set `PROJECT_ROOT` and `BLENDER` using `.env.example` as reference. On macOS, `BLENDER` is typically `/Applications/Blender.app/Contents/MacOS/Blender`; on Linux, `/usr/bin/blender`.
 
 ## Integration with Dadosfera Project
 1. Load `dadosfera_animation_v2_hybrid_explosions.blend`

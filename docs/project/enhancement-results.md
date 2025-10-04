@@ -80,7 +80,7 @@ The enhancement process created a complete pipeline of optimized scenes:
 ### **Usage**
 ```bash
 # Apply all enhancements in sequence
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}
 
 # 1. Create base ultra-realistic explosion
 /Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/fix_explosion_realism.py

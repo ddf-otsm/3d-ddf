@@ -2,10 +2,18 @@
 """Save the scene with improved explosions"""
 
 import bpy
+import os
+from pathlib import Path
 
 # Save the updated scene
+env_project_root = os.environ.get("PROJECT_ROOT")
+if env_project_root:
+    project_root = Path(env_project_root).resolve()
+else:
+    project_root = Path(__file__).resolve().parents[1]
+
 bpy.ops.wm.save_as_mainfile(
-    filepath="/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/blender_files/dadosfera_animation_v1_improved_explosions.blend")
+    filepath=str(project_root / "projects/dadosfera/blender_files/dadosfera_animation_v1_improved_explosions.blend"))
 
 print("✅ Scene saved with improved explosions")
 print("File: dadosfera_animation_v1_improved_explosions.blend")

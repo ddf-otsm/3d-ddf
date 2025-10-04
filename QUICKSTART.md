@@ -4,21 +4,25 @@
 
 ### Step 0: Setup Development Environment
 ```bash
-# Create virtual environment and install dependencies
+# 1. Configure environment variables (optional but recommended)
+cp .env.example .env
+# Edit .env with your paths (BLENDER, PROJECT_ROOT)
+
+# 2. Create virtual environment and install dependencies
 ./setup_venv.sh
 
-# Activate it
+# 3. Activate it
 source venv/bin/activate  # macOS/Linux
 ```
 
-See [Virtual Environment Setup](docs/setup/VENV_SETUP.md) for details.
+See [Virtual Environment Setup](docs/setup/VENV_SETUP.md) for details and [`.env.example`](.env.example) for configuration options.
 
 ## 🚀 Getting Started in 3 Steps
 
 ### Step 1: Install Blender Addon (One-time setup)
 1. Open **Blender**
 2. `Edit > Preferences > Add-ons`
-3. Click **Install** → Select: `/Users/luismartins/local_repos/3d-ddf/blender-mcp/addon.py`
+3. Click **Install** → Select: `${PROJECT_ROOT}/blender-mcp/addon.py`
 4. ✅ Enable **"Interface: Blender MCP"**
 
 ### Step 2: Start Blender MCP Server

@@ -363,7 +363,7 @@ if __name__ == '__main__':
 Run it:
 
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}
 python scripts/detect_blender.py
 ```
 
@@ -382,7 +382,7 @@ open /Applications/Blender.app  # macOS
 
 # 3. In Blender:
 #    Edit > Preferences > Add-ons > Install...
-#    Navigate to: /Users/luismartins/local_repos/3d-ddf/blender-mcp/addon.py
+#    Navigate to: ${PROJECT_ROOT}/blender-mcp/addon.py
 #    Enable: "Interface: Blender MCP"
 ```
 
@@ -417,7 +417,7 @@ BLENDER_EXECUTABLE=/Applications/Blender.app/Contents/MacOS/Blender
 ### Quick Test
 
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}
 
 # 1. Check Blender version
 blender --version

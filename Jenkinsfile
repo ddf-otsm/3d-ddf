@@ -56,6 +56,15 @@ pipeline {
             }
         }
         
+        stage('Check Hardcoded Paths') {
+            steps {
+                echo '🔍 Checking for hardcoded paths...'
+                sh '''
+                    ${PYTHON} scripts/validate_paths.py
+                '''
+            }
+        }
+        
         stage('Generate Reports') {
             steps {
                 echo '📈 Generating validation reports...'

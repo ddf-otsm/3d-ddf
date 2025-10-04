@@ -15,8 +15,9 @@ def generate_report(repo_root: Path):
     reports_dir = repo_root / "reports"
     reports_dir.mkdir(exist_ok=True)
 
+    # Use timestamp at FRONT (taxonomy standard)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_file = reports_dir / f"validation_report_{timestamp}.txt"
+    report_file = reports_dir / f"{timestamp}_validation_report.txt"
 
     content = []
     content.append("=" * 70)

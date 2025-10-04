@@ -14,29 +14,15 @@ This directory contains active plans for all integration phases and ongoing proj
 - **Active Tasks**: User testing, performance optimization, error handling
 - **Document**: [phase1-basic-integration.md](phase1-basic-integration.md)
 
-#### **Phase 2: Registration Integration** ✅ COMPLETE  
-- **Status**: Production Ready
-- **Focus**: Free platforms with API keys (6 platforms)
-- **Active Tasks**: API validation, authentication testing, rate limiting
-- **Document**: [phase2-registration-integration.md](phase2-registration-integration.md)
-
-#### **Phase 3: Game Development** ✅ COMPLETE
-- **Status**: Production Ready
-- **Focus**: Game development platforms (Unity, Adobe Mixamo)
-- **Active Tasks**: Game engine integration, asset pipeline, performance testing
-- **Document**: [phase3-game-development.md](phase3-game-development.md)
-
-#### **Phase 4: Professional Marketplaces** ✅ COMPLETE
-- **Status**: Production Ready
-- **Focus**: Commercial platforms (CGTrader, TurboSquid, etc.)
-- **Active Tasks**: Commercial API testing, license management, payment integration
-- **Document**: [phase4-professional-marketplaces.md](phase4-professional-marketplaces.md)
-
-#### **Advanced Features** ✅ COMPLETE
-- **Status**: Production Ready
-- **Focus**: AI recommendations, batch processing, custom platforms
-- **Active Tasks**: AI model integration, batch processing testing, custom platform testing
-- **Document**: [advanced-features.md](advanced-features.md)
+#### **Phase 2-4 & Advanced Features** ✅ ARCHIVED
+- **Status**: Complete - Archived to `docs/plans/finished/`
+- **Date**: 2025-10-03
+- **Reason**: Core integrations complete, future enhancements tracked in specialized plans
+- **Documents**: 
+  - [Phase 2: Registration Integration](phase2-registration-integration.md) → [Archived](../finished/phase2-registration-integration.md)
+  - [Phase 3: Game Development](phase3-game-development.md) → [Archived](../finished/phase3-game-development.md)
+  - [Phase 4: Professional Marketplaces](phase4-professional-marketplaces.md) → [Archived](../finished/phase4-professional-marketplaces.md)
+  - [Advanced Features](advanced-features.md) → [Archived](../finished/advanced-features.md)
 
 ### **Specialized Projects**
 
@@ -46,23 +32,20 @@ This directory contains active plans for all integration phases and ongoing proj
 - **Active Tasks**: Font library setup, image processing pipeline, 3D extrusion engine
 - **Document**: [logo-to-3d-service.md](logo-to-3d-service.md)
 
-#### **Explosion Realism Improvements** 🔄 IN PROGRESS
-- **Status**: Active Development
-- **Focus**: Improving explosion visual effects in Blender
-- **Active Tasks**: Testing ultra-realistic scripts, user feedback, performance optimization
-- **Document**: [explosion-realism-improvements.md](explosion-realism-improvements.md)
+#### **Explosion Development Roadmap** 🔄 ACTIVE
+- **Status**: Active Development (v1.5-beta complete, integration pending)
+- **Focus**: Development, consolidation, and integration of explosion system
+- **Consolidates**: `explosion-content-consolidation.md`, `explosion-realism-improvements.md`
+- **Document**: [explosion-development-roadmap.md](explosion-development-roadmap.md)
 
 ## 📊 **Plan Status Summary**
 
 | Plan | Status | Priority | Next Milestone | Owner |
 |------|--------|----------|----------------|-------|
 | Phase 1 | ✅ Complete | Low | User feedback collection | Integration Team |
-| Phase 2 | ✅ Complete | Low | API optimization | API Team |
-| Phase 3 | ✅ Complete | Low | Game engine testing | Game Dev Team |
-| Phase 4 | ✅ Complete | Low | Commercial integration | Commercial Team |
-| Advanced Features | ✅ Complete | Low | AI model deployment | AI Team |
-| Logo to 3D Service | 🔄 Planning | High | Architecture completion | 3D Service Team |
-| Explosion Improvements | 🔄 Active | Medium | Script testing | VFX Team |
+| Phase 2-4 & Advanced | 📦 Archived | N/A | See finished/ directory | - |
+| Logo to 3D Service | 🔄 Planning | High | Text-to-3D pipeline | 3D Service Team |
+| Explosion Development | 🔄 Active | High | Integration with name pipeline | VFX Team |
 
 ## 🎯 **Current Focus Areas**
 
@@ -155,6 +138,16 @@ This directory contains active plans for all integration phases and ongoing proj
 ### **Project Documentation**
 - [Explosion Test Project](../../../projects/explosion-test/)
 - [Dadosfera Project](../../../projects/dadosfera/)
+
+### **Bi-directional References**
+- See also: `docs/plans/ACTIVE_PLANS_SUMMARY.md`
+- Linked mini prompts (expected bi-directional links if present):
+  - `mini_prompt/lv2/automated_execution_active_plans.md`
+  - `mini_prompt/lv1/create_meta_plan_mini_prompt.md`
+
+## Dependencies
+- Depends on: `docs/plans/ACTIVE_PLANS_SUMMARY.md`
+- Required by: `docs/plans/active/MODERNIZATION_REPORT.md`
 
 ### **Setup Documentation**
 - [Installation Guide](../../setup/installation.md)

@@ -585,6 +585,8 @@ services/logo-to-3d/
 - ✅ Test API server startup and basic functionality (all endpoints working)
 - ✅ Copy Dadosfera logo to test data directory
 - ✅ Create core modules (config, logging, exceptions, utils)
+- ✅ Minimal PoC HTML UI at `/` with a simple name form
+- ✅ `/api/v1/text-to-3d` POST endpoint returns a job result (placeholder script run)
 - 🔄 Create working Blender script for text extrusion (pending Blender installation)
 - 🔄 Test SVG import and geometry generation (requires Blender)
 - 🔄 Validate basic material application
@@ -1341,3 +1343,14 @@ The full deployment strategy including Docker containerization, Kubernetes orche
 - [ ] Design Team Approval
 - [ ] Security Review
 - [ ] Resource Allocation Confirmed
+
+## Dependencies
+- **Depends on**:
+  - `services/logo-to-3d/` (implementation code)
+  - `services/logo-to-3d/src/core/blender_server.py` (Blender integration)
+  - `docs/plans/active/MODERNIZATION_REPORT.md` (FastAPI/Pydantic versions)
+  - `.env.example` (environment configuration)
+- **Required by**:
+  - `docs/projects/dadosfera/prioritized/TASKS.md` (project execution)
+  - `docs/plans/active/explosion-development-roadmap.md` (integration target)
+- **See also**: `docs/plans/active/DEPENDENCY_MAP.md` (full dependency graph)

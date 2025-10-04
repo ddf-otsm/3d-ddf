@@ -54,7 +54,7 @@ Your screenshot shows the current render has major quality issues:
 
 ```python
 # In Blender's Scripting workspace, run:
-exec(open("/Users/luismartins/local_repos/3d-ddf/scripts/setup_photorealistic_render.py").read())
+exec(open(f"{os.environ.get('PROJECT_ROOT','.')}/scripts/setup_photorealistic_render.py").read())
 ```
 
 ### Manual Steps:

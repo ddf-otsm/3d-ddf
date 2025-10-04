@@ -8,7 +8,7 @@ Centralized, parameterized render service for the Dadosfera project. Single unif
 
 ```bash
 # Navigate to project root
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}  # e.g., ~/local_repos/3d-ddf
 
 # Quick draft (fastest - ~2 minutes)
 bash scripts/render.sh quick

@@ -68,7 +68,7 @@ Run all renames at once:
 
 ```bash
 #!/bin/bash
-cd /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/exports
+cd ${PROJECT_ROOT}/projects/dadosfera/exports  # e.g., ~/local_repos/3d-ddf/projects/dadosfera/exports
 
 # Rename file 1
 mv "dadosfera_CYCLES_PRODUCTION_PHOTOREALISTIC_FINAL.mp4" \

@@ -309,12 +309,46 @@ post {
 9. ✅ Document environment requirements
 10. ✅ Test locally before pushing
 
+## Environment Variables for Jenkins
+
+If your validation scripts require environment variables (e.g., `PROJECT_ROOT`, `BLENDER`):
+
+### Option 1: Jenkins Global Properties
+1. Go to Jenkins → Manage Jenkins → Configure System
+2. Scroll to "Global properties"
+3. Check "Environment variables"
+4. Add key-value pairs:
+   - `PROJECT_ROOT`: `/var/lib/jenkins/workspace/3d-ddf-validation`
+   - `BLENDER`: `/usr/bin/blender` (or path on Jenkins agent)
+
+### Option 2: Pipeline Environment Block
+Add to Jenkinsfile:
+```groovy
+environment {
+    PROJECT_ROOT = "${WORKSPACE}"
+    BLENDER = "/usr/bin/blender"
+}
+```
+
+### Option 3: .env File (Local Development Parity)
+Copy `.env.example` to Jenkins workspace and source it:
+```bash
+cp .env.example .env
+# Edit .env with Jenkins-specific paths
+source .env
+```
+
+See [`.env.example`](../../.env.example) for all available variables.
+
+---
+
 ## Support
 
 - **Jenkinsfile**: `/Jenkinsfile`
 - **Validators**: `/scripts/validate_*.py`
 - **Pre-commit**: `/scripts/hooks/pre-commit`
 - **Documentation**: `/docs/setup/jenkins.md`
+- **Environment**: `/.env.example`
 
 ---
 

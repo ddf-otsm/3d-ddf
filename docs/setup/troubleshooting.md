@@ -22,14 +22,20 @@
 
 3. **If installed but not in PATH:**
    ```bash
-   # macOS - Add to PATH
+   # Option A: Add to PATH (macOS)
    echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
    source ~/.zshrc
+   
+   # Option B: Use .env file (recommended for cross-platform)
+   cp .env.example .env
+   # Edit .env and set: BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
    
    # Verify
    which blender
    blender --version
    ```
+   
+   See [`.env.example`](../../.env.example) for platform-specific Blender paths.
 
 ### MCP showing red or "no tools"
 
@@ -72,6 +78,34 @@
 **"Unknown command type":**
 - Make sure the addon is up to date
 - Check that the Blender MCP server is version 1.2 or higher
+
+### Path or Environment Variable Issues
+
+**Symptoms:**
+- Scripts fail with "PROJECT_ROOT not found"
+- Hardcoded paths don't work on your system
+- Blender executable not found
+
+**Solutions:**
+1. **Use environment variables:**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your system-specific paths
+   ```
+
+2. **Common path patterns:**
+   - macOS: `BLENDER=/Applications/Blender.app/Contents/MacOS/Blender`
+   - Linux: `BLENDER=/usr/bin/blender` or `/opt/blender/blender`
+   - Windows: `BLENDER="C:\Program Files\Blender Foundation\Blender\blender.exe"`
+
+3. **Verify environment variables are loaded:**
+   ```bash
+   source .env  # or add to your shell profile
+   echo $PROJECT_ROOT
+   echo $BLENDER
+   ```
+
+See [`.env.example`](../../.env.example) for full documentation.
 
 ### Still having issues?
 

@@ -9,7 +9,7 @@ Phase 1 focuses on the simplest and completely free 3D asset platforms:
 
 ### 1. Test Your Setup
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}
 python scripts/test_phase1.py
 ```
 

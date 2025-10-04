@@ -86,10 +86,12 @@ Ask Cursor:
 
 ```python
 import bpy
+import os
 scene = bpy.context.scene
 
-# Set output path
-scene.render.filepath = '/Users/luismartins/local_repos/3d-ddf/projects/my-project/renders/frames/frame_'
+# Set output path (use environment variable or relative path)
+PROJECT_ROOT = os.environ.get('PROJECT_ROOT', os.path.expanduser('~/local_repos/3d-ddf'))
+scene.render.filepath = os.path.join(PROJECT_ROOT, 'projects/my-project/renders/frames/frame_')
 
 # Set format
 scene.render.image_settings.file_format = 'PNG'

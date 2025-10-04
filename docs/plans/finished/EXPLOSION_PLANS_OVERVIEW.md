@@ -180,12 +180,17 @@ This is a new plan for advanced physics-based simulation modeling.
 
 ### To create explosions TODAY:
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
-/Applications/Blender.app/Contents/MacOS/Blender \
+cd ${PROJECT_ROOT}  # e.g., ~/local_repos/3d-ddf
+$BLENDER \  # e.g., /Applications/Blender.app/Contents/MacOS/Blender (macOS)
   projects/dadosfera/blender_files/your_scene.blend \
   --background \
   --python scripts/explosions/integrate_with_main_project.py
 ```
+
+> **Platform Notes**:  
+> - macOS: `BLENDER=/Applications/Blender.app/Contents/MacOS/Blender`  
+> - Linux: `BLENDER=/usr/bin/blender` or `/opt/blender/blender`  
+> - Windows: `BLENDER="C:\Program Files\Blender Foundation\Blender\blender.exe"`
 
 ### To improve realism:
 1. Read: `explosion-realism-improvements.md`

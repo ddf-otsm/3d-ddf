@@ -8,6 +8,7 @@ import bpy
 import sys
 import time
 import argparse
+import os
 from pathlib import Path
 from typing import Dict, Any
 from datetime import datetime
@@ -123,7 +124,14 @@ class RenderService:
     def __init__(self, args):
         self.args = args
         self.scene = bpy.context.scene
-        self.project_root = Path("/Users/luismartins/local_repos/3d-ddf")
+        # Resolve project root dynamically to avoid hardcoded user paths
+        # Prefer PROJECT_ROOT env var; fallback to repo root inferred from this script location
+        env_project_root = os.environ.get("PROJECT_ROOT")
+        if env_project_root:
+            self.project_root = Path(env_project_root).resolve()
+        else:
+            # scripts/ is directly under project root
+            self.project_root = Path(__file__).resolve().parents[1]
 
         # Generate output name
         timestamp = time.strftime("%Y%m%d_%H%M")

@@ -37,7 +37,7 @@ blender --version    # All platforms
 1. Open **Blender**
 2. Go to `Edit > Preferences > Add-ons`
 3. Click **"Install..."** button
-4. Navigate to and select: `/Users/luismartins/local_repos/3d-ddf/blender-mcp/addon.py`
+4. Navigate to and select: `${PROJECT_ROOT}/blender-mcp/addon.py`
 5. Enable the addon by checking the box next to **"Interface: Blender MCP"**
 
 ### 2. MCP Server Configuration
@@ -59,10 +59,21 @@ The MCP server is already configured in `.cursor/mcp.json` for this project. It 
 
 ## Environment Variables (Optional)
 
-You can configure the Blender connection with these environment variables:
+You can configure the Blender connection and project paths with environment variables. 
 
+**Recommended**: Copy `.env.example` to `.env` and customize:
+```bash
+cp .env.example .env
+# Edit .env with your paths
+```
+
+Available variables:
+- `PROJECT_ROOT`: Absolute path to the project root (defaults to repository root)
+- `BLENDER` / `BLENDER_EXECUTABLE`: Path to Blender executable (platform-specific)
 - `BLENDER_HOST`: Host address for Blender socket server (default: "localhost")
 - `BLENDER_PORT`: Port number for Blender socket server (default: 9876)
+
+See [`.env.example`](../../.env.example) for full documentation and platform-specific examples.
 
 ## Submodule Information
 

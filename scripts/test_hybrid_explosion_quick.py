@@ -5,6 +5,8 @@ Renders 5 key frames to validate concept before full implementation
 """
 
 import bpy
+import os
+from pathlib import Path
 import random
 from mathutils import Vector
 
@@ -299,10 +301,14 @@ def render_test_frames():
     test_frames = [1, 15, 25, 40, 60]
 
     print("\n🎬 Rendering test frames...")
+    env_project_root = os.environ.get("PROJECT_ROOT")
+    if env_project_root:
+        project_root = Path(env_project_root).resolve()
+    else:
+        project_root = Path(__file__).resolve().parents[1]
     for frame in test_frames:
         scene.frame_set(frame)
-        scene.render.filepath = f"/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/hybrid_quick_test_frame_{
-            frame:03d}"
+        scene.render.filepath = str(project_root / f"projects/explosion-test/renders/hybrid_quick_test_frame_{frame:03d}")
         bpy.ops.render.render(write_still=True)
         print(f"   ✅ Rendered frame {frame}")
 
@@ -326,8 +332,13 @@ def main():
     print("✅ Hybrid explosion created")
 
     # Save scene
+    env_project_root = os.environ.get("PROJECT_ROOT")
+    if env_project_root:
+        project_root = Path(env_project_root).resolve()
+    else:
+        project_root = Path(__file__).resolve().parents[1]
     bpy.ops.wm.save_as_mainfile(
-        filepath="/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files/hybrid_quick_test.blend")
+        filepath=str(project_root / "projects/explosion-test/blender_files/hybrid_quick_test.blend"))
     print("✅ Scene saved: hybrid_quick_test.blend")
 
     render_test_frames()

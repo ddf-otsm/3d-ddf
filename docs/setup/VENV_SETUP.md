@@ -115,6 +115,21 @@ pre-commit run --all-files
 3. Update requirements: `pip freeze > requirements.txt`
 4. Or manually add to `requirements.txt` with version
 
+## Environment Variables
+
+Configure project paths and Blender executable using environment variables:
+
+```bash
+# Copy the example file
+cp .env.example .env
+
+# Edit with your paths
+# PROJECT_ROOT=/your/path/to/3d-ddf
+# BLENDER=/path/to/blender
+```
+
+See [`.env.example`](../../.env.example) for all available variables.
+
 ## Git Integration
 
 The `venv/` directory is already in `.gitignore` - it won't be committed.

@@ -30,7 +30,7 @@ When you want to review the latest upstream changes:
 
 2. **Compare upstream with our tracked version**
    ```bash
-   cd /Users/luismartins/local_repos/3d-ddf
+   cd ${PROJECT_ROOT}
    git diff --no-index /tmp/blender-mcp-update/upstream-blender-mcp blender-mcp > /tmp/blender-mcp-update/diff.patch
    ```
    - Review `/tmp/blender-mcp-update/diff.patch` in your editor.

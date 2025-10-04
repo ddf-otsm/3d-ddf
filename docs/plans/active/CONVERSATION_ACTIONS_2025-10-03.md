@@ -20,7 +20,10 @@
   - Documented manual upstream comparison in `docs/setup/BLENDER_MCP_UPDATE.md`
 - Render workflow improvements
   - `scripts/render_service.py`: prefixed frame directories with `frames_`; dynamic export dir (dadosfera vs explosion-test); included project name in video filenames
+  - Portability: removed hardcoded `/Users/luismartins` path by resolving `PROJECT_ROOT` dynamically (env var or script-relative)
   - `workflows/run.sh`: status shows recent renders and exported videos for dadosfera and explosion-test
+  - Portability: `BLENDER` path can be overridden via env; defaults to macOS install path
+  - `scripts/monitor_render.sh` and `scripts/encode_frames_to_video.sh`: replaced hardcoded paths with dynamic project root
   - Added `docs/project/enhancement-results.md`
 - Repository housekeeping
   - Resolved export naming warnings; taxonomy validation now passes
@@ -61,3 +64,7 @@
 ## Notes & Risks
 - IDE warnings (TrustedTypes, extension API proposals) are environment-specific and not part of repo code
 - `bpy` availability requires executing via Blender; do not expect local Python to import it
+
+## Dependencies
+- Depends on: `docs/plans/ACTIVE_PLANS_SUMMARY.md`
+- Required by: `docs/plans/active/PROGRESS_AND_RESOURCING.md`
