@@ -145,8 +145,7 @@ def validate_links(repo_root: Path) -> List[LinkError]:
                                 str(rel_path),
                                 line_num,
                                 url,
-                                f"Link to directory without README.md: {
-                                    target.relative_to(repo_root)}"))
+                                f"Link to directory without README.md: {target.relative_to(repo_root)}"))
 
             except Exception as e:
                 errors.append(LinkError(

@@ -136,9 +136,7 @@ def test_production_explosions():
         print(f"\n💥 Explosion {i}/8: {config.name}")
         print(f"   📍 Location: {config.location}")
         print(
-            f"   ⏱️  Start: Frame {
-                config.start_frame}, Duration: {
-                config.duration} frames")
+            f"   ⏱️  Start: Frame {config.start_frame}, Duration: {config.duration} frames")
         print(f"   🎨 Quality: {config.quality_preset.value}")
         print(f"   🔥 Fire particles: {config.fire_particle_count}")
         print(f"   💥 Debris particles: {config.debris_particle_count}")
