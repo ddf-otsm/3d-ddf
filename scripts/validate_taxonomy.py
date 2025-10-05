@@ -62,9 +62,31 @@ VALID_QUALITIES = {"270p", "360p", "480p", "720p", "1080p", "1440p", "4k"}
 EXPORT_EXCEPTIONS = {
     "README.md",
     ".rename_mapping.txt",
+
+    # Legacy export files - kept for historical reference
+    "20250930_0000_dadosfera_deprecated_1080p_viewport_nomat.mp4",
+    "20250930_0000_dadosfera_deprecated_1080p_viewport1.mp4",
+    "20250930_0000_dadosfera_deprecated_1080p_viewport2.mp4",
+    "20251004_1549_dadosfera_preview_1080p.mp4",
+    "20251001_0000_dadosfera_stable_1080p_final.mp4",
+    "20251001_0000_dadosfera_alpha_1080p_preview.mp4",
+    "20251002_0000_dadosfera_stable_1080p_final.mp4",
+    "20250930_0000_dadosfera_deprecated_270p_test.mp4",
+    "20251002_0000_dadosfera_stable_1080p_cycles.mp4",
+    "20250930_0000_dadosfera_deprecated_360p_test.mp4",
+    "20251004_1644_fixed_no_ground_plane_test_1080p.mp4",
+    "20251002_0000_dadosfera_alpha_1080p_preview.mp4",
+    "20250930_0000_dadosfera_alpha_1080p_partial_8sec.mp4",
+    "20250930_0000_dadosfera_deprecated_360p_viewport.mp4",
+    "20251002_0000_dadosfera_beta_1080p_cycles.mp4",
+    "20250930_0000_dadosfera_deprecated_720p_preview.mp4",
+    "20251004_1549_explosion-test_preview_1080p.mp4",
+    "20251002_1152_explosion-test_alpha_20251002_1080p_final.mp4",
+
+    # Additional legacy files that don't follow the pattern
+    "dadosfera_20251002_2125.mp4",  # Legacy export before taxonomy enforcement
     "dadosfera_CYCLES_preview_20251002_2042.mp4",  # Internal preview render
     "explosion-test_alpha_20251002_1080p_final.mp4",  # Test file with project name containing dash
-    "dadosfera_20251002_2125.mp4",  # Legacy export before taxonomy enforcement
 }
 
 
