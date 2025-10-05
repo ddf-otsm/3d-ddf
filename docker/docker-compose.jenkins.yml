@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  deployer-jenkins-cicd:
+    image: jenkins/jenkins:lts-jdk17
+    container_name: deployer-jenkins-cicd
+    ports:
+      - "${JENKINS_PORT:-8080}:8080"
+      - "${JENKINS_AGENT_PORT:-50000}:50000"
+    volumes:
+      - jenkins-cicd-data:/var/jenkins_home
+    environment:
+      - JENKINS_OPTS=--httpPort=8080
+      - JAVA_OPTS=-Xms1g -Xmx4g
+    networks:
+      - jenkins-cicd-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/login"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  deployer-jenkins-webhook:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: deployer-jenkins-webhook
+    ports:
+      - "${JENKINS_WEBHOOK_PORT:-9000}:9000"
+    environment:
+      - JENKINS_URL=http://deployer-jenkins-cicd:8080
+      - JENKINS_USER=${JENKINS_USER:-admin}
+      - JENKINS_TOKEN=${JENKINS_TOKEN:-}
+      - WEBHOOK_SECRET=${WEBHOOK_SECRET:-}
+      - FLASK_ENV=development
+    networks:
+      - jenkins-cicd-network
+    depends_on:
+      deployer-jenkins-cicd:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  jenkins-cicd-data:
+    driver: local
+
+networks:
+  jenkins-cicd-network:
+    driver: bridge
