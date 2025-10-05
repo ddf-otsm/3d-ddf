@@ -9,7 +9,13 @@ import sys
 from pathlib import Path
 
 # Add project root for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+project_root = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+# Also add scripts directory
+scripts_dir = project_root / "scripts"
+if scripts_dir.exists():
+    sys.path.insert(0, str(scripts_dir))
 
 # Import explosion modules - they handle Blender availability internally
 from scripts.explosions.config import ExplosionConfig, QualityPreset
