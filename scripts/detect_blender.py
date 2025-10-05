@@ -191,9 +191,7 @@ def main():
         elif platform.system() == 'Linux' and recommended['source'] != 'PATH':
             print("🔧 To add to PATH:")
             print(
-                f'   echo \'export PATH="{
-                    os.path.dirname(
-                        recommended["executable"])}:$PATH"\' >> ~/.bashrc')
+                f'   echo \'export PATH="{os.path.dirname(recommended["executable"])}:$PATH"\' >> ~/.bashrc')
             print('   source ~/.bashrc')
             print()
 
