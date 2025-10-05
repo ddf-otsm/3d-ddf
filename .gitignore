@@ -111,5 +111,8 @@ htmlcov/
 # pytest
 .pytest_cache/
 
+# Utility scripts (not tests)
+scripts/utility/
+
 # Keep empty directories
 !.gitkeep
