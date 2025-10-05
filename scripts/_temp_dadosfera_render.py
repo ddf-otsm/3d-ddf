@@ -34,12 +34,12 @@ if True:
 
 # Output settings
 scene.render.image_settings.file_format = 'PNG'
-scene.render.filepath = '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251004_1549_production_dadosfera_preview/frame_'
+scene.render.filepath = '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251004_2025_production_fixed_scene_test/frame_'
 scene.render.use_file_extension = True
 
 # Frame range
 scene.frame_start = 1
-scene.frame_end = 48
+scene.frame_end = 24
 
 # Print settings
 print("\n" + "=" * 70)
@@ -52,7 +52,7 @@ print(f"Frames: {scene.frame_start}-{scene.frame_end} ({scene.frame_end - scene.
 print(f"FPS: {scene.render.fps}")
 print(f"Duration: {(scene.frame_end - scene.frame_start + 1) / scene.render.fps:.2f}s")
 print(f"Denoising: {scene.cycles.use_denoising}")
-print(f"Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251004_1549_production_dadosfera_preview")
+print(f"Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251004_2025_production_fixed_scene_test")
 print("=" * 70 + "\n")
 
 # Render

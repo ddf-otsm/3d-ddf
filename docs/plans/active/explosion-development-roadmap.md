@@ -3,7 +3,7 @@
 **Status**: 🟢 Active - In Progress  
 **Priority**: High  
 **Current Phase**: Testing & Validation  
-**Last Updated**: October 2, 2025 @ 00:20  
+**Last Updated**: October 4, 2025 @ 20:45  
 
 ---
 
@@ -14,6 +14,39 @@ Develop realistic explosion effects for the 3D-DDF project using a hybrid approa
 ---
 
 ## 📊 Current Status Summary
+
+### 🆕 Updates (Oct 4, 2025)
+- Organized Blender files into subfolders per project: `active/`, `archived/`, `backups/`.
+  - Dadosfera: `projects/dadosfera/blender_files/{active,archived,backups}`
+  - Explosion-Test: `projects/explosion-test/blender_files/{active,archived}`
+- Created visual comparison set for Dadosfera renders and moved assets into repo:
+  - Path: `projects/dadosfera/analysis/render_comparison_20251004/`
+  - Files: extracted video frames (Oct 2 vs Oct 4) and corresponding original render PNGs
+  - Notes file: `COMPARISON_NOTES.md`
+- Diagnosis: All Dadosfera `.blend` files share the same `Ground_Plane` material (checker). The Oct 2 "good" look is not due to a different floor material.
+- Critical finding: Current explosion setups are geometry/emission based and lack real particle/volume systems, explaining the realism gap.
+- Decision: Proceed with Fresh Start (Option A) to build a clean baseline and implement real particle-based explosions.
+- Implemented helper script to organize/archive and scaffold a clean start:
+  - `scripts/organize_and_fresh_start.py`
+
+### 🎯 Immediate Next Actions
+1. Create `projects/dadosfera/blender_files/active/dadosfera_v2_clean.blend`
+   - Clean scene: Dadosfera text/logo only
+   - Materials: professional metallic/glass for letters
+   - Floor: subtle studio PBR (no checker)
+   - Lighting: 3‑point + HDRI; camera/DOF tuned to reference
+2. Create `projects/explosion-test/blender_files/active/particle_explosion_v1.blend`
+   - Quick Smoke emitter + Fire/Smoke domain
+   - Volumetric materials, minimal bake for test
+   - Produce validation frames
+3. Integrate explosion into `dadosfera_v2_clean.blend`, render keyframes, and compare
+   - Frames: 1, 24, 48, 72, 96, 120
+   - Store results under `projects/dadosfera/analysis/`
+4. Update production render via `scripts/render_production.py` once baseline is approved
+
+### 🔗 References
+- Comparison set: `projects/dadosfera/analysis/render_comparison_20251004/`
+- Organize script: `scripts/organize_and_fresh_start.py`
 
 ### ✅ Completed Actions
 1. ✅ Created comprehensive hybrid explosion implementation plan

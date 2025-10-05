@@ -19,5 +19,11 @@
   "duration_seconds": 2.0,
   "fps": 24,
   "output_directory": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/20251004_1549_production_explosion-test_preview",
-  "render_start": "2025-10-04T15:49:13.352110"
+  "render_start": "2025-10-04T15:49:13.352110",
+  "render_end": "2025-10-04T16:10:42.890462",
+  "render_duration_seconds": 1289.537535905838,
+  "render_duration_minutes": 21.4922922650973,
+  "average_seconds_per_frame": 26.865365331371624,
+  "output_video": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/exports/20251004_1549_explosion-test_preview_1080p.mp4",
+  "video_size_mb": 0.4783439636230469
 }

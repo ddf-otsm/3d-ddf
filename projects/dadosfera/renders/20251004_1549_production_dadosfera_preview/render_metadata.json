@@ -19,5 +19,11 @@
   "duration_seconds": 2.0,
   "fps": 24,
   "output_directory": "/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251004_1549_production_dadosfera_preview",
-  "render_start": "2025-10-04T15:49:44.333811"
+  "render_start": "2025-10-04T15:49:44.333811",
+  "render_end": "2025-10-04T16:11:47.967665",
+  "render_duration_seconds": 1323.6335430145264,
+  "render_duration_minutes": 22.060559050242105,
+  "average_seconds_per_frame": 27.57569881280263,
+  "output_video": "/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/exports/20251004_1549_dadosfera_preview_1080p.mp4",
+  "video_size_mb": 0.9979639053344727
 }

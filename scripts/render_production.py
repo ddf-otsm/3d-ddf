@@ -289,6 +289,28 @@ Examples:
         print(f"   Expected: {project_config['blend_file']}")
         return 1
     
+    # Pre-render validation: Check scene for test elements
+    print("🔍 Running pre-render validation...")
+    validation_script = project_root / 'scripts/clean_production_scene.py'
+    validation_cmd = [
+        '/Applications/Blender.app/Contents/MacOS/Blender',
+        str(blend_file),
+        '--background',
+        '--python', str(validation_script),
+        '--',
+        '--dry-run'
+    ]
+    
+    validation_result = subprocess.run(validation_cmd, capture_output=True, text=True)
+    
+    if validation_result.returncode != 0:
+        print("⚠️  Scene validation warnings detected:")
+        print(validation_result.stdout)
+        print("\n❓ Scene has issues but may still be renderable.")
+        print("   Consider running: blender <scene> --background --python scripts/clean_production_scene.py -- --output <scene>")
+    else:
+        print("✅ Scene validation passed")
+    
     # Get quality preset
     quality = QUALITY_PRESETS[args.quality]
     
