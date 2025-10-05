@@ -20,11 +20,7 @@ class LinkError:
         self.issue = issue
 
     def __str__(self):
-        return f"❌ {
-            self.file}:{
-            self.line}\n   Link: {
-            self.link}\n   Issue: {
-                self.issue}"
+        return f"❌ {self.file}:{self.line}\n   Link: {self.link}\n   Issue: {self.issue}"
 
 
 def find_markdown_files(repo_root: Path) -> List[Path]:

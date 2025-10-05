@@ -185,9 +185,7 @@ def main():
         if platform.system() == 'Darwin' and recommended['source'] != 'PATH':
             print("🔧 To add to PATH:")
             print(
-                f'   echo \'export PATH="{
-                    os.path.dirname(
-                        recommended["executable"])}:$PATH"\' >> ~/.zshrc')
+                f'   echo \'export PATH="{os.path.dirname(recommended["executable"])}:$PATH"\' >> ~/.zshrc')
             print('   source ~/.zshrc')
             print()
         elif platform.system() == 'Linux' and recommended['source'] != 'PATH':

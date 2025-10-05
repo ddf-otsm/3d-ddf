@@ -103,8 +103,7 @@ def validate_metadata_consistency(file_path: Path) -> Optional[str]:
                 meta_quality = export.get("quality")
 
                 if meta_version and parts[1] != meta_version:
-                    return f"Version mismatch in {filename}: filename has '{
-                        parts[1]}', metadata has '{meta_version}'"
+                    return f"Version mismatch in {filename}: filename has '{parts[1]}', metadata has '{meta_version}'"
 
                 if meta_quality and parts[3] != meta_quality:
                     return f"Quality mismatch in {filename}: filename has '{
