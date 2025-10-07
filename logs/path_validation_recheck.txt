@@ -1,0 +1,7 @@
+Project root: /Users/luismartins/local_repos/3d-ddf
+
+🔍 Checking for hardcoded paths in documentation and scripts...
+
+📊 Checked 358 files
+
+✅ No hardcoded paths found!
