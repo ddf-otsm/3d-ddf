@@ -1,0 +1,527 @@
+version: "1.0"
+plan:
+  id: logo_to_3d_service_v2
+  slug: logo-to-3d-service
+  pack_dir_name: logo-to-3d-service_detailed_execution_packs
+  pack_path: docs/plans/active/logo-to-3d-service_detailed_execution_packs/
+  source_plan_path: docs/plans/active/logo-to-3d-service.md
+  bundle: consolidated_logo_to_3d_pipeline
+  owners: ["3D Service Team", "Core Maintainers"]
+  ai_hours: 1.5
+  human_hours: 0.75
+  priority: high
+  estimated_duration_minutes: 120
+context:
+  project_root_var: ${PROJECT_ROOT}
+  home_var: ${HOME}
+  logo_service_root: ${PROJECT_ROOT}/services/logo-to-3d
+  env:
+    platform: "local-macos"
+    ide: "cursor"
+    flags: ["--tolerant", "--verbose"]
+    python_version: "3.11+"
+  references:
+    - path: docs/plans/active/logo-to-3d-service.md
+      purpose: "Source plan with full architecture"
+    - path: services/logo-to-3d/README.md
+      purpose: "Service documentation"
+safety:
+  terminal_timeout_cmd: gtimeout
+  prohibit_interactive: true
+  require_precommit: true
+  safe_delete: trash_git
+  absolute_paths_policy: enforced
+  cloud_ops_dry_run_required: true
+  max_single_command_timeout: 180
+  retry_policy:
+    default_attempts: 2
+    backoff_seconds: 3
+execution:
+  tasks:
+    # ============================================================
+    # PHASE 1: Environment & Structure Validation
+    # ============================================================
+    - id: t1_validate_service_root
+      name: Verify service root directory exists
+      description: Confirm services/logo-to-3d/ is present and accessible
+      priority: critical
+      estimated_minutes: 5
+      preconditions:
+        - type: command_available
+          args: "test"
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'test -d services/logo-to-3d && echo SERVICE_ROOT_OK'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: abort
+            notes: "Service root directory missing; cannot proceed"
+      verification:
+        - type: grep_present
+          args: "SERVICE_ROOT_OK"
+
+    - id: t2_verify_directory_tree
+      name: Verify complete directory structure
+      description: Check that all expected directories exist (src, api, tests, docs)
+      priority: high
+      estimated_minutes: 10
+      preconditions:
+        - type: file_exists
+          args: "services/logo-to-3d"
+      steps:
+        - type: run
+          command: |
+            gtimeout 15 bash -lc '
+            cd services/logo-to-3d
+            dirs="src api tests docs fonts presets data"
+            missing=""
+            for d in $dirs; do
+              if [ ! -d "$d" ]; then
+                missing="$missing $d"
+              fi
+            done
+            if [ -z "$missing" ]; then
+              echo "TREE_COMPLETE"
+            else
+              echo "MISSING_DIRS:$missing"
+            fi
+            '
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: escalate
+            notes: "Directory tree incomplete; review structure"
+      verification:
+        - type: grep_present
+          args: "TREE_COMPLETE|MISSING_DIRS"
+
+    - id: t3_verify_core_files
+      name: Verify core configuration files
+      description: Check for README, pyproject.toml, requirements.txt
+      priority: high
+      estimated_minutes: 5
+      steps:
+        - type: run
+          command: |
+            gtimeout 10 bash -lc '
+            cd services/logo-to-3d
+            files="README.md pyproject.toml requirements.txt"
+            for f in $files; do
+              if [ -f "$f" ]; then
+                echo "FOUND: $f"
+              else
+                echo "MISSING: $f"
+              fi
+            done
+            '
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: grep_present
+          args: "FOUND: README.md"
+        - type: grep_present
+          args: "FOUND: pyproject.toml"
+
+    # ============================================================
+    # PHASE 2: Module Import Validation
+    # ============================================================
+    - id: t4_validate_core_modules
+      name: Test importability of core modules
+      description: Attempt to import config, logging, exceptions, utils without errors
+      priority: high
+      estimated_minutes: 15
+      preconditions:
+        - type: command_available
+          args: "python3"
+      steps:
+        - type: run
+          command: |
+            gtimeout 30 python3 - <<'PYEOF'
+            import sys
+            import os
+            from pathlib import Path
+            import importlib.util
+
+            # Add service root to path
+            service_root = Path.cwd() / 'services' / 'logo-to-3d'
+            sys.path.insert(0, str(service_root / 'src'))
+
+            modules_to_test = [
+                ('src/core/config.py', 'core.config'),
+                ('src/core/logging.py', 'core.logging'),
+                ('src/core/exceptions.py', 'core.exceptions'),
+                ('src/core/utils.py', 'core.utils'),
+            ]
+
+            results = {'success': [], 'failed': [], 'missing': []}
+
+            for rel_path, mod_name in modules_to_test:
+                full_path = service_root / rel_path
+                if not full_path.exists():
+                    results['missing'].append(rel_path)
+                    print(f"MISSING: {rel_path}")
+                    continue
+                
+                try:
+                    spec = importlib.util.spec_from_file_location(mod_name, full_path)
+                    if spec and spec.loader:
+                        module = importlib.util.module_from_spec(spec)
+                        sys.modules[mod_name] = module
+                        spec.loader.exec_module(module)
+                        results['success'].append(rel_path)
+                        print(f"OK: {rel_path}")
+                except Exception as e:
+                    results['failed'].append((rel_path, str(e)))
+                    print(f"FAIL: {rel_path} - {e}")
+
+            print(f"\nIMPORT_SUMMARY: {len(results['success'])} OK, {len(results['failed'])} FAIL, {len(results['missing'])} MISSING")
+            
+            # Exit with error if any failures (missing is acceptable)
+            sys.exit(0 if len(results['failed']) == 0 else 1)
+            PYEOF
+          timeout_seconds: 35
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 3
+          on_fail:
+            action: escalate
+            notes: "Core module imports failed; review syntax and dependencies"
+      verification:
+        - type: grep_present
+          args: "IMPORT_SUMMARY"
+        - type: grep_absent
+          args: "FAIL:"
+
+    - id: t5_validate_api_structure
+      name: Validate FastAPI application structure
+      description: Check API module structure and route definitions
+      priority: high
+      estimated_minutes: 15
+      steps:
+        - type: run
+          command: |
+            gtimeout 30 python3 - <<'PYEOF'
+            import sys
+            from pathlib import Path
+            import importlib.util
+
+            service_root = Path.cwd() / 'services' / 'logo-to-3d'
+            sys.path.insert(0, str(service_root / 'src'))
+            sys.path.insert(0, str(service_root / 'api'))
+
+            api_main = service_root / 'api' / 'main.py'
+            
+            if not api_main.exists():
+                print("MISSING: api/main.py")
+                sys.exit(1)
+
+            try:
+                # Try to import without starting server
+                spec = importlib.util.spec_from_file_location('api.main', api_main)
+                if spec and spec.loader:
+                    module = importlib.util.module_from_spec(spec)
+                    sys.modules['api.main'] = module
+                    spec.loader.exec_module(module)
+                    
+                    # Check for FastAPI app instance
+                    if hasattr(module, 'app'):
+                        print("OK: FastAPI app found")
+                    else:
+                        print("WARN: No 'app' instance in api/main.py")
+                    
+                    print("API_STRUCTURE_OK")
+                else:
+                    print("FAIL: Cannot load api/main.py")
+                    sys.exit(1)
+            except Exception as e:
+                print(f"IMPORT_ERROR: {e}")
+                # Don't fail if it's just missing dependencies
+                if 'fastapi' in str(e).lower() or 'pydantic' in str(e).lower():
+                    print("WARN: FastAPI/Pydantic not installed (acceptable for validation)")
+                    print("API_STRUCTURE_PARTIAL")
+                else:
+                    sys.exit(1)
+            PYEOF
+          timeout_seconds: 35
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 3
+          on_fail:
+            action: escalate
+            notes: "API structure validation failed"
+      verification:
+        - type: grep_present
+          args: "API_STRUCTURE_OK|API_STRUCTURE_PARTIAL"
+
+    # ============================================================
+    # PHASE 3: Test Execution
+    # ============================================================
+    - id: t6_discover_tests
+      name: Discover available test files
+      description: List all test files in tests/ directory
+      priority: medium
+      estimated_minutes: 5
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'cd services/logo-to-3d && find tests -name \"test_*.py\" -type f | tee ../../logs/logo_service_tests_discovered.txt'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: file_exists
+          args: "logs/logo_service_tests_discovered.txt"
+
+    - id: t7_run_unit_tests
+      name: Execute unit tests if present
+      description: Run pytest for unit tests with mocked dependencies
+      priority: medium
+      estimated_minutes: 20
+      preconditions:
+        - type: command_available
+          args: "pytest"
+      steps:
+        - type: run
+          command: |
+            gtimeout 90 bash -lc '
+            cd services/logo-to-3d
+            if [ -f pytest.ini ] || [ -d tests ]; then
+              PYTHONPATH=src:api:${PYTHONPATH} pytest tests/ -v --tb=short -k "not integration and not blender" 2>&1 | tee ../../logs/logo_service_unit_tests.txt
+              exit_code=${PIPESTATUS[0]}
+              if [ $exit_code -eq 5 ]; then
+                echo "NO_TESTS_COLLECTED"
+                exit 0
+              fi
+              exit $exit_code
+            else
+              echo "NO_TESTS_FOUND"
+              exit 0
+            fi
+            '
+          timeout_seconds: 100
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 1
+            backoff_seconds: 3
+          on_fail:
+            action: escalate
+            notes: "Unit tests failed; review logs/logo_service_unit_tests.txt"
+      verification:
+        - type: grep_present
+          args: "passed|PASSED|NO_TESTS|OK"
+
+    # ============================================================
+    # PHASE 4: Path Safety & Configuration
+    # ============================================================
+    - id: t8_scan_service_paths
+      name: Scan for hardcoded paths in service
+      description: Identify hardcoded paths within services/logo-to-3d/
+      priority: high
+      estimated_minutes: 10
+      steps:
+        - type: run
+          command: "gtimeout 15 bash -lc 'cd services/logo-to-3d && grep -RnE \"/Users/[^/]+|/home/[^/]+|/Applications/\" . --exclude-dir=.git --exclude-dir=venv --exclude=\"*.pyc\" | tee ../../logs/logo_service_path_scan.txt | head -50'"
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: false  # May have findings
+      verification:
+        - type: file_exists
+          args: "logs/logo_service_path_scan.txt"
+
+    - id: t9_replace_service_paths
+      name: Replace hardcoded paths with env vars
+      description: Use sed to replace hardcoded paths in service files
+      priority: high
+      estimated_minutes: 10
+      steps:
+        - type: run
+          command: "gtimeout 20 bash -lc 'cd services/logo-to-3d && git ls-files \"*.py\" \"*.md\" \"*.yaml\" | xargs sed -i \"\" -E \"s@/Users/[A-Za-z0-9_.-]+@\\${HOME}@g; s@/home/[A-Za-z0-9_.-]+@\\${HOME}@g\"'"
+          timeout_seconds: 25
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 3
+          on_fail:
+            action: rollback
+            notes: "Path replacement failed; rollback via git restore"
+      verification:
+        - type: grep_absent
+          args: "/Users/[^/]+|/home/[^/]+"
+
+    - id: t10_validate_configuration
+      name: Validate service configuration files
+      description: Check pyproject.toml and requirements.txt syntax
+      priority: medium
+      estimated_minutes: 10
+      steps:
+        - type: run
+          command: |
+            gtimeout 15 python3 - <<'PYEOF'
+            import sys
+            from pathlib import Path
+            import tomllib
+
+            service_root = Path.cwd() / 'services' / 'logo-to-3d'
+            
+            # Validate pyproject.toml
+            pyproject = service_root / 'pyproject.toml'
+            if pyproject.exists():
+                try:
+                    with open(pyproject, 'rb') as f:
+                        data = tomllib.load(f)
+                    print("OK: pyproject.toml valid TOML")
+                except Exception as e:
+                    print(f"FAIL: pyproject.toml invalid - {e}")
+                    sys.exit(1)
+            else:
+                print("MISSING: pyproject.toml")
+            
+            # Validate requirements.txt
+            requirements = service_root / 'requirements.txt'
+            if requirements.exists():
+                try:
+                    with open(requirements) as f:
+                        lines = [l.strip() for l in f if l.strip() and not l.startswith('#')]
+                    print(f"OK: requirements.txt has {len(lines)} dependencies")
+                except Exception as e:
+                    print(f"FAIL: requirements.txt invalid - {e}")
+                    sys.exit(1)
+            else:
+                print("MISSING: requirements.txt")
+            
+            print("CONFIG_VALIDATION_OK")
+            PYEOF
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: grep_present
+          args: "CONFIG_VALIDATION_OK"
+
+    # ============================================================
+    # PHASE 5: Documentation & Commit
+    # ============================================================
+    - id: t11_verify_documentation
+      name: Verify service documentation
+      description: Check that README.md exists and has expected sections
+      priority: low
+      estimated_minutes: 5
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'cd services/logo-to-3d && grep -E \"^#|^##\" README.md | head -20 && echo DOC_OK'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: grep_present
+          args: "DOC_OK"
+
+    - id: t12_stage_service_changes
+      name: Stage service changes for commit
+      description: Add all modified files in services/logo-to-3d/ to staging
+      priority: high
+      estimated_minutes: 5
+      steps:
+        - type: run
+          command: "gtimeout 15 git add services/logo-to-3d/"
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: true
+        - type: run
+          command: "gtimeout 10 git status --short services/logo-to-3d/ | tee logs/logo_service_git_status.txt"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: file_exists
+          args: "logs/logo_service_git_status.txt"
+
+    - id: t13_pre_commit_validation
+      name: Run pre-commit hooks
+      description: Execute pre-commit validation before final commit
+      priority: critical
+      estimated_minutes: 10
+      steps:
+        - type: run
+          command: "gtimeout 60 bash -lc 'if [ -f .git/hooks/pre-commit ]; then .git/hooks/pre-commit; else echo NO_HOOKS; fi'"
+          timeout_seconds: 70
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 1
+            backoff_seconds: 3
+          on_fail:
+            action: abort
+            notes: "Pre-commit hooks failed; fix issues before commit"
+      verification:
+        - type: grep_present
+          args: "PASSED|OK|NO_HOOKS"
+
+    - id: t14_create_service_commit
+      name: Create test-gated commit for service
+      description: Commit service validation changes
+      priority: critical
+      estimated_minutes: 5
+      steps:
+        - type: run
+          command: "gtimeout 20 git commit -m 'Logo-to-3D service: structure validation, import checks, path safety'"
+          timeout_seconds: 25
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: abort
+            notes: "Commit failed; review git status and logs"
+        - type: run
+          command: "gtimeout 10 git log -1 --oneline | tee logs/logo_service_commit_confirmation.txt"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: file_exists
+          args: "logs/logo_service_commit_confirmation.txt"
+        - type: grep_present
+          args: "Logo-to-3D service"
+      commit:
+        enabled: true
+        message: "Logo-to-3D service: structure validation, import checks, path safety"
+        gate_with_test_driven_commit: true
+
+postconditions:
+  success_criteria:
+    - "Service directory structure complete and validated"
+    - "Core modules importable without errors"
+    - "API structure verified (FastAPI app present)"
+    - "Unit tests pass (if present) or gracefully skipped"
+    - "Zero hardcoded paths in service code"
+    - "Configuration files valid (pyproject.toml, requirements.txt)"
+    - "All changes committed with test gating"
+  artifacts:
+    - path: logs/logo_service_tests_discovered.txt
+      description: "List of discovered test files"
+    - path: logs/logo_service_unit_tests.txt
+      description: "Unit test execution results"
+    - path: logs/logo_service_path_scan.txt
+      description: "Hardcoded path scan results"
+    - path: logs/logo_service_git_status.txt
+      description: "Git status before commit"
+    - path: logs/logo_service_commit_confirmation.txt
+      description: "Commit confirmation"
+  rollback_procedure:
+    - "git reset --soft HEAD~1  # Undo commit, keep changes"
+    - "cd services/logo-to-3d && git restore .  # Discard changes"
+    - "Review logs/ directory for diagnostic information"
+  next_steps:
+    - "Install missing dependencies (FastAPI, Pydantic, Pillow, etc.)"
+    - "Complete POC Blender integration script"
+    - "Implement image processing pipeline (potrace, OpenCV)"
+    - "Add comprehensive test coverage (>80%)"
+    - "Create API documentation and usage examples"

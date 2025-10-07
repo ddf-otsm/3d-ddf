@@ -4,10 +4,10 @@ Validate that documentation and scripts don't contain hardcoded paths.
 
 This script checks for common hardcoded path patterns that should use
 environment variables instead:
-- /Users/... (macOS user paths)
+- /Users/luismartins (macOS user paths)
 - /Applications/... (macOS app paths)
 - C:\\... (Windows paths)
-- /home/... (Linux user paths)
+- /Users/luismartins (Linux user paths)
 - /local_repos/... (specific directory names)
 
 Allowed exceptions:

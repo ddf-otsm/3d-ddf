@@ -1,0 +1,190 @@
+./render_live.log:78:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0001.png'
+./render_live.log:130:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0002.png'
+./render_live.log:181:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0003.png'
+./render_live.log:232:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0004.png'
+./render_live.log:284:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0005.png'
+./render_live.log:336:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0006.png'
+./render_live.log:388:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0007.png'
+./render_live.log:440:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0008.png'
+./render_live.log:491:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0009.png'
+./render_live.log:543:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0010.png'
+./render_live.log:595:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0011.png'
+./render_live.log:647:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0012.png'
+./render_live.log:699:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0013.png'
+./render_live.log:751:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0014.png'
+./render_live.log:802:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0015.png'
+./render_live.log:853:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0016.png'
+./render_live.log:905:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0017.png'
+./render_live.log:956:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0018.png'
+./render_live.log:1007:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0019.png'
+./render_live.log:1059:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0020.png'
+./render_live.log:1111:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0021.png'
+./render_live.log:1163:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0022.png'
+./render_live.log:1215:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0023.png'
+./render_live.log:1267:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0024.png'
+./render_live.log:1318:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0025.png'
+./render_live.log:1369:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0026.png'
+./render_live.log:1421:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0027.png'
+./render_live.log:1473:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0028.png'
+./render_live.log:1525:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0029.png'
+./render_live.log:1577:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0030.png'
+./render_live.log:1629:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0031.png'
+./render_live.log:1681:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0032.png'
+./render_live.log:1733:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0033.png'
+./render_live.log:1785:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0034.png'
+./render_live.log:1837:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0035.png'
+./render_live.log:1888:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0036.png'
+./render_live.log:1939:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0037.png'
+./render_live.log:1990:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0038.png'
+./render_live.log:2042:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0039.png'
+./render_live.log:2093:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0040.png'
+./render_live.log:2144:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0041.png'
+./render_live.log:2195:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0042.png'
+./render_live.log:2247:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0043.png'
+./render_live.log:2298:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0044.png'
+./render_live.log:2350:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0045.png'
+./render_live.log:2401:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0046.png'
+./render_live.log:2407:[2025-10-01 13:50:18] Output directory: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2428:[2025-10-01 13:50:18] Log file: /Users/luismartins/local_repos/3d-ddf/render_logs/render_cycles_1759337418.log
+./render_live.log:2434:[2025-10-01 13:50:18]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2441:[2025-10-01 13:50:24]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2448:[2025-10-01 13:50:28]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2455:[2025-10-01 13:50:33]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2462:[2025-10-01 13:50:37]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2469:[2025-10-01 13:50:41]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2476:[2025-10-01 13:50:44]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2483:[2025-10-01 13:50:48]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2490:[2025-10-01 13:50:51]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2497:[2025-10-01 13:50:55]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2504:[2025-10-01 13:50:58]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2511:[2025-10-01 13:51:01]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2518:[2025-10-01 13:51:05]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2525:[2025-10-01 13:51:08]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2532:[2025-10-01 13:51:11]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2539:[2025-10-01 13:51:15]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2546:[2025-10-01 13:51:18]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2553:[2025-10-01 13:51:22]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2560:[2025-10-01 13:51:25]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2567:[2025-10-01 13:51:28]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2574:[2025-10-01 13:51:31]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:2624:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0047.png'
+./render_live.log:2676:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0048.png'
+./render_live.log:2727:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0049.png'
+./render_live.log:2779:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0050.png'
+./render_live.log:2830:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0051.png'
+./render_live.log:2882:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0052.png'
+./render_live.log:2933:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0053.png'
+./render_live.log:2984:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0054.png'
+./render_live.log:3036:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0055.png'
+./render_live.log:3088:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0056.png'
+./render_live.log:3140:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0057.png'
+./render_live.log:3191:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0058.png'
+./render_live.log:3242:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0059.png'
+./render_live.log:3293:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0060.png'
+./render_live.log:3345:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0061.png'
+./render_live.log:3397:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0062.png'
+./render_live.log:3449:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0063.png'
+./render_live.log:3500:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0064.png'
+./render_live.log:3552:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0065.png'
+./render_live.log:3603:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0066.png'
+./render_live.log:3654:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0067.png'
+./render_live.log:3706:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0068.png'
+./render_live.log:3757:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0069.png'
+./render_live.log:3808:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0070.png'
+./render_live.log:3860:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0071.png'
+./render_live.log:3868:[2025-10-01 13:51:35]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3875:[2025-10-01 13:51:38]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3882:[2025-10-01 13:51:41]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3889:[2025-10-01 13:51:45]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3896:[2025-10-01 13:51:48]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3903:[2025-10-01 13:51:51]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3910:[2025-10-01 13:51:54]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3917:[2025-10-01 13:51:58]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3924:[2025-10-01 13:52:02]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3931:[2025-10-01 13:52:05]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3938:[2025-10-01 13:52:09]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3945:[2025-10-01 13:52:12]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3952:[2025-10-01 13:52:15]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3959:[2025-10-01 13:52:19]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3966:[2025-10-01 13:52:22]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3973:[2025-10-01 13:52:25]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3980:[2025-10-01 13:52:28]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3987:[2025-10-01 13:52:31]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:3994:[2025-10-01 13:52:34]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4001:[2025-10-01 13:52:37]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4008:[2025-10-01 13:52:41]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4015:[2025-10-01 13:52:44]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4022:[2025-10-01 13:52:47]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4029:[2025-10-01 13:52:50]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4036:[2025-10-01 13:52:53]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:4090:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0072.png'
+./render_live.log:4142:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0073.png'
+./render_live.log:4195:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0074.png'
+./render_live.log:4247:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0075.png'
+./render_live.log:4299:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0076.png'
+./render_live.log:4351:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0077.png'
+./render_live.log:4403:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0078.png'
+./render_live.log:4455:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0079.png'
+./render_live.log:4506:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0080.png'
+./render_live.log:4557:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0081.png'
+./render_live.log:4608:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0082.png'
+./render_live.log:4659:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0083.png'
+./render_live.log:4710:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0084.png'
+./render_live.log:4762:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0085.png'
+./render_live.log:4813:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0086.png'
+./render_live.log:4864:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0087.png'
+./render_live.log:4915:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0088.png'
+./render_live.log:4967:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0089.png'
+./render_live.log:5018:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0090.png'
+./render_live.log:5070:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0091.png'
+./render_live.log:5121:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0092.png'
+./render_live.log:5173:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0093.png'
+./render_live.log:5225:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0094.png'
+./render_live.log:5277:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0095.png'
+./render_live.log:5328:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0096.png'
+./render_live.log:5379:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0097.png'
+./render_live.log:5384:[2025-10-01 13:52:57]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5391:[2025-10-01 13:53:00]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5398:[2025-10-01 13:53:03]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5405:[2025-10-01 13:53:07]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5412:[2025-10-01 13:53:10]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5419:[2025-10-01 13:53:14]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5426:[2025-10-01 13:53:17]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5433:[2025-10-01 13:53:20]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5440:[2025-10-01 13:53:24]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5447:[2025-10-01 13:53:27]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5454:[2025-10-01 13:53:31]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5461:[2025-10-01 13:53:35]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5468:[2025-10-01 13:53:38]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5475:[2025-10-01 13:53:42]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5482:[2025-10-01 13:53:46]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5489:[2025-10-01 13:53:50]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5496:[2025-10-01 13:53:55]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5503:[2025-10-01 13:54:00]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5510:[2025-10-01 13:54:05]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5517:[2025-10-01 13:54:11]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5524:[2025-10-01 13:54:17]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5531:[2025-10-01 13:54:24]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5538:[2025-10-01 13:54:31]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5545:[2025-10-01 13:54:40]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5552:[2025-10-01 13:54:49]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5559:[2025-10-01 13:55:03]    Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles
+./render_live.log:5609:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0098.png'
+./render_live.log:5661:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0099.png'
+./render_live.log:5713:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0100.png'
+./render_live.log:5765:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0101.png'
+./render_live.log:5817:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0102.png'
+./render_live.log:5869:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0103.png'
+./render_live.log:5921:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0104.png'
+./render_live.log:5972:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0105.png'
+./render_live.log:6024:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0106.png'
+./render_live.log:6076:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0107.png'
+./render_live.log:6128:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0108.png'
+./render_live.log:6180:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0109.png'
+./render_live.log:6231:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0110.png'
+./render_live.log:6282:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0111.png'
+./render_live.log:6334:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0112.png'
+./render_live.log:6386:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0113.png'
+./render_live.log:6438:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0114.png'
+./render_live.log:6489:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles/frame_0115.png'
+./render_live.log:6540:Saved: '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/frames_cycles

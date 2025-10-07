@@ -1,0 +1,61 @@
+version: "1.0"
+plan:
+  id: quality_validation_consolidated_v2
+  slug: quality-and-validation-consolidated
+  pack_dir_name: quality-and-validation-consolidated_detailed_execution_packs
+  pack_path: docs/plans/active/quality-and-validation-consolidated_detailed_execution_packs/
+  source_plan_path: docs/plans/active/QUALITY_AND_VALIDATION_CONSOLIDATED.md
+  bundle: consolidated_quality_testing_validation
+  owners: ["Core Maintainers", "QA Team"]
+  ai_hours: 1.75
+  human_hours: 0.75
+  priority: high
+  estimated_duration_minutes: 150
+context:
+  project_root_var: ${PROJECT_ROOT}
+  home_var: ${HOME}
+  env:
+    platform: "local-macos"
+    ide: "cursor"
+    python_version: "3.11+"
+  test_baseline:
+    total_tests: 238
+    passing: 149
+    pass_rate: "62.8%"
+safety:
+  terminal_timeout_cmd: gtimeout
+  prohibit_interactive: true
+  require_precommit: true
+  safe_delete: trash_git
+  absolute_paths_policy: enforced
+execution:
+  tasks:
+    - id: t1_path_scan
+      name: Scan for hardcoded paths
+      steps:
+        - type: run
+          command: "gtimeout 20 python3 scripts/validate_paths.py | tee logs/path_validation.txt"
+          timeout_seconds: 25
+          non_interactive: true
+    - id: t2_run_tests
+      name: Execute test suites
+      steps:
+        - type: run
+          command: "gtimeout 120 pytest tests/ -v --tb=short | tee logs/test_results.txt"
+          timeout_seconds: 130
+          non_interactive: true
+    - id: t3_commit
+      name: Commit validation results
+      steps:
+        - type: run
+          command: "gtimeout 20 git commit -m 'Quality validation sweep'"
+          timeout_seconds: 25
+          non_interactive: true
+      commit:
+        enabled: true
+        message: "Quality validation sweep"
+postconditions:
+  success_criteria:
+    - "Validators pass"
+  artifacts:
+    - path: logs/

@@ -1,0 +1,497 @@
+version: "1.0"
+plan:
+  id: explosion_dev_roadmap_v2
+  slug: explosion-development-roadmap
+  pack_dir_name: explosion-development-roadmap_detailed_execution_packs
+  pack_path: docs/plans/active/explosion-development-roadmap_detailed_execution_packs/
+  source_plan_path: docs/plans/active/explosion-development-roadmap.md
+  bundle: consolidated_explosions_production
+  owners: ["VFX Team", "Core Maintainers"]
+  ai_hours: 2.5
+  human_hours: 1.5
+  priority: high
+  estimated_duration_minutes: 180
+context:
+  project_root_var: ${PROJECT_ROOT}
+  home_var: ${HOME}
+  env:
+    platform: "local-macos"
+    ide: "cursor"
+    flags: ["--tolerant", "--verbose"]
+    python_version: "3.11+"
+    blender_version: "4.2+"
+  references:
+    - path: mini_prompt/lv1/project_and_plans_review_reprioritize_mini_prompt.md
+      purpose: "Prioritization framework"
+    - path: mini_prompt/lv2/test_driven_commit_mini_prompt.md
+      purpose: "Commit gating process"
+    - path: docs/plans/active/explosion-development-roadmap.md
+      purpose: "Source plan with full context"
+safety:
+  terminal_timeout_cmd: gtimeout
+  prohibit_interactive: true
+  require_precommit: true
+  safe_delete: trash_git
+  absolute_paths_policy: enforced
+  cloud_ops_dry_run_required: true
+  max_single_command_timeout: 300
+  retry_policy:
+    default_attempts: 2
+    backoff_seconds: 3
+execution:
+  tasks:
+    # ============================================================
+    # PHASE 1: Environment Validation & Path Safety
+    # ============================================================
+    - id: t1_environment_check
+      name: Validate execution environment
+      description: Verify all required tools and directories exist before proceeding
+      priority: critical
+      estimated_minutes: 5
+      preconditions:
+        - type: command_available
+          args: "python3"
+        - type: command_available
+          args: "gtimeout"
+        - type: command_available
+          args: "git"
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'python3 --version && git --version && gtimeout --version && echo ENV_OK'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 1
+            backoff_seconds: 2
+          on_fail:
+            action: abort
+            notes: "Core tools missing; cannot proceed"
+        - type: run
+          command: "gtimeout 10 bash -lc 'test -d projects/dadosfera && test -d projects/explosion-test && test -d scripts && echo DIRS_OK'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: abort
+            notes: "Required project directories missing"
+      verification:
+        - type: grep_present
+          args: "ENV_OK"
+        - type: grep_present
+          args: "DIRS_OK"
+
+    - id: t2_scan_hardcoded_paths
+      name: Scan for hardcoded user paths
+      description: Identify all occurrences of /Users/<name>, /home/<name>, and similar patterns
+      priority: high
+      estimated_minutes: 10
+      preconditions:
+        - type: command_available
+          args: "grep"
+      steps:
+        - type: run
+          command: "gtimeout 15 bash -lc 'grep -RnE \"/Users/[^/]+|/home/[^/]+\" . --exclude-dir=.git --exclude-dir=venv --exclude-dir=node_modules --exclude-dir=htmlcov --exclude=\"*.pyc\" | tee logs/hardcoded_paths_scan.txt | head -100'"
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: false  # May have findings
+          retry:
+            attempts: 1
+            backoff_seconds: 2
+          on_fail:
+            action: escalate
+            notes: "grep command failed; check syntax or permissions"
+        - type: run
+          command: "gtimeout 5 bash -lc 'wc -l logs/hardcoded_paths_scan.txt || echo 0'"
+          timeout_seconds: 8
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: file_exists
+          args: "logs/hardcoded_paths_scan.txt"
+      commit:
+        enabled: false
+        message: "Scan only; no changes"
+
+    - id: t3_replace_hardcoded_paths
+      name: Replace hardcoded paths with environment variables
+      description: Use sed to replace /Users/<name> and /home/<name> with ${HOME}
+      priority: high
+      estimated_minutes: 15
+      preconditions:
+        - type: file_exists
+          args: "logs/hardcoded_paths_scan.txt"
+      steps:
+        - type: run
+          command: "gtimeout 30 bash -lc 'git ls-files \"*.py\" \"*.sh\" \"*.md\" \"*.yaml\" \"*.yml\" | xargs sed -i \"\" -E \"s@/Users/[A-Za-z0-9_.-]+@\\${HOME}@g; s@/home/[A-Za-z0-9_.-]+@\\${HOME}@g\"'"
+          timeout_seconds: 35
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 3
+          on_fail:
+            action: rollback
+            notes: "sed replacement failed; rollback via git restore"
+        - type: run
+          command: "gtimeout 10 bash -lc 'git diff --stat | tee logs/path_replacement_diff.txt'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: grep_absent
+          args: "/Users/[^/]+|/home/[^/]+"
+        - type: file_exists
+          args: "logs/path_replacement_diff.txt"
+
+    - id: t4_validate_paths_script
+      name: Run official path validator
+      description: Execute scripts/validate_paths.py to confirm 0 hardcoded paths remain
+      priority: high
+      estimated_minutes: 10
+      preconditions:
+        - type: file_exists
+          args: "scripts/validate_paths.py"
+      steps:
+        - type: run
+          command: "gtimeout 20 python3 scripts/validate_paths.py | tee logs/path_validation_result.txt"
+          timeout_seconds: 25
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 3
+          on_fail:
+            action: escalate
+            notes: "Path validator found issues; manual review required"
+      verification:
+        - type: grep_absent
+          args: "FOUND|ERROR|hardcoded"
+        - type: grep_present
+          args: "PASSED|OK|0 issues"
+
+    # ============================================================
+    # PHASE 2: Script Validation & Importability
+    # ============================================================
+    - id: t5_verify_render_production_script
+      name: Verify render_production.py structure
+      description: Check that render_production.py exists and has expected structure
+      priority: high
+      estimated_minutes: 5
+      preconditions:
+        - type: file_exists
+          args: "scripts/render_production.py"
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'grep -E \"PROJECTS|QUALITY_PRESETS|def.*render\" scripts/render_production.py | head -10 && echo STRUCTURE_OK'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: escalate
+            notes: "render_production.py missing expected structure"
+      verification:
+        - type: grep_present
+          args: "PROJECTS"
+        - type: grep_present
+          args: "QUALITY_PRESETS"
+        - type: grep_present
+          args: "STRUCTURE_OK"
+
+    - id: t6_import_explosion_scripts
+      name: Test importability of explosion scripts
+      description: Attempt to import key explosion modules to verify no syntax errors
+      priority: medium
+      estimated_minutes: 10
+      preconditions:
+        - type: command_available
+          args: "python3"
+      steps:
+        - type: run
+          command: |
+            gtimeout 15 python3 - <<'PYEOF'
+            import sys
+            import importlib.util
+            from pathlib import Path
+
+            root = Path.cwd()
+            scripts = [
+                'scripts/render_production.py',
+                'scripts/create_explosion_video.py',
+            ]
+
+            success = []
+            for script_path in scripts:
+                p = root / script_path
+                if not p.exists():
+                    print(f"SKIP: {script_path} (not found)")
+                    continue
+                try:
+                    spec = importlib.util.spec_from_file_location(p.stem, p)
+                    if spec and spec.loader:
+                        module = importlib.util.module_from_spec(spec)
+                        sys.modules[p.stem] = module
+                        spec.loader.exec_module(module)
+                        success.append(script_path)
+                        print(f"OK: {script_path}")
+                except Exception as e:
+                    print(f"FAIL: {script_path} - {e}")
+            
+            print(f"IMPORT_SUMMARY: {len(success)} scripts imported successfully")
+            PYEOF
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 3
+          on_fail:
+            action: escalate
+            notes: "Import failures detected; review syntax or dependencies"
+      verification:
+        - type: grep_present
+          args: "IMPORT_SUMMARY"
+
+    # ============================================================
+    # PHASE 3: Test Execution & Validation
+    # ============================================================
+    - id: t7_run_explosion_tests
+      name: Execute explosion test suite
+      description: Run pytest for explosion-related tests (18 tests expected)
+      priority: high
+      estimated_minutes: 30
+      preconditions:
+        - type: command_available
+          args: "pytest"
+        - type: file_exists
+          args: "pytest.ini"
+      steps:
+        - type: run
+          command: "gtimeout 120 pytest tests/explosions/ tests/unit/test_create_explosion*.py tests/unit/test_fix_explosion*.py -v --tb=short | tee logs/explosion_tests_result.txt"
+          timeout_seconds: 130
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 2
+            backoff_seconds: 5
+          on_fail:
+            action: escalate
+            notes: "Explosion tests failed; review logs/explosion_tests_result.txt"
+      verification:
+        - type: grep_present
+          args: "passed|PASSED"
+        - type: grep_absent
+          args: "FAILED|ERROR"
+
+    - id: t8_run_integration_tests
+      name: Execute integration tests
+      description: Run integration test suite to verify cross-module functionality
+      priority: medium
+      estimated_minutes: 20
+      preconditions:
+        - type: command_available
+          args: "pytest"
+      steps:
+        - type: run
+          command: "gtimeout 90 pytest tests/integration/ -v --tb=short | tee logs/integration_tests_result.txt"
+          timeout_seconds: 100
+          non_interactive: true
+          expect_zero_exit: false  # Some may be skipped
+          retry:
+            attempts: 1
+            backoff_seconds: 3
+          on_fail:
+            action: escalate
+            notes: "Integration tests encountered issues"
+      verification:
+        - type: file_exists
+          args: "logs/integration_tests_result.txt"
+
+    - id: t9_full_test_suite_sample
+      name: Run sample of full test suite
+      description: Execute a representative sample of the full 239-test suite
+      priority: medium
+      estimated_minutes: 45
+      preconditions:
+        - type: command_available
+          args: "pytest"
+      steps:
+        - type: run
+          command: "gtimeout 180 pytest tests/ -k 'not blender and not gpu' -x --tb=short | tee logs/full_suite_sample_result.txt"
+          timeout_seconds: 190
+          non_interactive: true
+          expect_zero_exit: false  # Partial run
+          retry:
+            attempts: 1
+            backoff_seconds: 5
+          on_fail:
+            action: escalate
+            notes: "Test suite sample revealed failures"
+      verification:
+        - type: file_exists
+          args: "logs/full_suite_sample_result.txt"
+
+    # ============================================================
+    # PHASE 4: Documentation & Artifact Management
+    # ============================================================
+    - id: t10_update_project_readmes
+      name: Update project README files
+      description: Ensure READMEs reflect current file locations and structure
+      priority: low
+      estimated_minutes: 10
+      preconditions:
+        - type: file_exists
+          args: "projects/dadosfera/README.md"
+        - type: file_exists
+          args: "projects/explosion-test/README.md"
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'grep -l \"blender_files\" projects/*/README.md | xargs ls -lh'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: escalate
+            notes: "README verification failed"
+      verification:
+        - type: file_exists
+          args: "projects/dadosfera/README.md"
+
+    - id: t11_archive_analysis_results
+      name: Archive analysis and comparison results
+      description: Ensure analysis artifacts are properly stored and documented
+      priority: low
+      estimated_minutes: 5
+      steps:
+        - type: run
+          command: "gtimeout 10 bash -lc 'test -d projects/dadosfera/analysis && ls -R projects/dadosfera/analysis/ | head -50 && echo ANALYSIS_OK'"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: escalate
+            notes: "Analysis directory structure issue"
+      verification:
+        - type: grep_present
+          args: "ANALYSIS_OK"
+
+    # ============================================================
+    # PHASE 5: Test-Gated Commit
+    # ============================================================
+    - id: t12_stage_changes
+      name: Stage all changes for commit
+      description: Add all modified files to git staging area
+      priority: high
+      estimated_minutes: 5
+      preconditions:
+        - type: command_available
+          args: "git"
+      steps:
+        - type: run
+          command: "gtimeout 15 git add ."
+          timeout_seconds: 20
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: abort
+            notes: "Cannot stage changes; check git status"
+        - type: run
+          command: "gtimeout 10 git status --short | tee logs/git_status_pre_commit.txt"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: file_exists
+          args: "logs/git_status_pre_commit.txt"
+
+    - id: t13_pre_commit_hooks
+      name: Execute pre-commit hooks
+      description: Run pre-commit validation before final commit
+      priority: critical
+      estimated_minutes: 10
+      preconditions:
+        - type: command_available
+          args: "git"
+      steps:
+        - type: run
+          command: "gtimeout 60 bash -lc 'if [ -f .git/hooks/pre-commit ]; then .git/hooks/pre-commit; else echo NO_HOOKS; fi'"
+          timeout_seconds: 70
+          non_interactive: true
+          expect_zero_exit: true
+          retry:
+            attempts: 1
+            backoff_seconds: 3
+          on_fail:
+            action: abort
+            notes: "Pre-commit hooks failed; fix issues before commit"
+      verification:
+        - type: grep_present
+          args: "PASSED|OK|NO_HOOKS"
+
+    - id: t14_create_commit
+      name: Create test-gated commit
+      description: Commit all changes with descriptive message
+      priority: critical
+      estimated_minutes: 5
+      preconditions:
+        - type: command_available
+          args: "git"
+      steps:
+        - type: run
+          command: "gtimeout 20 git commit -m 'Explosion roadmap: path safety, script validation, test execution'"
+          timeout_seconds: 25
+          non_interactive: true
+          expect_zero_exit: true
+          on_fail:
+            action: abort
+            notes: "Commit failed; review git status and logs"
+        - type: run
+          command: "gtimeout 10 git log -1 --oneline | tee logs/commit_confirmation.txt"
+          timeout_seconds: 12
+          non_interactive: true
+          expect_zero_exit: true
+      verification:
+        - type: file_exists
+          args: "logs/commit_confirmation.txt"
+        - type: grep_present
+          args: "Explosion roadmap"
+      commit:
+        enabled: true
+        message: "Explosion roadmap: path safety, script validation, test execution"
+        gate_with_test_driven_commit: true
+
+postconditions:
+  success_criteria:
+    - "Zero hardcoded user paths remain (validated by scripts/validate_paths.py)"
+    - "Explosion scripts import successfully without errors"
+    - "Explosion test suite passes (18/18 tests)"
+    - "All changes committed with test gating"
+    - "Documentation reflects current state"
+  artifacts:
+    - path: logs/hardcoded_paths_scan.txt
+      description: "Initial scan results for hardcoded paths"
+    - path: logs/path_replacement_diff.txt
+      description: "Git diff showing path replacements"
+    - path: logs/path_validation_result.txt
+      description: "Official validator output"
+    - path: logs/explosion_tests_result.txt
+      description: "Explosion test suite results"
+    - path: logs/integration_tests_result.txt
+      description: "Integration test results"
+    - path: logs/full_suite_sample_result.txt
+      description: "Sample of full test suite results"
+    - path: logs/commit_confirmation.txt
+      description: "Git commit confirmation"
+    - path: projects/dadosfera/analysis/
+      description: "Analysis and comparison artifacts"
+    - path: projects/explosion-test/
+      description: "Explosion test project structure"
+  rollback_procedure:
+    - "git reset --soft HEAD~1  # Undo commit, keep changes"
+    - "git restore .  # Discard all changes"
+    - "Review logs/ directory for diagnostic information"
+  next_steps:
+    - "Create baseline scenes (dadosfera_v2_clean.blend, particle_explosion_v1.blend)"
+    - "Integrate explosions into main project"
+    - "Render validation keyframes (1, 24, 48, 72, 96, 120)"
+    - "Performance optimization and material refinement"

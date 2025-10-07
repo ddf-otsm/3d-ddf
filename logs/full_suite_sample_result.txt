@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0
+rootdir: /Users/luismartins/local_repos/3d-ddf
+configfile: pytest.ini
+plugins: langsmith-0.4.6, anyio-4.9.0, asyncio-1.1.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 238 items / 17 deselected / 221 selected
+
+tests/explosions/test_explosion_system.py ......F
+
+=================================== FAILURES ===================================
+_____________ TestExplosionCreation.test_create_sequence_simulated _____________
+tests/explosions/test_explosion_system.py:83: in test_create_sequence_simulated
+    objects = create_explosion_sequence(self.config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: TestExplosion
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 60 frames
+🎨 Quality: medium
+🔧 LOD applied: 1.00 (particles reduced for distance)
+=========================== short test summary info ============================
+FAILED tests/explosions/test_explosion_system.py::TestExplosionCreation::test_create_sequence_simulated
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+================== 1 failed, 6 passed, 17 deselected in 0.11s ==================

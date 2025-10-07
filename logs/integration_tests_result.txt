@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0 -- /opt/homebrew/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/luismartins/local_repos/3d-ddf
+configfile: pytest.ini
+plugins: langsmith-0.4.6, anyio-4.9.0, asyncio-1.1.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 10 items
+
+tests/integration/test_blender_mcp_cube.py::test_create_cube FAILED      [ 10%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_config_and_materials_integration PASSED [ 20%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_config_validation PASSED [ 30%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_explosion_workflow_simulation PASSED [ 40%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_material_creation_without_blender PASSED [ 50%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_quality_preset_integration PASSED [ 60%]
+tests/integration/test_explosion_integration.py::TestExplosionPerformance::test_config_creation_performance PASSED [ 70%]
+tests/integration/test_explosion_integration.py::TestExplosionPerformance::test_material_creation_performance PASSED [ 80%]
+tests/integration/test_explosion_integration.py::TestExplosionErrorHandling::test_config_with_extreme_values PASSED [ 90%]
+tests/integration/test_explosion_integration.py::TestExplosionErrorHandling::test_invalid_material_type PASSED [100%]
+
+=================================== FAILURES ===================================
+_______________________________ test_create_cube _______________________________
+tests/integration/test_blender_mcp_cube.py:91: in test_create_cube
+    scene_before = tester.get_scene_info()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_blender_mcp_cube.py:73: in get_scene_info
+    return self.send_command("get_scene_info", {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_blender_mcp_cube.py:55: in send_command
+    return json.loads(response)
+           ^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py:355: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+----------------------------- Captured stdout call -----------------------------
+
+============================================================
+TEST: Create Cube and Verify with Blender Data
+============================================================
+
+✅ Connected to Blender at localhost:9876
+📊 Getting initial scene info...
+=========================== short test summary info ============================
+FAILED tests/integration/test_blender_mcp_cube.py::test_create_cube - json.de...
+========================= 1 failed, 9 passed in 0.09s ==========================
