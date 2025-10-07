@@ -1,0 +1,14 @@
+A  docs/plans/active/explosion-development-roadmap_detailed_execution_packs/overview.md
+A  docs/plans/active/explosion-development-roadmap_detailed_execution_packs/tasks.yaml
+A  docs/plans/active/logo-to-3d-service_detailed_execution_packs/overview.md
+A  docs/plans/active/logo-to-3d-service_detailed_execution_packs/tasks.yaml
+A  docs/plans/active/quality-and-validation-consolidated_detailed_execution_packs/overview.md
+A  docs/plans/active/quality-and-validation-consolidated_detailed_execution_packs/tasks.yaml
+A  logs/explosion_tests_result.txt
+A  logs/full_suite_sample_result.txt
+A  logs/hardcoded_paths_scan.txt
+A  logs/integration_tests_result.txt
+A  logs/path_replacement_diff.txt
+A  logs/path_validation_result.txt
+M  scripts/validate_paths.py
+?? logs/git_status_pre_commit.txt

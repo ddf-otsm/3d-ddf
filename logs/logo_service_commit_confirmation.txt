@@ -1,0 +1,1 @@
+2aca18b Logo-to-3D service: structure validation, import checks, path safety
