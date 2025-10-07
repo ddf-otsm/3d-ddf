@@ -247,7 +247,7 @@ exec(open('scripts/create_explosion_video.py').read())
 ## 🔗 Related Projects
 
 - **Dadosfera**: Main 3D branding project ([dadosfera/README.md](../../projects/dadosfera/README.md))
-- **Integration Tests**: System integration validation ([tests/integration/README.md](../../tests/integration/README.md))
+- **Integration Tests**: System integration validation ([Testing Guide](../../docs/testing/VISUAL_REGRESSION_TESTING.md))
 - **Asset Platforms**: 3D asset integration roadmap ([docs/guides/3d-asset-platforms-roadmap.md](../../docs/guides/3d-asset-platforms-roadmap.md))
 
 ## 💬 Support

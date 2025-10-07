@@ -284,7 +284,7 @@ ffmpeg -framerate 24 -i frame_%04d.png \
 - [Explosion Development Roadmap](../../docs/plans/active/explosion-development-roadmap.md)
 - [Render Batches Tracking](RENDER_BATCHES.md)
 - [Project README](README.md)
-- [Test Results](tests/README.md)
+- [Test Results](../../docs/project/test_pass_summary_20251002.md)
 
 ---
 

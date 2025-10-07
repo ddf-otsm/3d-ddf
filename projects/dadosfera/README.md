@@ -157,7 +157,7 @@ Random distribution around the scene:
 ## Visual Results
 
 ### Still Render (Cycles)
-![Crystal Scene](renders/stills/render_output.png)
+[Crystal Scene placeholder](#)  <!-- image placeholder: renders/stills/render_output.png -->
 - Photorealistic ray-traced render
 - Full caustics and refraction
 - AI denoised, Filmic color grading
@@ -165,25 +165,25 @@ Random distribution around the scene:
 ### Animation Frames (Logo)
 
 #### Frame 1 (Start - Front View)
-![Frame 001](renders/frames/dadosfera_frame_001.png)
+[Frame 001 placeholder](#)  <!-- image placeholder: renders/frames/dadosfera_frame_001.png -->
 - Clear view of "dadosfera" text with cyan metallic glow
 - Crystal sphere and orbiting shapes above
 - Checker ground plane with reflections
 
 #### Frame 60 (90° - Right Side)
-![Frame 060](renders/frames/dadosfera_frame_060.png)
+[Frame 060 placeholder](#)  <!-- image placeholder: renders/frames/dadosfera_frame_060.png -->
 - Camera rotated 90 degrees
 - Higher camera angle
 - Shows depth of 3D extrusion
 
 #### Frame 120 (180° - Back View)
-![Frame 120](renders/frames/dadosfera_frame_120.png)
+[Frame 120 placeholder](#)  <!-- image placeholder: renders/frames/dadosfera_frame_120.png -->
 - Opposite side view
 - Individual letter shapes visible
 - Atmospheric lighting
 
 #### Frame 180 (270° - Left Side)
-![Frame 180](renders/frames/dadosfera_frame_180.png)
+[Frame 180 placeholder](#)  <!-- image placeholder: renders/frames/dadosfera_frame_180.png -->
 - Three-quarter rotation completed
 - Beautiful cyan glow on letters
 
