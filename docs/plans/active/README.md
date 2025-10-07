@@ -13,10 +13,10 @@ This directory contains active plans for key ongoing projects. Consolidations ha
 - Execution and Operations (Consolidated) → [EXECUTION_AND_OPERATIONS_CONSOLIDATED.md](EXECUTION_AND_OPERATIONS_CONSOLIDATED.md)
 
 ### **Reference (Completed, for context)**
-- Jenkins Automation (Consolidated) → [JENKINS_AUTOMATION_CONSOLIDATED.md](JENKINS_AUTOMATION_CONSOLIDATED.md)
-- Taxonomy and Optimization (Consolidated) → [TAXONOMY_CONSOLIDATED.md](TAXONOMY_CONSOLIDATED.md)
-- Modernization Report → [MODERNIZATION_REPORT.md](MODERNIZATION_REPORT.md)
-- Dependency Map → [DEPENDENCY_MAP.md](DEPENDENCY_MAP.md)
+- Jenkins Automation (Consolidated) → [../references/JENKINS_AUTOMATION_CONSOLIDATED.md](../references/JENKINS_AUTOMATION_CONSOLIDATED.md)
+- Taxonomy and Optimization (Consolidated) → [../references/TAXONOMY_CONSOLIDATED.md](../references/TAXONOMY_CONSOLIDATED.md)
+- Modernization Report → [../references/MODERNIZATION_REPORT.md](../references/MODERNIZATION_REPORT.md)
+- Dependency Map → [../references/DEPENDENCY_MAP.md](../references/DEPENDENCY_MAP.md)
 
 ## 📊 **Plan Status Summary**
 
