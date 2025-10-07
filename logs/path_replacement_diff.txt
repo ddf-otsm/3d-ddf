@@ -1,7 +1,3 @@
- data/logos/AGENTS.md                                    | 14 +++++++-------
- docs/plans/prioritized/REPRIORITIZED_EXECUTION_ORDER.md |  2 +-
- logs/path_replacement_diff.txt                          |  2 --
- renders/20251003_1018_explosions/AGENTS.md              | 16 ++++++++--------
- renders/AGENTS.md                                       | 14 +++++++-------
- scripts/validate_paths.py                               |  4 ++--
- 6 files changed, 25 insertions(+), 27 deletions(-)
+ logs/logo_service_commit_confirmation.txt | 2 +-
+ logs/path_replacement_diff.txt            | 7 -------
+ 2 files changed, 1 insertion(+), 8 deletions(-)
