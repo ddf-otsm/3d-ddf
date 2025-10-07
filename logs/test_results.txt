@@ -1,0 +1,928 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0 -- /opt/homebrew/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/luismartins/local_repos/3d-ddf
+configfile: pytest.ini
+plugins: langsmith-0.4.6, anyio-4.9.0, asyncio-1.1.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 238 items
+
+tests/explosions/test_explosion_system.py::TestExplosionConfig::test_default_config PASSED [  0%]
+tests/explosions/test_explosion_system.py::TestExplosionConfig::test_from_preset PASSED [  0%]
+tests/explosions/test_explosion_system.py::TestExplosionConfig::test_quality_preset_application PASSED [  1%]
+tests/explosions/test_explosion_system.py::TestExplosionMaterials::test_material_caching PASSED [  1%]
+tests/explosions/test_explosion_system.py::TestExplosionMaterials::test_material_creation PASSED [  2%]
+tests/explosions/test_explosion_system.py::TestExplosionCreation::test_clear_existing PASSED [  2%]
+tests/explosions/test_explosion_system.py::TestExplosionCreation::test_create_sequence_simulated FAILED [  2%]
+tests/explosions/test_explosion_system.py::TestExplosionCreation::test_lod_application PASSED [  3%]
+tests/explosions/test_explosion_system.py::TestAnimation::test_animate_explosion PASSED [  3%]
+tests/explosions/test_explosion_system.py::TestPresets::test_get_preset_config PASSED [  4%]
+tests/explosions/test_explosion_system.py::TestPresets::test_unknown_preset PASSED [  4%]
+tests/explosions/test_explosion_system.py::TestMultipleExplosions::test_no_conflicts PASSED [  5%]
+tests/explosions/test_explosion_system.py::TestEdgeCases::test_negative_duration PASSED [  5%]
+tests/explosions/test_explosion_system.py::TestEdgeCases::test_zero_particles PASSED [  5%]
+tests/integration/test_blender_mcp_cube.py::test_create_cube FAILED      [  6%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_config_and_materials_integration PASSED [  6%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_config_validation PASSED [  7%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_explosion_workflow_simulation PASSED [  7%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_material_creation_without_blender PASSED [  7%]
+tests/integration/test_explosion_integration.py::TestExplosionIntegration::test_quality_preset_integration PASSED [  8%]
+tests/integration/test_explosion_integration.py::TestExplosionPerformance::test_config_creation_performance PASSED [  8%]
+tests/integration/test_explosion_integration.py::TestExplosionPerformance::test_material_creation_performance PASSED [  9%]
+tests/integration/test_explosion_integration.py::TestExplosionErrorHandling::test_config_with_extreme_values PASSED [  9%]
+tests/integration/test_explosion_integration.py::TestExplosionErrorHandling::test_invalid_material_type PASSED [ 10%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_analyze_current_explosions_function_exists FAILED [ 10%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_color_value_formatting PASSED [ 10%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_explosion_object_filtering_logic PASSED [ 11%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_material_analysis_logic PASSED [ 11%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_module_imports FAILED [ 12%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_string_operations PASSED [ 12%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosionsEdgeCases::test_empty_scene_analysis PASSED [ 13%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosionsEdgeCases::test_mixed_object_types PASSED [ 13%]
+tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosionsEdgeCases::test_object_property_formatting PASSED [ 13%]
+tests/unit/test_analyze_scripts.py::TestAnalyzeCurrentExplosions::test_string_formatting_operations PASSED [ 14%]
+tests/unit/test_analyze_scripts.py::TestAnalyzeExplosionRealism::test_analyze_explosion_realism_structure PASSED [ 14%]
+tests/unit/test_analyze_scripts.py::TestAnalyzeExplosionRealism::test_recommendation_logic PASSED [ 15%]
+tests/unit/test_analyze_scripts.py::TestMockBlenderOperations::test_mock_material_properties PASSED [ 15%]
+tests/unit/test_analyze_scripts.py::TestMockBlenderOperations::test_mock_object_properties PASSED [ 15%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjects::test_explosion_detection_logic PASSED [ 16%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjects::test_explosion_object_counting_logic PASSED [ 16%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjects::test_explosion_validation_logic PASSED [ 17%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjects::test_module_imports PASSED [ 17%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjects::test_output_formatting PASSED [ 18%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjectsEdgeCases::test_case_sensitive_matching PASSED [ 18%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjectsEdgeCases::test_empty_scene PASSED [ 18%]
+tests/unit/test_check_explosion_objects.py::TestCheckExplosionObjectsEdgeCases::test_mixed_object_types PASSED [ 19%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_animate_explosion_objects PASSED [ 19%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_clear_scene PASSED [ 20%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_explosion_objects FAILED [ 20%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_explosion_test_scene PASSED [ 21%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_fire_material FAILED [ 21%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_smoke_material FAILED [ 21%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_test_explosions PASSED [ 22%]
+tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_setup_scene FAILED [ 22%]
+tests/unit/test_create_explosion_test_scene.py::TestExplosionTestSceneEdgeCases::test_explosion_objects_at_different_locations FAILED [ 23%]
+tests/unit/test_create_explosion_test_scene.py::TestExplosionTestSceneEdgeCases::test_fire_material_with_empty_name FAILED [ 23%]
+tests/unit/test_create_explosion_test_scene.py::TestExplosionTestSceneEdgeCases::test_scene_setup_with_custom_frame_range FAILED [ 23%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_configure_render_settings_different_qualities PASSED [ 24%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_create_explosion_showcase_without_system PASSED [ 24%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_encode_frames_to_video PASSED [ 25%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_module_imports PASSED [ 25%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_render_explosion_video PASSED [ 26%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_render_explosion_video_without_blender PASSED [ 26%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_setup_camera_and_lighting PASSED [ 26%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_setup_scene_basic PASSED [ 27%]
+tests/unit/test_create_explosion_video.py::TestCreateExplosionVideo::test_setup_scene_without_blender PASSED [ 27%]
+tests/unit/test_create_explosion_video.py::TestExplosionVideoEdgeCases::test_explosion_showcase_with_multiple_configurations PASSED [ 28%]
+tests/unit/test_create_explosion_video.py::TestExplosionVideoEdgeCases::test_frame_encoding_with_empty_frames_dir PASSED [ 28%]
+tests/unit/test_create_explosion_video.py::TestExplosionVideoEdgeCases::test_render_settings_with_invalid_quality PASSED [ 28%]
+tests/unit/test_create_explosion_video.py::TestExplosionVideoEdgeCases::test_video_rendering_with_nonexistent_output_dir PASSED [ 29%]
+tests/unit/test_create_explosion_video.py::TestVideoCreationLogicPatterns::test_explosion_positioning_logic PASSED [ 29%]
+tests/unit/test_create_explosion_video.py::TestVideoCreationLogicPatterns::test_frame_range_calculation PASSED [ 30%]
+tests/unit/test_create_explosion_video.py::TestVideoCreationLogicPatterns::test_material_configuration_logic PASSED [ 30%]
+tests/unit/test_create_explosion_video.py::TestVideoCreationLogicPatterns::test_output_path_generation PASSED [ 31%]
+tests/unit/test_create_explosion_video.py::TestVideoCreationLogicPatterns::test_quality_settings_mapping PASSED [ 31%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_clear_existing_explosions FAILED [ 31%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_enhanced_fire_material FAILED [ 32%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_enhanced_smoke_material FAILED [ 32%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_explosion_lighting_setup FAILED [ 33%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_improved_debris_material FAILED [ 33%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_realistic_particle_system FAILED [ 34%]
+tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_volume_smoke_effect FAILED [ 34%]
+tests/unit/test_create_improved_realistic_explosions.py::TestExplosionCreationScenarios::test_explosion_at_different_locations FAILED [ 34%]
+tests/unit/test_create_improved_realistic_explosions.py::TestExplosionCreationScenarios::test_large_scale_explosion FAILED [ 35%]
+tests/unit/test_create_improved_realistic_explosions.py::TestExplosionCreationScenarios::test_small_scale_explosion FAILED [ 35%]
+tests/unit/test_create_improved_realistic_explosions.py::TestMaterialCreationEdgeCases::test_fire_material_with_zero_intensity FAILED [ 36%]
+tests/unit/test_create_improved_realistic_explosions.py::TestMaterialCreationEdgeCases::test_particle_system_with_extreme_counts FAILED [ 36%]
+tests/unit/test_create_improved_realistic_explosions.py::TestMaterialCreationEdgeCases::test_smoke_material_with_extreme_density FAILED [ 36%]
+tests/unit/test_create_improved_realistic_explosions.py::TestIntegrationScenarios::test_complete_explosion_creation_workflow FAILED [ 37%]
+tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_clear_existing_explosions FAILED [ 37%]
+tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_create_explosion_particle_material FAILED [ 38%]
+tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_create_explosion_particle_system FAILED [ 38%]
+tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_create_particle_explosion_sequence FAILED [ 39%]
+tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_module_imports FAILED [ 39%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionLogicPatterns::test_explosion_object_naming_logic PASSED [ 39%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionLogicPatterns::test_explosion_timing_logic PASSED [ 40%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionLogicPatterns::test_material_color_logic PASSED [ 40%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionLogicPatterns::test_particle_count_scaling_logic PASSED [ 41%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionLogicPatterns::test_particle_system_configuration_logic FAILED [ 41%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionEdgeCases::test_explosion_at_extreme_coordinates PASSED [ 42%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionEdgeCases::test_explosion_at_origin PASSED [ 42%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionEdgeCases::test_negative_start_frame PASSED [ 42%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionEdgeCases::test_very_large_particle_count PASSED [ 43%]
+tests/unit/test_create_particle_explosions.py::TestParticleExplosionEdgeCases::test_zero_particle_count PASSED [ 43%]
+tests/unit/test_explosion_config.py::TestQualityPreset::test_quality_preset_enum_members PASSED [ 44%]
+tests/unit/test_explosion_config.py::TestQualityPreset::test_quality_preset_values PASSED [ 44%]
+tests/unit/test_explosion_config.py::TestExplosionConfig::test_custom_config_creation PASSED [ 44%]
+tests/unit/test_explosion_config.py::TestExplosionConfig::test_default_config_creation PASSED [ 45%]
+tests/unit/test_explosion_config.py::TestExplosionConfig::test_default_configs PASSED [ 45%]
+tests/unit/test_explosion_config.py::TestExplosionConfig::test_from_preset_method PASSED [ 46%]
+tests/unit/test_explosion_config.py::TestExplosionConfig::test_quality_preset_application PASSED [ 46%]
+tests/unit/test_explosion_config.py::TestExplosionConfigValidation::test_invalid_particle_counts PASSED [ 47%]
+tests/unit/test_explosion_config.py::TestExplosionConfigValidation::test_large_values PASSED [ 47%]
+tests/unit/test_explosion_config.py::TestExplosionConfigValidation::test_negative_values PASSED [ 47%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_blender_availability_detection PASSED [ 48%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_clear_existing_explosions_without_blender PASSED [ 48%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_create_explosion_sequence_without_blender FAILED [ 49%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_explosion_config_validation FAILED [ 49%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_explosion_sequence_different_quality_presets FAILED [ 50%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_explosion_sequence_with_custom_config FAILED [ 50%]
+tests/unit/test_explosion_creation.py::TestExplosionCreation::test_multiple_explosion_creations FAILED [ 50%]
+tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_negative_coordinates FAILED [ 51%]
+tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_very_large_explosion FAILED [ 51%]
+tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_very_small_explosion FAILED [ 52%]
+tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_zero_particle_config PASSED [ 52%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_apply_explosion_lighting FAILED [ 52%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_clear_all_explosions FAILED [ 53%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_advanced_particle_system FAILED [ 53%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_enhanced_smoke_material PASSED [ 54%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_fire_glow_effect PASSED [ 54%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_realistic_debris_material PASSED [ 55%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_ultra_realistic_fire_material PASSED [ 55%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_volume_explosion_effect PASSED [ 55%]
+tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_fix_particle_system_settings PASSED [ 56%]
+tests/unit/test_fix_explosion_realism.py::TestMaterialCreationEdgeCases::test_fire_material_with_extreme_values PASSED [ 56%]
+tests/unit/test_fix_explosion_realism.py::TestMaterialCreationEdgeCases::test_material_creation_with_empty_name PASSED [ 57%]
+tests/unit/test_fix_explosion_realism.py::TestMaterialCreationEdgeCases::test_particle_system_with_zero_values FAILED [ 57%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_blender_availability_detection PASSED [ 57%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_blender_material_creation PASSED [ 58%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_different_material_types PASSED [ 58%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_initialization PASSED [ 59%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_material_caching PASSED [ 59%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_material_naming PASSED [ 60%]
+tests/unit/test_materials.py::TestExplosionMaterials::test_multiple_material_instances PASSED [ 60%]
+tests/unit/test_materials.py::TestMaterialCreationMethods::test_create_debris_material_without_blender PASSED [ 60%]
+tests/unit/test_materials.py::TestMaterialCreationMethods::test_create_fire_material_without_blender PASSED [ 61%]
+tests/unit/test_materials.py::TestMaterialCreationMethods::test_create_smoke_material_without_blender PASSED [ 61%]
+tests/unit/test_render_service.py::TestRenderService::test_cancel_job PASSED [ 62%]
+tests/unit/test_render_service.py::TestRenderService::test_cancel_nonexistent_job PASSED [ 62%]
+tests/unit/test_render_service.py::TestRenderService::test_get_job_status PASSED [ 63%]
+tests/unit/test_render_service.py::TestRenderService::test_job_not_found PASSED [ 63%]
+tests/unit/test_render_service.py::TestRenderService::test_list_jobs PASSED [ 63%]
+tests/unit/test_render_service.py::TestRenderService::test_render_job_creation PASSED [ 64%]
+tests/unit/test_render_service.py::TestRenderService::test_render_service_initialization PASSED [ 64%]
+tests/unit/test_render_service.py::TestRenderService::test_submit_render_job PASSED [ 65%]
+tests/unit/test_render_service.py::TestRenderJob::test_job_progress_tracking PASSED [ 65%]
+tests/unit/test_render_service.py::TestRenderJob::test_job_status_transitions PASSED [ 65%]
+tests/unit/test_render_service.py::TestRenderJob::test_job_with_different_frame_ranges PASSED [ 66%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_material_style_clay FAILED [ 66%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_material_style_photorealistic FAILED [ 67%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_quality_preset_draft FAILED [ 67%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_quality_preset_final FAILED [ 68%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_calculate_render_time_estimate_different_frame_counts FAILED [ 68%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_calculate_render_time_estimate_different_presets FAILED [ 68%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_main_function_exists FAILED [ 69%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_material_styles_configuration PASSED [ 69%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_parse_args_with_custom_values FAILED [ 70%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_parse_args_with_defaults FAILED [ 70%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_quality_presets_configuration PASSED [ 71%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_setup_output_path_with_frame_number FAILED [ 71%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_setup_output_path_with_timestamp FAILED [ 71%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_validate_frame_range_invalid FAILED [ 72%]
+tests/unit/test_render_service_real.py::TestRenderServiceReal::test_validate_frame_range_valid FAILED [ 72%]
+tests/unit/test_render_service_real.py::TestRenderServiceIntegration::test_error_handling_invalid_arguments FAILED [ 73%]
+tests/unit/test_render_service_real.py::TestRenderServiceIntegration::test_full_render_pipeline_simulation FAILED [ 73%]
+tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_material_style_with_no_objects FAILED [ 73%]
+tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_negative_frame_numbers FAILED [ 74%]
+tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_very_large_frame_counts FAILED [ 74%]
+tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_zero_frame_range_handling FAILED [ 75%]
+tests/unit/test_utility_scripts.py::TestGenerateReport::test_generate_report_basic PASSED [ 75%]
+tests/unit/test_utility_scripts.py::TestGenerateReport::test_generate_report_output_file_creation FAILED [ 76%]
+tests/unit/test_utility_scripts.py::TestBlenderDetection::test_find_blender_installations PASSED [ 76%]
+tests/unit/test_utility_scripts.py::TestFileOperations::test_path_operations PASSED [ 76%]
+tests/unit/test_utility_scripts.py::TestMockBlenderOperations::test_mock_bpy_structure FAILED [ 77%]
+tests/unit/test_utility_scripts.py::TestMockBlenderOperations::test_mock_material_creation FAILED [ 77%]
+tests/unit/test_validate_file_sizes.py::TestSizeIssue::test_size_issue_creation PASSED [ 78%]
+tests/unit/test_validate_file_sizes.py::TestSizeIssue::test_size_issue_string_representation PASSED [ 78%]
+tests/unit/test_validate_file_sizes.py::TestSizeIssue::test_size_issue_warning_string_representation PASSED [ 78%]
+tests/unit/test_validate_file_sizes.py::TestGetFileSizeMb::test_get_file_size_mb_empty_file PASSED [ 79%]
+tests/unit/test_validate_file_sizes.py::TestGetFileSizeMb::test_get_file_size_mb_larger_file PASSED [ 79%]
+tests/unit/test_validate_file_sizes.py::TestGetFileSizeMb::test_get_file_size_mb_small_file PASSED [ 80%]
+tests/unit/test_validate_file_sizes.py::TestCheckFileSizes::test_check_file_sizes_empty_directory PASSED [ 80%]
+tests/unit/test_validate_file_sizes.py::TestCheckFileSizes::test_check_file_sizes_excludes_git_directory PASSED [ 81%]
+tests/unit/test_validate_file_sizes.py::TestCheckFileSizes::test_check_file_sizes_excludes_pycache_directory PASSED [ 81%]
+tests/unit/test_validate_file_sizes.py::TestCheckFileSizes::test_check_file_sizes_with_empty_file PASSED [ 81%]
+tests/unit/test_validate_file_sizes.py::TestCheckFileSizes::test_check_file_sizes_with_large_files PASSED [ 82%]
+tests/unit/test_validate_file_sizes.py::TestCheckFileSizes::test_check_file_sizes_with_small_files PASSED [ 82%]
+tests/unit/test_validate_file_sizes.py::TestPrintResults::test_print_results_mixed_issues PASSED [ 83%]
+tests/unit/test_validate_file_sizes.py::TestPrintResults::test_print_results_no_issues PASSED [ 83%]
+tests/unit/test_validate_file_sizes.py::TestPrintResults::test_print_results_with_errors PASSED [ 84%]
+tests/unit/test_validate_file_sizes.py::TestPrintResults::test_print_results_with_warnings_only PASSED [ 84%]
+tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_file_size_boundary_values FAILED [ 84%]
+tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_file_size_with_special_characters PASSED [ 85%]
+tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_file_size_with_unicode_names PASSED [ 85%]
+tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_multiple_large_files PASSED [ 86%]
+tests/unit/test_validate_json.py::TestJSONError::test_json_error_creation PASSED [ 86%]
+tests/unit/test_validate_json.py::TestJSONError::test_json_error_string_representation PASSED [ 86%]
+tests/unit/test_validate_json.py::TestFindJsonFiles::test_find_json_files_empty_directory PASSED [ 87%]
+tests/unit/test_validate_json.py::TestFindJsonFiles::test_find_json_files_excludes_git_directory PASSED [ 87%]
+tests/unit/test_validate_json.py::TestFindJsonFiles::test_find_json_files_excludes_pycache_directory PASSED [ 88%]
+tests/unit/test_validate_json.py::TestFindJsonFiles::test_find_json_files_with_json_files PASSED [ 88%]
+tests/unit/test_validate_json.py::TestValidateJsonSyntax::test_validate_json_syntax_empty_file PASSED [ 89%]
+tests/unit/test_validate_json.py::TestValidateJsonSyntax::test_validate_json_syntax_invalid_json PASSED [ 89%]
+tests/unit/test_validate_json.py::TestValidateJsonSyntax::test_validate_json_syntax_nonexistent_file PASSED [ 89%]
+tests/unit/test_validate_json.py::TestValidateJsonSyntax::test_validate_json_syntax_valid_json PASSED [ 90%]
+tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_invalid_schema FAILED [ 90%]
+tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_no_schema PASSED [ 91%]
+tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_valid_schema FAILED [ 91%]
+tests/unit/test_validate_json.py::TestValidateMetadataConsistency::test_validate_metadata_consistency_missing_exports PASSED [ 92%]
+tests/unit/test_validate_json.py::TestValidateMetadataConsistency::test_validate_metadata_consistency_missing_file PASSED [ 92%]
+tests/unit/test_validate_json.py::TestValidateMetadataConsistency::test_validate_metadata_consistency_non_metadata_file PASSED [ 92%]
+tests/unit/test_validate_json.py::TestValidateMetadataConsistency::test_validate_metadata_consistency_valid_metadata PASSED [ 93%]
+tests/unit/test_validate_json.py::TestValidateAllJson::test_validate_all_json_empty_directory PASSED [ 93%]
+tests/unit/test_validate_json.py::TestValidateAllJson::test_validate_all_json_mixed_files PASSED [ 94%]
+tests/unit/test_validate_json.py::TestPrintResults::test_print_results_no_errors PASSED [ 94%]
+tests/unit/test_validate_json.py::TestPrintResults::test_print_results_with_errors PASSED [ 94%]
+tests/unit/test_validation_scripts.py::TestValidationError::test_validation_error_creation PASSED [ 95%]
+tests/unit/test_validation_scripts.py::TestValidationError::test_validation_error_string_representation PASSED [ 95%]
+tests/unit/test_validation_scripts.py::TestValidationError::test_validation_error_without_fix PASSED [ 96%]
+tests/unit/test_validation_scripts.py::TestTaxonomyValidation::test_validate_documentation_empty_directory PASSED [ 96%]
+tests/unit/test_validation_scripts.py::TestTaxonomyValidation::test_validate_documentation_with_proper_structure PASSED [ 97%]
+tests/unit/test_validation_scripts.py::TestTaxonomyValidation::test_validate_export_naming_no_exports PASSED [ 97%]
+tests/unit/test_validation_scripts.py::TestTaxonomyValidation::test_validate_export_naming_with_project_structure PASSED [ 97%]
+tests/unit/test_validation_scripts.py::TestLinkValidation::test_link_error_creation PASSED [ 98%]
+tests/unit/test_validation_scripts.py::TestLinkValidation::test_validate_links_no_markdown_files PASSED [ 98%]
+tests/unit/test_validation_scripts.py::TestLinkValidation::test_validate_links_with_markdown_structure PASSED [ 99%]
+tests/unit/test_validation_scripts.py::TestDocsValidation::test_validate_docs_empty_directory PASSED [ 99%]
+tests/unit/test_validation_scripts.py::TestDocsValidation::test_validate_docs_with_valid_structure PASSED [100%]
+
+=================================== FAILURES ===================================
+_____________ TestExplosionCreation.test_create_sequence_simulated _____________
+tests/explosions/test_explosion_system.py:83: in test_create_sequence_simulated
+    objects = create_explosion_sequence(self.config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: TestExplosion
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 60 frames
+🎨 Quality: medium
+🔧 LOD applied: 1.00 (particles reduced for distance)
+_______________________________ test_create_cube _______________________________
+tests/integration/test_blender_mcp_cube.py:91: in test_create_cube
+    scene_before = tester.get_scene_info()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_blender_mcp_cube.py:73: in get_scene_info
+    return self.send_command("get_scene_info", {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_blender_mcp_cube.py:55: in send_command
+    return json.loads(response)
+           ^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/json/decoder.py:355: in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+E   json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+----------------------------- Captured stdout call -----------------------------
+
+============================================================
+TEST: Create Cube and Verify with Blender Data
+============================================================
+
+✅ Connected to Blender at localhost:9876
+📊 Getting initial scene info...
+_ TestAnalyzeCurrentExplosions.test_analyze_current_explosions_function_exists _
+tests/unit/test_analyze_current_explosions.py:93: in test_analyze_current_explosions_function_exists
+    self.assertTrue(callable(getattr(analyze_current_explosions, 'analyze_current_explosions', None)))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NameError: name 'analyze_current_explosions' is not defined
+_______________ TestAnalyzeCurrentExplosions.test_module_imports _______________
+tests/unit/test_analyze_current_explosions.py:88: in test_module_imports
+    self.assertTrue(hasattr(analyze_current_explosions, 'analyze_current_explosions'))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NameError: name 'analyze_current_explosions' is not defined
+__________ TestCreateExplosionTestScene.test_create_explosion_objects __________
+tests/unit/test_create_explosion_test_scene.py:264: in test_create_explosion_objects
+    objects = create_explosion_test_scene.create_explosion_objects(
+scripts/create_explosion_test_scene.py:195: in create_explosion_objects
+    fire_mat = create_fire_material(name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_explosion_test_scene.py:103: in create_fire_material
+    color_ramp.color_ramp.elements[0].color = (1.0, 0.0, 0.0, 1.0)  # Red
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+----------------------------- Captured stdout call -----------------------------
+   Creating explosion objects at (0, 0, 0)
+____________ TestCreateExplosionTestScene.test_create_fire_material ____________
+tests/unit/test_create_explosion_test_scene.py:211: in test_create_fire_material
+    result = create_explosion_test_scene.create_fire_material("test")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_explosion_test_scene.py:103: in create_fire_material
+    color_ramp.color_ramp.elements[0].color = (1.0, 0.0, 0.0, 1.0)  # Red
+    ^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'MockNode' object has no attribute 'color_ramp'
+___________ TestCreateExplosionTestScene.test_create_smoke_material ____________
+tests/unit/test_create_explosion_test_scene.py:236: in test_create_smoke_material
+    result = create_explosion_test_scene.create_smoke_material("test")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_explosion_test_scene.py:154: in create_smoke_material
+    emission.inputs['Color'].default_value = (0.3, 0.3, 0.3, 1.0)  # Gray
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'MockNodeInputs' object is not subscriptable
+________________ TestCreateExplosionTestScene.test_setup_scene _________________
+tests/unit/test_create_explosion_test_scene.py:181: in test_setup_scene
+    create_explosion_test_scene.setup_scene()
+scripts/create_explosion_test_scene.py:71: in setup_scene
+    bsdf.inputs['Base Color'].default_value = (0.2, 0.2, 0.2, 1.0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+----------------------------- Captured stdout call -----------------------------
+
+🎬 Setting up test scene...
+_ TestExplosionTestSceneEdgeCases.test_explosion_objects_at_different_locations _
+tests/unit/test_create_explosion_test_scene.py:410: in test_explosion_objects_at_different_locations
+    objects = create_explosion_test_scene.create_explosion_objects(
+scripts/create_explosion_test_scene.py:177: in create_explosion_objects
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.3, location=location)
+E   TypeError: TestExplosionTestSceneEdgeCases.test_explosion_objects_at_different_locations.<locals>.mock_sphere_add() got an unexpected keyword argument 'radius'
+----------------------------- Captured stdout call -----------------------------
+   Creating explosion objects at (0, 0, 0)
+______ TestExplosionTestSceneEdgeCases.test_fire_material_with_empty_name ______
+tests/unit/test_create_explosion_test_scene.py:374: in test_fire_material_with_empty_name
+    result = create_explosion_test_scene.create_fire_material("")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_explosion_test_scene.py:103: in create_fire_material
+    color_ramp.color_ramp.elements[0].color = (1.0, 0.0, 0.0, 1.0)  # Red
+    ^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'MockNode' object has no attribute 'color_ramp'
+___ TestExplosionTestSceneEdgeCases.test_scene_setup_with_custom_frame_range ___
+tests/unit/test_create_explosion_test_scene.py:356: in test_scene_setup_with_custom_frame_range
+    self.assertEqual(scene.frame_start, 10)
+E   AssertionError: 1 != 10
+----------------------------- Captured stdout call -----------------------------
+
+🎬 Setting up test scene...
+   ✅ Scene setup complete
+_____ TestCreateImprovedRealisticExplosions.test_clear_existing_explosions _____
+tests/unit/test_create_improved_realistic_explosions.py:119: in test_clear_existing_explosions
+    create_improved_realistic_explosions.clear_existing_explosions()
+scripts/create_improved_realistic_explosions.py:27: in clear_existing_explosions
+    bpy.data.objects.remove(obj, do_unlink=True)
+E   TypeError: list.remove() takes no keyword arguments
+----------------------------- Captured stdout call -----------------------------
+🗑️  Removing old explosion objects...
+___ TestCreateImprovedRealisticExplosions.test_create_enhanced_fire_material ___
+tests/unit/test_create_improved_realistic_explosions.py:143: in test_create_enhanced_fire_material
+    result = create_improved_realistic_explosions.create_enhanced_fire_material("test")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_improved_realistic_explosions.py:47: in create_enhanced_fire_material
+    emission.inputs['Strength'].default_value = 25.0  # Much brighter
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'MockNodeInputs' object is not subscriptable
+__ TestCreateImprovedRealisticExplosions.test_create_enhanced_smoke_material ___
+tests/unit/test_create_improved_realistic_explosions.py:168: in test_create_enhanced_smoke_material
+    result = create_improved_realistic_explosions.create_enhanced_smoke_material("test")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_improved_realistic_explosions.py:128: in create_enhanced_smoke_material
+    volume.inputs['Density'].default_value = 0.4
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'MockNodeInputs' object is not subscriptable
+__ TestCreateImprovedRealisticExplosions.test_create_explosion_lighting_setup __
+tests/unit/test_create_improved_realistic_explosions.py:265: in test_create_explosion_lighting_setup
+    mock_bpy.data.objects.new.return_value = new_light_obj
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'list' object has no attribute 'new'
+__ TestCreateImprovedRealisticExplosions.test_create_improved_debris_material __
+tests/unit/test_create_improved_realistic_explosions.py:188: in test_create_improved_debris_material
+    result = create_improved_realistic_explosions.create_improved_debris_material("test")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'create_improved_realistic_explosions' has no attribute 'create_improved_debris_material'
+_ TestCreateImprovedRealisticExplosions.test_create_realistic_particle_system __
+tests/unit/test_create_improved_realistic_explosions.py:213: in test_create_realistic_particle_system
+    mock_obj.particle_systems[0].settings = mock_settings
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+____ TestCreateImprovedRealisticExplosions.test_create_volume_smoke_effect _____
+tests/unit/test_create_improved_realistic_explosions.py:237: in test_create_volume_smoke_effect
+    result = create_improved_realistic_explosions.create_volume_smoke_effect(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'create_improved_realistic_explosions' has no attribute 'create_volume_smoke_effect'
+_____ TestExplosionCreationScenarios.test_explosion_at_different_locations _____
+tests/unit/test_create_improved_realistic_explosions.py:351: in test_explosion_at_different_locations
+    result = create_improved_realistic_explosions.create_enhanced_explosion(
+E   TypeError: create_enhanced_explosion() got an unexpected keyword argument 'scale'
+__________ TestExplosionCreationScenarios.test_large_scale_explosion ___________
+tests/unit/test_create_improved_realistic_explosions.py:319: in test_large_scale_explosion
+    result = create_improved_realistic_explosions.create_enhanced_explosion(
+E   TypeError: create_enhanced_explosion() got an unexpected keyword argument 'scale'
+__________ TestExplosionCreationScenarios.test_small_scale_explosion ___________
+tests/unit/test_create_improved_realistic_explosions.py:294: in test_small_scale_explosion
+    result = create_improved_realistic_explosions.create_enhanced_explosion(
+E   TypeError: create_enhanced_explosion() got an unexpected keyword argument 'scale'
+_____ TestMaterialCreationEdgeCases.test_fire_material_with_zero_intensity _____
+tests/unit/test_create_improved_realistic_explosions.py:378: in test_fire_material_with_zero_intensity
+    result = create_improved_realistic_explosions.create_enhanced_fire_material("zero_test")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_improved_realistic_explosions.py:47: in create_enhanced_fire_material
+    emission.inputs['Strength'].default_value = 25.0  # Much brighter
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'MockNodeInputs' object is not subscriptable
+____ TestMaterialCreationEdgeCases.test_particle_system_with_extreme_counts ____
+tests/unit/test_create_improved_realistic_explosions.py:422: in test_particle_system_with_extreme_counts
+    mock_obj.particle_systems[0].settings = mock_settings
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+____ TestMaterialCreationEdgeCases.test_smoke_material_with_extreme_density ____
+tests/unit/test_create_improved_realistic_explosions.py:397: in test_smoke_material_with_extreme_density
+    result_low = create_improved_realistic_explosions.create_enhanced_smoke_material("low_test")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_improved_realistic_explosions.py:128: in create_enhanced_smoke_material
+    volume.inputs['Density'].default_value = 0.4
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'MockNodeInputs' object is not subscriptable
+______ TestIntegrationScenarios.test_complete_explosion_creation_workflow ______
+tests/unit/test_create_improved_realistic_explosions.py:460: in test_complete_explosion_creation_workflow
+    objects = create_improved_realistic_explosions.create_improved_explosion(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'create_improved_realistic_explosions' has no attribute 'create_improved_explosion'
+_________ TestCreateParticleExplosions.test_clear_existing_explosions __________
+tests/unit/test_create_particle_explosions.py:128: in test_clear_existing_explosions
+    result = create_particle_explosions.clear_existing_explosions()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_particle_explosions.py:23: in clear_existing_explosions
+    bpy.data.objects.remove(obj, do_unlink=True)
+E   TypeError: list.remove() takes no keyword arguments
+----------------------------- Captured stdout call -----------------------------
+🗑️  Removing old simple explosion spheres...
+_____ TestCreateParticleExplosions.test_create_explosion_particle_material _____
+tests/unit/test_create_particle_explosions.py:179: in test_create_explosion_particle_material
+    result = create_particle_explosions.create_explosion_particle_material(emitter, name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/create_particle_explosions.py:106: in create_explosion_particle_material
+    color_ramp.color_ramp.elements[0].color = (1.0, 0.1, 0.0, 1.0)  # Red
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+______ TestCreateParticleExplosions.test_create_explosion_particle_system ______
+tests/unit/test_create_particle_explosions.py:153: in test_create_explosion_particle_system
+    result = create_particle_explosions.create_explosion_particle_system(
+scripts/create_particle_explosions.py:80: in create_explosion_particle_system
+    create_explosion_particle_material(emitter, name)
+scripts/create_particle_explosions.py:123: in create_explosion_particle_material
+    emitter.data.materials.append(mat)
+    ^^^^^^^^^^^^
+E   AttributeError: 'MockObject' object has no attribute 'data'
+----------------------------- Captured stdout call -----------------------------
+   Creating particle explosion at (0, 0, 0)
+_____ TestCreateParticleExplosions.test_create_particle_explosion_sequence _____
+tests/unit/test_create_particle_explosions.py:201: in test_create_particle_explosion_sequence
+    result = create_particle_explosions.create_particle_explosion_sequence(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'create_particle_explosions' has no attribute 'create_particle_explosion_sequence'
+_______________ TestCreateParticleExplosions.test_module_imports _______________
+tests/unit/test_create_particle_explosions.py:117: in test_module_imports
+    self.assertTrue(hasattr(create_particle_explosions, 'create_particle_explosion_sequence'))
+E   AssertionError: False is not true
+_ TestParticleExplosionLogicPatterns.test_particle_system_configuration_logic __
+tests/unit/test_create_particle_explosions.py:239: in test_particle_system_configuration_logic
+    self.assertGreater(expected_value, 0)
+E   AssertionError: 0.0 not greater than 0
+_____ TestExplosionCreation.test_create_explosion_sequence_without_blender _____
+tests/unit/test_explosion_creation.py:42: in test_create_explosion_sequence_without_blender
+    result = create_explosion_sequence(self.test_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Test_Explosion
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 60 frames
+🎨 Quality: medium
+🔧 LOD applied: 1.00 (particles reduced for distance)
+____________ TestExplosionCreation.test_explosion_config_validation ____________
+tests/unit/test_explosion_creation.py:95: in test_explosion_config_validation
+    result = create_explosion_sequence(minimal_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Minimal
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 1 frames
+🎨 Quality: medium
+🔧 LOD applied: 1.00 (particles reduced for distance)
+___ TestExplosionCreation.test_explosion_sequence_different_quality_presets ____
+tests/unit/test_explosion_creation.py:75: in test_explosion_sequence_different_quality_presets
+    result = create_explosion_sequence(config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Test_quick
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 60 frames
+🎨 Quality: quick
+🔧 LOD applied: 1.00 (particles reduced for distance)
+_______ TestExplosionCreation.test_explosion_sequence_with_custom_config _______
+tests/unit/test_explosion_creation.py:64: in test_explosion_sequence_with_custom_config
+    result = create_explosion_sequence(custom_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Custom_Test
+📍 Location: (1.0, 2.0, 3.0)
+⏱️  Duration: 120 frames
+🎨 Quality: medium
+🔧 LOD applied: 0.80 (particles reduced for distance)
+___________ TestExplosionCreation.test_multiple_explosion_creations ____________
+tests/unit/test_explosion_creation.py:108: in test_multiple_explosion_creations
+    objects = create_explosion_sequence(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Explosion_1
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 60 frames
+🎨 Quality: quick
+🔧 LOD applied: 1.00 (particles reduced for distance)
+___________ TestExplosionCreationEdgeCases.test_negative_coordinates ___________
+tests/unit/test_explosion_creation.py:140: in test_negative_coordinates
+    result = create_explosion_sequence(negative_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Negative_Test
+📍 Location: (-10.0, -20.0, -30.0)
+⏱️  Duration: 60 frames
+🎨 Quality: medium
+🔧 LOD applied: 3.00 (particles reduced for distance)
+___________ TestExplosionCreationEdgeCases.test_very_large_explosion ___________
+tests/unit/test_explosion_creation.py:153: in test_very_large_explosion
+    result = create_explosion_sequence(large_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Large_Test
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 1000 frames
+🎨 Quality: medium
+🔧 LOD applied: 1.00 (particles reduced for distance)
+___________ TestExplosionCreationEdgeCases.test_very_small_explosion ___________
+tests/unit/test_explosion_creation.py:166: in test_very_small_explosion
+    result = create_explosion_sequence(small_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:151: in create_explosion_sequence
+    fire_objects = create_fire_particles(config, materials)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/explosions/create_production_explosion.py:191: in create_fire_particles
+    mesh = bpy.data.meshes.new(f"Fire_Particle_{i}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+tests/mocks/mock_bpy.py:287: in meshes_new
+    return self.meshes.new(name)
+           ^^^^^^^^^^^^^^^^^^^^^
+E   RecursionError: maximum recursion depth exceeded
+!!! Recursion detected (same locals & position)
+----------------------------- Captured stdout call -----------------------------
+💥 Creating explosion: Small_Test
+📍 Location: (0.0, 0.0, 0.0)
+⏱️  Duration: 1 frames
+🎨 Quality: medium
+🔧 LOD applied: 1.00 (particles reduced for distance)
+____________ TestFixExplosionRealism.test_apply_explosion_lighting _____________
+tests/unit/test_fix_explosion_realism.py:245: in test_apply_explosion_lighting
+    mock_bpy.data.objects.new.return_value = new_light_obj
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'list' object has no attribute 'new'
+______________ TestFixExplosionRealism.test_clear_all_explosions _______________
+tests/unit/test_fix_explosion_realism.py:122: in test_clear_all_explosions
+    mock_bpy.data.objects.remove.assert_called()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'builtin_function_or_method' object has no attribute 'assert_called'
+_________ TestFixExplosionRealism.test_create_advanced_particle_system _________
+tests/unit/test_fix_explosion_realism.py:219: in test_create_advanced_particle_system
+    mock_obj.particle_systems[0].settings = mock_settings
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+_____ TestMaterialCreationEdgeCases.test_particle_system_with_zero_values ______
+tests/unit/test_fix_explosion_realism.py:388: in test_particle_system_with_zero_values
+    mock_obj.particle_systems[0].settings = mock_settings
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: 'Mock' object is not subscriptable
+_____________ TestRenderServiceReal.test_apply_material_style_clay _____________
+tests/unit/test_render_service_real.py:185: in test_apply_material_style_clay
+    render_service.apply_material_style('clay')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'apply_material_style'
+________ TestRenderServiceReal.test_apply_material_style_photorealistic ________
+tests/unit/test_render_service_real.py:168: in test_apply_material_style_photorealistic
+    render_service.apply_material_style('photorealistic')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'apply_material_style'
+____________ TestRenderServiceReal.test_apply_quality_preset_draft _____________
+tests/unit/test_render_service_real.py:132: in test_apply_quality_preset_draft
+    render_service.apply_quality_preset('draft')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'apply_quality_preset'
+____________ TestRenderServiceReal.test_apply_quality_preset_final _____________
+tests/unit/test_render_service_real.py:146: in test_apply_quality_preset_final
+    render_service.apply_quality_preset('final')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'apply_quality_preset'
+_ TestRenderServiceReal.test_calculate_render_time_estimate_different_frame_counts _
+tests/unit/test_render_service_real.py:268: in test_calculate_render_time_estimate_different_frame_counts
+    estimate_small = render_service.calculate_render_time_estimate(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'calculate_render_time_estimate'
+_ TestRenderServiceReal.test_calculate_render_time_estimate_different_presets __
+tests/unit/test_render_service_real.py:241: in test_calculate_render_time_estimate_different_presets
+    estimate_draft = render_service.calculate_render_time_estimate(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'calculate_render_time_estimate'
+_______________ TestRenderServiceReal.test_main_function_exists ________________
+tests/unit/test_render_service_real.py:290: in test_main_function_exists
+    self.assertTrue(hasattr(render_service, 'main'))
+E   AssertionError: False is not true
+___________ TestRenderServiceReal.test_parse_args_with_custom_values ___________
+tests/unit/test_render_service_real.py:115: in test_parse_args_with_custom_values
+    args = render_service.parse_args(test_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: parse_args() takes 0 positional arguments but 1 was given
+_____________ TestRenderServiceReal.test_parse_args_with_defaults ______________
+tests/unit/test_render_service_real.py:95: in test_parse_args_with_defaults
+    args = render_service.parse_args([])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: parse_args() takes 0 positional arguments but 1 was given
+________ TestRenderServiceReal.test_setup_output_path_with_frame_number ________
+tests/unit/test_render_service_real.py:213: in test_setup_output_path_with_frame_number
+    result = render_service.setup_output_path(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'setup_output_path'
+_________ TestRenderServiceReal.test_setup_output_path_with_timestamp __________
+tests/unit/test_render_service_real.py:196: in test_setup_output_path_with_timestamp
+    result1 = render_service.setup_output_path(output_dir=str(output_dir))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'setup_output_path'
+___________ TestRenderServiceReal.test_validate_frame_range_invalid ____________
+tests/unit/test_render_service_real.py:231: in test_validate_frame_range_invalid
+    self.assertFalse(render_service.validate_frame_range(100, 1))  # End before start
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'validate_frame_range'
+____________ TestRenderServiceReal.test_validate_frame_range_valid _____________
+tests/unit/test_render_service_real.py:225: in test_validate_frame_range_valid
+    self.assertTrue(render_service.validate_frame_range(1, 100))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'validate_frame_range'
+______ TestRenderServiceIntegration.test_error_handling_invalid_arguments ______
+tests/unit/test_render_service_real.py:339: in test_error_handling_invalid_arguments
+    render_service.parse_args(['--quality', 'invalid_quality'])
+E   TypeError: parse_args() takes 0 positional arguments but 1 was given
+______ TestRenderServiceIntegration.test_full_render_pipeline_simulation _______
+tests/unit/test_render_service_real.py:326: in test_full_render_pipeline_simulation
+    parsed_args = render_service.parse_args(args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: parse_args() takes 0 positional arguments but 1 was given
+________ TestRenderServiceEdgeCases.test_material_style_with_no_objects ________
+tests/unit/test_render_service_real.py:389: in test_material_style_with_no_objects
+    render_service.apply_material_style('photorealistic')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'apply_material_style'
+____________ TestRenderServiceEdgeCases.test_negative_frame_numbers ____________
+tests/unit/test_render_service_real.py:367: in test_negative_frame_numbers
+    self.assertFalse(render_service.validate_frame_range(-10, 100))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'validate_frame_range'
+___________ TestRenderServiceEdgeCases.test_very_large_frame_counts ____________
+tests/unit/test_render_service_real.py:373: in test_very_large_frame_counts
+    estimate = render_service.calculate_render_time_estimate(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'calculate_render_time_estimate'
+__________ TestRenderServiceEdgeCases.test_zero_frame_range_handling ___________
+tests/unit/test_render_service_real.py:356: in test_zero_frame_range_handling
+    estimate = render_service.calculate_render_time_estimate(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'render_service' has no attribute 'calculate_render_time_estimate'
+_________ TestGenerateReport.test_generate_report_output_file_creation _________
+tests/unit/test_utility_scripts.py:46: in test_generate_report_output_file_creation
+    self.assertGreater(len(report_files), 0)
+E   AssertionError: 0 not greater than 0
+----------------------------- Captured stdout call -----------------------------
+
+✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmp83cu5qp8/reports/20251007_011515_validation_report.txt
+______________ TestMockBlenderOperations.test_mock_bpy_structure _______________
+tests/unit/test_utility_scripts.py:108: in test_mock_bpy_structure
+    from explosions.create_production_explosion import MockBpy
+E   ImportError: cannot import name 'MockBpy' from 'explosions.create_production_explosion' (/Users/luismartins/local_repos/3d-ddf/tests/integration/../../scripts/explosions/create_production_explosion.py)
+
+During handling of the above exception, another exception occurred:
+tests/unit/test_utility_scripts.py:118: in test_mock_bpy_structure
+    self.fail(f"Failed to import mock bpy structure: {e}")
+E   AssertionError: Failed to import mock bpy structure: cannot import name 'MockBpy' from 'explosions.create_production_explosion' (/Users/luismartins/local_repos/3d-ddf/tests/integration/../../scripts/explosions/create_production_explosion.py)
+____________ TestMockBlenderOperations.test_mock_material_creation _____________
+tests/unit/test_utility_scripts.py:123: in test_mock_material_creation
+    from explosions.create_production_explosion import MockBpy
+E   ImportError: cannot import name 'MockBpy' from 'explosions.create_production_explosion' (/Users/luismartins/local_repos/3d-ddf/tests/integration/../../scripts/explosions/create_production_explosion.py)
+
+During handling of the above exception, another exception occurred:
+tests/unit/test_utility_scripts.py:131: in test_mock_material_creation
+    self.fail(f"Mock mesh creation failed: {e}")
+E   AssertionError: Mock mesh creation failed: cannot import name 'MockBpy' from 'explosions.create_production_explosion' (/Users/luismartins/local_repos/3d-ddf/tests/integration/../../scripts/explosions/create_production_explosion.py)
+________ TestFileSizeValidationEdgeCases.test_file_size_boundary_values ________
+tests/unit/test_validate_file_sizes.py:324: in test_file_size_boundary_values
+    self.assertEqual(stats["large_files"], 2)
+E   AssertionError: 1 != 2
+----------------------------- Captured stdout call -----------------------------
+📊 Checking file sizes...
+
+_______ TestValidateJsonSchema.test_validate_json_schema_invalid_schema ________
+scripts/validate_json.py:67: in validate_json_schema
+    jsonschema.validate(instance=data, schema=schema)
+E   TypeError: MockJsonschema.validate() got multiple values for argument 'instance'
+
+During handling of the above exception, another exception occurred:
+tests/unit/test_validate_json.py:248: in test_validate_json_schema_invalid_schema
+    error = validate_json_schema(data_file, Path(self.temp_dir.name))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/validate_json.py:69: in validate_json_schema
+    except jsonschema.exceptions.ValidationError as e:
+           ^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'MockJsonschema' object has no attribute 'exceptions'
+________ TestValidateJsonSchema.test_validate_json_schema_valid_schema _________
+scripts/validate_json.py:67: in validate_json_schema
+    jsonschema.validate(instance=data, schema=schema)
+E   TypeError: MockJsonschema.validate() got multiple values for argument 'instance'
+
+During handling of the above exception, another exception occurred:
+tests/unit/test_validate_json.py:225: in test_validate_json_schema_valid_schema
+    error = validate_json_schema(data_file, Path(self.temp_dir.name))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/validate_json.py:69: in validate_json_schema
+    except jsonschema.exceptions.ValidationError as e:
+           ^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'MockJsonschema' object has no attribute 'exceptions'
+=========================== short test summary info ============================
+FAILED tests/explosions/test_explosion_system.py::TestExplosionCreation::test_create_sequence_simulated
+FAILED tests/integration/test_blender_mcp_cube.py::test_create_cube - json.de...
+FAILED tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_analyze_current_explosions_function_exists
+FAILED tests/unit/test_analyze_current_explosions.py::TestAnalyzeCurrentExplosions::test_module_imports
+FAILED tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_explosion_objects
+FAILED tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_fire_material
+FAILED tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_create_smoke_material
+FAILED tests/unit/test_create_explosion_test_scene.py::TestCreateExplosionTestScene::test_setup_scene
+FAILED tests/unit/test_create_explosion_test_scene.py::TestExplosionTestSceneEdgeCases::test_explosion_objects_at_different_locations
+FAILED tests/unit/test_create_explosion_test_scene.py::TestExplosionTestSceneEdgeCases::test_fire_material_with_empty_name
+FAILED tests/unit/test_create_explosion_test_scene.py::TestExplosionTestSceneEdgeCases::test_scene_setup_with_custom_frame_range
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_clear_existing_explosions
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_enhanced_fire_material
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_enhanced_smoke_material
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_explosion_lighting_setup
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_improved_debris_material
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_realistic_particle_system
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestCreateImprovedRealisticExplosions::test_create_volume_smoke_effect
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestExplosionCreationScenarios::test_explosion_at_different_locations
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestExplosionCreationScenarios::test_large_scale_explosion
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestExplosionCreationScenarios::test_small_scale_explosion
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestMaterialCreationEdgeCases::test_fire_material_with_zero_intensity
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestMaterialCreationEdgeCases::test_particle_system_with_extreme_counts
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestMaterialCreationEdgeCases::test_smoke_material_with_extreme_density
+FAILED tests/unit/test_create_improved_realistic_explosions.py::TestIntegrationScenarios::test_complete_explosion_creation_workflow
+FAILED tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_clear_existing_explosions
+FAILED tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_create_explosion_particle_material
+FAILED tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_create_explosion_particle_system
+FAILED tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_create_particle_explosion_sequence
+FAILED tests/unit/test_create_particle_explosions.py::TestCreateParticleExplosions::test_module_imports
+FAILED tests/unit/test_create_particle_explosions.py::TestParticleExplosionLogicPatterns::test_particle_system_configuration_logic
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreation::test_create_explosion_sequence_without_blender
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreation::test_explosion_config_validation
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreation::test_explosion_sequence_different_quality_presets
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreation::test_explosion_sequence_with_custom_config
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreation::test_multiple_explosion_creations
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_negative_coordinates
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_very_large_explosion
+FAILED tests/unit/test_explosion_creation.py::TestExplosionCreationEdgeCases::test_very_small_explosion
+FAILED tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_apply_explosion_lighting
+FAILED tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_clear_all_explosions
+FAILED tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_advanced_particle_system
+FAILED tests/unit/test_fix_explosion_realism.py::TestMaterialCreationEdgeCases::test_particle_system_with_zero_values
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_material_style_clay
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_material_style_photorealistic
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_quality_preset_draft
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_apply_quality_preset_final
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_calculate_render_time_estimate_different_frame_counts
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_calculate_render_time_estimate_different_presets
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_main_function_exists
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_parse_args_with_custom_values
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_parse_args_with_defaults
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_setup_output_path_with_frame_number
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_setup_output_path_with_timestamp
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_validate_frame_range_invalid
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceReal::test_validate_frame_range_valid
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceIntegration::test_error_handling_invalid_arguments
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceIntegration::test_full_render_pipeline_simulation
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_material_style_with_no_objects
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_negative_frame_numbers
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_very_large_frame_counts
+FAILED tests/unit/test_render_service_real.py::TestRenderServiceEdgeCases::test_zero_frame_range_handling
+FAILED tests/unit/test_utility_scripts.py::TestGenerateReport::test_generate_report_output_file_creation
+FAILED tests/unit/test_utility_scripts.py::TestMockBlenderOperations::test_mock_bpy_structure
+FAILED tests/unit/test_utility_scripts.py::TestMockBlenderOperations::test_mock_material_creation
+FAILED tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_file_size_boundary_values
+FAILED tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_invalid_schema
+FAILED tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_valid_schema
+======================== 68 failed, 170 passed in 1.34s ========================
