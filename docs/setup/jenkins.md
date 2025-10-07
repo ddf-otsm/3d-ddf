@@ -886,10 +886,10 @@ environment {
 
 ### Related Documentation
 
-- [Two-Instance Architecture Guide](../infrastructure/jenkins-two-instance-architecture.md)
-- [Jenkins Deployment Strategy](../deployment/JENKINS_DEPLOYMENT_STRATEGY.md)
-- [Local Jenkins Overview](../infrastructure/local-jenkins-overview.md)
-- [Terraform GPU Production Module](See terraform documentation for OCI GPU production setup)
+- [Two-Instance Architecture Guide](../setup/local-jenkins.md)
+- [Jenkins Deployment Strategy](../setup/jenkins.md)
+- [Local Jenkins Overview](../setup/local-jenkins.md)
+- Terraform GPU Production Module: refer to your cloud provider’s Terraform registry and internal infra docs
 
 ---
 

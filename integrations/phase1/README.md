@@ -111,8 +111,8 @@ print(f"Total assets: {library['metadata']['total_assets']}")
 
 ## 📚 Documentation
 
-- [Quick Start Guide](docs/phase1-quickstart.md)
-- [Implementation Summary](docs/phase1-implementation-summary.md)
+- [Quick Start Guide](../../docs/guides/phase1-quickstart.md)
+- [Implementation Summary](../../docs/project/phase1-implementation-summary.md)
 - [3D Asset Platforms Roadmap](../../docs/guides/3d-asset-platforms-roadmap.md)
 
 ## 🔄 Next Steps

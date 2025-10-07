@@ -233,7 +233,7 @@ python main.py search character
 
 - [Basic Asset Scraper](src/basic_asset_scraper.py)
 - [Main Entry Point](main.py)
-- [Integration Summary](../INTEGRATION_SUMMARY.md)
+- [Integration Summary](../../docs/project/README.md)
 
 ## 🎯 **Benefits**
 

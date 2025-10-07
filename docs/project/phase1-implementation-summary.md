@@ -130,7 +130,7 @@ Phase 1 is complete and ready for Phase 2 implementation:
 ### 📚 **Documentation Created**
 
 - [Phase 1 Quick Start Guide](../guides/phase1-quickstart.md)
-- [3D Asset Platforms Roadmap](3d-asset-platforms-roadmap.md)
+- [3D Asset Platforms Roadmap](../guides/3d-asset-platforms-roadmap.md)
 - [Implementation Summary](phase1-implementation-summary.md)
 
 ### 🎉 **Success Criteria Met**

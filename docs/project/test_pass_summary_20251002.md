@@ -328,7 +328,7 @@ Use pytest markers to separate tests:
 - [Installation Guide](../setup/installation.md)
 - [Blender Installation](../setup/blender-installation.md)
 - [Troubleshooting](../setup/troubleshooting.md)
-- [Quick Start](QUICKSTART.md)
+- [Quick Start](../../QUICKSTART.md)
 
 **Commands**:
 ```bash

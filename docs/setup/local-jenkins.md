@@ -259,18 +259,18 @@ docker system prune -f
 
 ### Local Development
 - [Jenkins Setup Guide (Main)](jenkins.md) - Comprehensive setup guide
-- [Docker Compose Configuration](See docker-compose.jenkins.yml in project root) - Local setup file
-- [Deployment Strategy](See Jenkins deployment documentation) - Migration guide
+- [Docker Compose Configuration](../../docker/docker-compose.jenkins.yml) - Local setup file
+- [Deployment Strategy](jenkins.md) - Migration guide
 
 ### Production Deployment
-- [Two-Instance Architecture](See Jenkins infrastructure documentation) - Cost-optimized architecture
-- [Terraform GPU Production](See terraform documentation for OCI GPU production setup) - Infrastructure-as-Code
-- [Jenkins Setup Guide (OCI)](See Jenkins setup guide documentation) - OCI-specific setup
+- [Two-Instance Architecture](local-jenkins.md) - Cost-optimized architecture
+- Terraform GPU Production: refer to your cloud provider’s Terraform registry and internal infra docs - Infrastructure-as-Code
+- [Jenkins Setup Guide (OCI)](jenkins.md) - OCI-specific setup
 
 ### Advanced Features
-- [Jenkins Deployment Strategy](See Jenkins deployment documentation) - Complete deployment guide
-- [Two-Instance Deployment Plan](See Jenkins deployment plan in active plans) - Step-by-step plan
-- [Local Jenkins Overview](See local Jenkins overview documentation) - Architecture overview
+- [Jenkins Deployment Strategy](jenkins.md) - Complete deployment guide
+- [Two-Instance Deployment Plan](jenkins.md) - Step-by-step plan
+- [Local Jenkins Overview](local-jenkins.md) - Architecture overview
 
 ---
 
@@ -278,4 +278,4 @@ docker system prune -f
 **Architecture**: Local Docker (Development) → Two-Instance Production (Recommended)
 **Cost Optimization**: 95% reduction enabled in production
 **Status**: Ready for production deployment
-**Next Step**: Execute production deployment following [Jenkins Deployment Strategy](See Jenkins deployment documentation)
+**Next Step**: Execute production deployment following [Jenkins Deployment Strategy](jenkins.md)
