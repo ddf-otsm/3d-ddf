@@ -13,7 +13,7 @@ Minimal front-end to trigger Blender render of Dadosfera with realistic explosio
 - QW_2h_HIGH_fix_path_hardcoding
   - importance: 5, urgency: 5, complexity: 1
   - effort.ai_hours: 0.8, effort.human_hours: 1.0
-  - Scope: replace `/Users/luismartins` hardcodes; use `${PROJECT_ROOT}` detection and env overrides
+  - Scope: replace `${HOME}` hardcodes; use `${PROJECT_ROOT}` detection and env overrides
   - Status: done for core scripts (`render_service.py`, `monitor_render.sh`, `encode_frames_to_video.sh`, `integrate_with_main_project.py`, `workflows/run.sh`)
 
 - DEP_2h_HIGH_move_non_plans_to_references

@@ -20,16 +20,16 @@ Stores source logo images that are processed by the logo-to-3D service and used 
 
 ```bash
 # List all logo files
-ls -lh /Users/luismartins/local_repos/3d-ddf/data/logos/
+ls -lh ${HOME}/local_repos/3d-ddf/data/logos/
 
 # Find specific image types
-find /Users/luismartins/local_repos/3d-ddf/data/logos -name "*.png" -o -name "*.svg"
+find ${HOME}/local_repos/3d-ddf/data/logos -name "*.png" -o -name "*.svg"
 
 # Get image dimensions (requires ImageMagick)
-identify "/Users/luismartins/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
+identify "${HOME}/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
 
 # List with file sizes
-ls -lhS /Users/luismartins/local_repos/3d-ddf/data/logos/
+ls -lhS ${HOME}/local_repos/3d-ddf/data/logos/
 ```
 
 ## Common Operations
@@ -37,13 +37,13 @@ ls -lhS /Users/luismartins/local_repos/3d-ddf/data/logos/
 ### Accessing a Logo File
 ```bash
 # Read file info directly by absolute path
-file "/Users/luismartins/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
+file "${HOME}/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
 
 # Get detailed image information (requires ImageMagick)
-identify -verbose "/Users/luismartins/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
+identify -verbose "${HOME}/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
 
 # Get basic dimensions with sips (macOS)
-sips -g pixelHeight -g pixelWidth "/Users/luismartins/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
+sips -g pixelHeight -g pixelWidth "${HOME}/local_repos/3d-ddf/data/logos/Logo Dadosfera Colorida sem Slogan.png"
 ```
 
 ### Processing Logos

@@ -1,2 +1,7 @@
- scripts/validate_paths.py | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ data/logos/AGENTS.md                                    | 14 +++++++-------
+ docs/plans/prioritized/REPRIORITIZED_EXECUTION_ORDER.md |  2 +-
+ logs/path_replacement_diff.txt                          |  2 --
+ renders/20251003_1018_explosions/AGENTS.md              | 16 ++++++++--------
+ renders/AGENTS.md                                       | 14 +++++++-------
+ scripts/validate_paths.py                               |  4 ++--
+ 6 files changed, 25 insertions(+), 27 deletions(-)

@@ -18,16 +18,16 @@ Stores final render outputs from Blender scenes. These files are ignored by `.cu
 
 ```bash
 # List all video files in renders/
-find /Users/luismartins/local_repos/3d-ddf/renders -name "*.mp4" -o -name "*.avi" -o -name "*.mov"
+find ${HOME}/local_repos/3d-ddf/renders -name "*.mp4" -o -name "*.avi" -o -name "*.mov"
 
 # List all subdirectories
-ls -d /Users/luismartins/local_repos/3d-ddf/renders/*/
+ls -d ${HOME}/local_repos/3d-ddf/renders/*/
 
 # Find the most recent video
-find /Users/luismartins/local_repos/3d-ddf/renders -name "*.mp4" -exec ls -t {} + | head -1
+find ${HOME}/local_repos/3d-ddf/renders -name "*.mp4" -exec ls -t {} + | head -1
 
 # Count frame sequences in a directory
-find /Users/luismartins/local_repos/3d-ddf/renders/explosions -name "*.png" | wc -l
+find ${HOME}/local_repos/3d-ddf/renders/explosions -name "*.png" | wc -l
 
 # Get video file info (requires ffprobe)
 ffprobe -v quiet -print_format json -show_format -show_streams {video_file}
@@ -38,16 +38,16 @@ ffprobe -v quiet -print_format json -show_format -show_streams {video_file}
 ### Accessing a Specific Video
 ```bash
 # Read video metadata directly by absolute path
-ffprobe "/Users/luismartins/local_repos/3d-ddf/renders/explosions/my_render.mp4"
+ffprobe "${HOME}/local_repos/3d-ddf/renders/explosions/my_render.mp4"
 ```
 
 ### Working with Frame Sequences
 ```bash
 # List frames in order
-ls -1v /Users/luismartins/local_repos/3d-ddf/renders/explosions/frame_*.png
+ls -1v ${HOME}/local_repos/3d-ddf/renders/explosions/frame_*.png
 
 # Check frame count
-ls -1 /Users/luismartins/local_repos/3d-ddf/renders/explosions/frame_*.png | wc -l
+ls -1 ${HOME}/local_repos/3d-ddf/renders/explosions/frame_*.png | wc -l
 ```
 
 ## Subdirectories

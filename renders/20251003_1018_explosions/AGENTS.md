@@ -19,19 +19,19 @@ Stores rendered outputs from explosion effect testing and production. These rend
 
 ```bash
 # List all explosion render directories
-ls -lt /Users/luismartins/local_repos/3d-ddf/renders/explosions/
+ls -lt ${HOME}/local_repos/3d-ddf/renders/explosions/
 
 # Find all explosion videos
-find /Users/luismartins/local_repos/3d-ddf/renders/explosions -name "*.mp4"
+find ${HOME}/local_repos/3d-ddf/renders/explosions -name "*.mp4"
 
 # Find frame sequences
-find /Users/luismartins/local_repos/3d-ddf/renders/explosions -name "frame_*.png" -o -name "explosion_*.png"
+find ${HOME}/local_repos/3d-ddf/renders/explosions -name "frame_*.png" -o -name "explosion_*.png"
 
 # Get latest render directory
-ls -td /Users/luismartins/local_repos/3d-ddf/renders/explosions/*/ | head -1
+ls -td ${HOME}/local_repos/3d-ddf/renders/explosions/*/ | head -1
 
 # Count renders by date
-ls -1 /Users/luismartins/local_repos/3d-ddf/renders/explosions/ | cut -d'_' -f3 | sort | uniq -c
+ls -1 ${HOME}/local_repos/3d-ddf/renders/explosions/ | cut -d'_' -f3 | sort | uniq -c
 ```
 
 ## Common Operations
@@ -39,16 +39,16 @@ ls -1 /Users/luismartins/local_repos/3d-ddf/renders/explosions/ | cut -d'_' -f3 
 ### Accessing a Specific Render
 ```bash
 # List files in a specific render directory
-ls -lh "/Users/luismartins/local_repos/3d-ddf/renders/explosions/explosion_showcase_20251002_113518/"
+ls -lh "${HOME}/local_repos/3d-ddf/renders/explosions/explosion_showcase_20251002_113518/"
 
 # Get video information
-ffprobe -v quiet -print_format json -show_format "/Users/luismartins/local_repos/3d-ddf/renders/explosions/my_explosion.mp4"
+ffprobe -v quiet -print_format json -show_format "${HOME}/local_repos/3d-ddf/renders/explosions/my_explosion.mp4"
 ```
 
 ### Analyzing Renders
 ```bash
 # Check render completion (frame count)
-find "/Users/luismartins/local_repos/3d-ddf/renders/explosions/explosion_showcase_20251002_113518/" -name "*.png" | wc -l
+find "${HOME}/local_repos/3d-ddf/renders/explosions/explosion_showcase_20251002_113518/" -name "*.png" | wc -l
 
 # Compare render outputs
 diff <(ls render_dir1/) <(ls render_dir2/)
