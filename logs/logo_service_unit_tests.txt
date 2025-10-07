@@ -61,4 +61,4 @@ ERROR tests/integration/test_text_processing.py
 ERROR tests/unit/test_font_manager.py
 ERROR tests/unit/test_text_renderer.py
 !!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!!
-============================== 4 errors in 0.13s ===============================
+============================== 4 errors in 0.10s ===============================
