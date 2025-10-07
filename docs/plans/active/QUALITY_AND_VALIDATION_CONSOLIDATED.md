@@ -336,21 +336,15 @@ bash .git/hooks/post-push  # Should end with "✅ Post-push validation completed
 3. **Ongoing**: Track progress in this plan (update pass rate weekly)
 4. **Completion**: Merge fixes and update post-push hook documentation
 
-### Open Issues and Tasks (Oct 7, 2025)
-- **Missing renders/images in Dadosfera docs**: Replaced with placeholders in `projects/dadosfera/README.md`.
-  - **Task**: Generate still and keyframe assets to replace placeholders.
-  - **Targets**: `projects/dadosfera/renders/stills/render_output.png`, `projects/dadosfera/renders/frames/dadosfera_frame_{001,060,120,180}.png`.
-  - **Acceptance**: Files exist and display correctly in README; link validator passes with no placeholders.
-- **Non-existent explosion script links**: Resolved by creating `scripts/analyze_explosion_realism.py` and `scripts/fix_explosion_realism.py`; added `projects/explosion-test/renders/README.md` linking to both.
-  - **Task**: Integrate these scripts into validation flow and document usage in `projects/explosion-test/HOW_TO_RUN_VALIDATION.md`.
-  - **Acceptance**: Validation doc includes steps; scripts runnable in Blender and via mocked tests.
-- **Link audit status**: 10 remaining broken links are all redirect stubs under `docs/plans/finished/` and one `AGENTS.md` taxonomy warning.
-  - **Decision**: Ignore finished-plan stubs for now; optionally update redirects to `../references/*` later.
-  - **Task**: Decide whether to move `AGENTS.md` to `docs/agents/AGENTS.md` or add to validator allowlist.
-- **Test environment issues**: Some suites require system deps or Blender context.
-  - `services/logo-to-3d/*`: missing `freetype` -> add `freetype-py` to dev install docs or gate tests with `@pytest.mark.skipif` when module missing.
-  - `scripts/save_explosion_test.py`: uses `bpy.ops.wm.*` at import time -> guard with `if __name__ == "__main__":` or refactor into functions; mark tests to skip when Blender not present.
-  - **Acceptance**: Full test collection succeeds locally; Blender-required tests are appropriately skipped or pass in Blender env.
+### Open Items (Current)
+- [ ] Generate actual renders to replace placeholders in `projects/dadosfera/renders/...`.
+  - Targets: `projects/dadosfera/renders/stills/render_output.png`, `projects/dadosfera/renders/frames/dadosfera_frame_{001,060,120,180}.png`
+- [ ] Integrate and document usage of realism scripts in `projects/explosion-test/HOW_TO_RUN_VALIDATION.md`.
+  - Scripts: `scripts/analyze_explosion_realism.py`, `scripts/fix_explosion_realism.py`
+- [ ] Decide on taxonomy for `AGENTS.md` (move to `docs/agents/` or add to validator allowlist).
+- [ ] Address test environment gaps:
+  - Add `freetype-py` to dev docs or gate with `@pytest.mark.skipif` in service tests
+  - Guard `scripts/save_explosion_test.py` from importing `bpy.ops` at import time
 
 ---
 
