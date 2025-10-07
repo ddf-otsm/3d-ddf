@@ -95,7 +95,7 @@ ffmpeg -i explosion_test_alpha_20251002_1080p_showcase.mp4 \
 ## 🔗 Related Documentation
 
 - [📖 Explosion Creation Guide](../../../docs/guides/explosion-creation.md)
-- [🎯 Active Development Plans](../../../docs/plans/active/explosion-realism-improvements.md)
+- [🎯 Active Development Plans](../../../docs/plans/active/explosion-development-roadmap.md)
 - [🧪 Test Results](../../../docs/project/test_pass_summary_20251002.md)
 - [⚙️ Configuration Guide](../../../scripts/explosions/config.py)
 - [📋 Project Overview](../README.md)

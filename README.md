@@ -141,7 +141,7 @@ pytest tests/explosions/ -v  # 100% pass rate
 
 ### 📚 Documentation
 - [💥 Explosion System Guide](scripts/explosions/README.md) - Complete technical overview
-- [🎯 Active Development Plans](docs/plans/active/explosion-realism-improvements.md)
+- [🎯 Active Development Plans](docs/plans/active/explosion-development-roadmap.md)
 - [🧪 Test Results](docs/project/test_pass_summary_20251002.md)
 
 **Status**: ✅ Production Ready | **Test Coverage**: 100% | **Integration**: Complete

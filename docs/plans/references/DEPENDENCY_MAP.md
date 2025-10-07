@@ -43,7 +43,7 @@
   - `docs/plans/active/logo-to-3d-service.md` (receives explosions in name pipeline)
 
 **Consolidates** (archived on 2025-10-03):
-  - `docs/plans/active/explosion-realism-improvements.md` → See consolidation section
+  - `docs/plans/active/explosion-development-roadmap.md` → Consolidated realism content
   - `docs/plans/active/explosion-content-consolidation.md` → See consolidation section
 
 **Related**:
@@ -74,7 +74,7 @@
 **Status**: 📦 Archived → `docs/plans/finished/advanced-features.md`  
 **Date**: 2025-10-03
 
-### `docs/plans/active/explosion-realism-improvements.md`
+### `docs/plans/active/explosion-development-roadmap.md`
 **Status**: 📦 Consolidated → `explosion-development-roadmap.md` (section: Realism Improvements)  
 **Date**: 2025-10-03
 
@@ -240,7 +240,7 @@
 
 **Before**:
 - `docs/plans/active/explosion-development-roadmap.md` (primary)
-- `docs/plans/active/explosion-realism-improvements.md` (separate)
+- `docs/plans/active/explosion-development-roadmap.md` (single source)
 - `docs/plans/active/explosion-content-consolidation.md` (separate)
 
 **After**:
@@ -250,7 +250,7 @@
   - Subsection: "Content Consolidation" (from explosion-content-consolidation.md)
 
 **Redirect Stubs Created**:
-- `explosion-realism-improvements.md` → points to roadmap
+- `explosion-realism-improvements.md` → consolidated into roadmap
 - `explosion-content-consolidation.md` → points to roadmap
 
 ---

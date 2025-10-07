@@ -137,7 +137,7 @@ pytest tests/integration/ -v -m "not blender"
 - [🧪 Testing Guide](../../tests/README.md)
 
 ### Development
-- [🎯 Active Plans](../../docs/plans/active/explosion-realism-improvements.md)
+- [🎯 Active Plans](../../docs/plans/active/explosion-development-roadmap.md)
 - [📋 Test Results](../../docs/project/test_pass_summary_20251002.md)
 - [🏗️ Architecture Overview](../../docs/project/overview.md)
 

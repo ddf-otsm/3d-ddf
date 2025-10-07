@@ -4,7 +4,7 @@
 **Priority**: Medium-High  
 **Current Phase**: Research & Planning  
 **Last Updated**: October 2, 2025  
-**Dependencies**: Complements explosion-development-roadmap.md and explosion-realism-improvements.md
+**Dependencies**: Complements explosion-development-roadmap.md (realism section consolidated)
 
 ---
 
@@ -666,7 +666,7 @@ void main() {
 - **Advisors**: VFX Team, Rendering Team
 - **Related Plans**: 
   - [Explosion Development Roadmap](../active/explosion-development-roadmap.md)
-  - [Explosion Realism Improvements](../active/explosion-realism-improvements.md)
+  - [Explosion Development Roadmap](../active/explosion-development-roadmap.md)
 - **Documentation**: [Explosion Creation Guide](../../guides/explosion-creation.md)
 
 ---

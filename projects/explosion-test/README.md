@@ -62,7 +62,7 @@ explosion-test/
 
 ## Related Documentation
 - [📋 Explosion System Overview](../../scripts/explosions/README.md)
-- [🎯 Active Plans](../../docs/plans/active/explosion-realism-improvements.md)
+- [🎯 Active Plans](../../docs/plans/active/explosion-development-roadmap.md)
 - [🧪 Test Results](../../docs/project/test_pass_summary_20251002.md)
 - [📖 Explosion Creation Guide](../../docs/guides/explosion-creation.md)
 - [⚙️ Configuration Guide](../../scripts/explosions/config.py)
