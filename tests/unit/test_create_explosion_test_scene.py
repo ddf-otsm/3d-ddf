@@ -205,6 +205,14 @@ class TestCreateExplosionTestScene(unittest.TestCase):
             # Mock material creation
             ground_material = MockMaterial("Ground_Material")
             mock_bpy.data.materials.new = Mock(return_value=ground_material)
+            
+            # Mock node creation for material
+            def mock_new(node_type):
+                return MockNode(node_type)
+            
+            ground_material.node_tree.nodes.new = mock_new
+            ground_material.node_tree.nodes.clear = Mock()
+            ground_material.node_tree.links.new = Mock()
 
             # Call the function
             create_explosion_test_scene.setup_scene()

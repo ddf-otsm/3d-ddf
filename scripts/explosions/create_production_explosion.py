@@ -80,8 +80,12 @@ except ImportError:
 import random
 from typing import List, Optional
 
-from .config import ExplosionConfig, QualityPreset
-from .materials import ExplosionMaterials
+try:
+    from .config import ExplosionConfig, QualityPreset
+    from .materials import ExplosionMaterials
+except ImportError:
+    from config import ExplosionConfig, QualityPreset
+    from materials import ExplosionMaterials
 
 
 def clear_existing_explosions():
