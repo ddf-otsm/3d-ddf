@@ -201,8 +201,8 @@ def find_blender_installations() -> List[Dict[str, str]]:
     # Common installation paths by OS
     search_paths = {
         'Darwin': [  # macOS
-            '${BLENDER}',
-            '/Applications/Blender*.app',
+            '${BLENDER}',  # preferred env var
+            # Example-only legacy default: '/Applications/Blender*.app',
             str(Path.home() / 'Applications' / 'Blender.app'),
             '/usr/local/bin/blender',
         ],
@@ -214,8 +214,9 @@ def find_blender_installations() -> List[Dict[str, str]]:
             str(Path.home() / 'Applications' / 'blender'),
         ],
         'Windows': [
-            'C:\\Program Files\\Blender Foundation\\Blender*\\blender.exe',
-            'C:\\Program Files (x86)\\Blender Foundation\\Blender*\\blender.exe',
+            # Example-only Windows patterns; prefer $Env:BLENDER or PATH
+            'C:/Program Files/Blender Foundation/Blender*/blender.exe',
+            'C:/Program Files (x86)/Blender Foundation/Blender*/blender.exe',
             str(Path.home() / 'AppData' / 'Local' / 'Programs' / 'Blender Foundation'),
         ]
     }
