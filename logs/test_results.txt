@@ -804,7 +804,7 @@ tests/unit/test_utility_scripts.py:46: in test_generate_report_output_file_creat
 E   AssertionError: 0 not greater than 0
 ----------------------------- Captured stdout call -----------------------------
 
-✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmp9bvkv1vm/reports/20251007_075442_validation_report.txt
+✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmpryxwgra0/reports/20251007_075700_validation_report.txt
 ______________ TestMockBlenderOperations.test_mock_bpy_structure _______________
 tests/unit/test_utility_scripts.py:108: in test_mock_bpy_structure
     from explosions.create_production_explosion import MockBpy
@@ -925,4 +925,4 @@ FAILED tests/unit/test_utility_scripts.py::TestMockBlenderOperations::test_mock_
 FAILED tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_file_size_boundary_values
 FAILED tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_invalid_schema
 FAILED tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_valid_schema
-======================== 68 failed, 170 passed in 0.99s ========================
+======================== 68 failed, 170 passed in 0.84s ========================
