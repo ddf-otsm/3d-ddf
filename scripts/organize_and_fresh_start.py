@@ -10,7 +10,16 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 
-PROJECT_ROOT = Path("/Users/luismartins/local_repos/3d-ddf")
+# Dynamic project root detection: use env var if provided; otherwise walk up to repo root
+def _detect_project_root() -> Path:
+    start = Path(__file__).resolve()
+    for parent in [start] + list(start.parents):
+        if (parent / ".git").exists():
+            return parent
+    # Fallback: assume this file lives under <repo>/scripts/
+    return Path(__file__).resolve().parent.parent
+
+PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", str(_detect_project_root())))
 
 def organize_dadosfera():
     """Archive old dadosfera files"""

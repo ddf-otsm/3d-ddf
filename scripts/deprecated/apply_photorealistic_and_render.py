@@ -4,23 +4,32 @@ Apply Photorealistic Materials and Render
 Called by render_photorealistic.sh with the scene already loaded
 """
 
-import bpy
+import bpy  # type: ignore
 import sys
 import time
 from pathlib import Path
+import os
+from typing import List
 
-# ============================================================================
+# =============================================================================
 # CONFIGURATION
-# ============================================================================
+# =============================================================================
 
 # Get engine from command line
 ENGINE = sys.argv[-1] if len(sys.argv) > 1 and sys.argv[-1] in ['EEVEE', 'CYCLES', 'BLENDER_EEVEE_NEXT'] else 'CYCLES'
 
-PROJECT_ROOT = Path("/Users/luismartins/local_repos/3d-ddf")
+def _detect_project_root() -> Path:
+    start = Path(__file__).resolve()
+    for parent in [start] + list(start.parents):
+        if (parent / ".git").exists():
+            return parent
+    return Path(__file__).resolve().parent.parent
+
+PROJECT_ROOT = Path(os.environ.get("PROJECT_ROOT", str(_detect_project_root())))
 FRAMES_DIR = PROJECT_ROOT / "projects/dadosfera/renders/frames_cycles_photorealistic"
 FRAMES_DIR.mkdir(parents=True, exist_ok=True)
 
-scene = bpy.context.scene
+scene = bpy.context.scene  # type: ignore
 
 print("\n" + "="*70)
 print(f"DADOSFERA PHOTOREALISTIC RENDER - {ENGINE}")
@@ -32,11 +41,11 @@ for obj in list(scene.objects)[:10]:  # Show first 10
 if len(scene.objects) > 10:
     print(f"      ... and {len(scene.objects) - 10} more")
 
-# ============================================================================
+# =============================================================================
 # APPLY PHOTOREALISTIC MATERIALS
-# ============================================================================
+# =============================================================================
 
-print("\n🎨 APPLYING PHOTOREALISTIC MATERIALS")
+print("\n�� APPLYING PHOTOREALISTIC MATERIALS")
 print("-"*70)
 
 # Switch to CYCLES
@@ -72,9 +81,9 @@ print(f"   Samples: {scene.cycles.samples}")
 print(f"   Denoising: OpenImageDenoise")
 print(f"   Adaptive sampling: Enabled")
 
-# ============================================================================
+# =============================================================================
 # MATERIAL APPLICATION
-# ============================================================================
+# =============================================================================
 
 material_count = {'floor': 0, 'text': 0, 'explosions': 0}
 
@@ -180,9 +189,9 @@ print(f"   - Floor: {material_count['floor']}")
 print(f"   - Text: {material_count['text']}")
 print(f"   - Explosions: {material_count['explosions']}")
 
-# ============================================================================
+# =============================================================================
 # RENDER SETTINGS
-# ============================================================================
+# =============================================================================
 
 print("\n⚙️  RENDER SETTINGS")
 print("-"*70)
@@ -211,12 +220,12 @@ print(f"   Frames: {scene.frame_start}-{scene.frame_end}")
 print(f"   Color: {scene.view_settings.view_transform} / {scene.view_settings.look}")
 print(f"   Output: {FRAMES_DIR}")
 
-# ============================================================================
+# =============================================================================
 # RENDER PROGRESS TRACKING
-# ============================================================================
+# =============================================================================
 
 render_start_time = None
-frame_times = []
+frame_times: List[float] = []
 
 @bpy.app.handlers.persistent
 def on_render_init(dummy):
@@ -282,9 +291,9 @@ bpy.app.handlers.render_post.append(on_frame_post)
 bpy.app.handlers.render_complete.append(on_render_complete)
 bpy.app.handlers.render_cancel.append(on_render_cancel)
 
-# ============================================================================
+# =============================================================================
 # START RENDER
-# ============================================================================
+# =============================================================================
 
 print("\n" + "="*70)
 print("▶️  STARTING BACKGROUND RENDER")
