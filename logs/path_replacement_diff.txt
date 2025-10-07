@@ -1,3 +1,4 @@
  logs/logo_service_commit_confirmation.txt | 2 +-
+ logs/logo_service_unit_tests.txt          | 2 +-
  logs/path_replacement_diff.txt            | 3 ---
- 2 files changed, 1 insertion(+), 4 deletions(-)
+ 3 files changed, 2 insertions(+), 5 deletions(-)
