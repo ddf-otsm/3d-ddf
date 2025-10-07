@@ -97,3 +97,4 @@ projects/
 ---
 
 **Note**: All infrastructure and testing components are ready. The project is now prepared for the actual 3D scene creation and explosion implementation phase.
+

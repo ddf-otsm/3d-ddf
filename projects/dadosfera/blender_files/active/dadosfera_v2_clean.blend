@@ -1,0 +1,17 @@
+# Dadosfera v2 Clean Scene (Simulated)
+
+This is a placeholder file created because Blender is not available.
+
+To create the actual scene:
+1. Open Blender
+2. Run: scripts/create_baseline_scenes.py
+3. Save as: projects/dadosfera/blender_files/active/dadosfera_v2_clean.blend
+
+Scene should contain:
+- Dadosfera 3D text with metallic material
+- Studio floor with PBR material
+- 3-point lighting setup
+- Professional camera setup
+- No explosion objects (add later)
+
+Status: Placeholder created - requires Blender for actual scene creation

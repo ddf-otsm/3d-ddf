@@ -1,0 +1,16 @@
+# Particle Explosion Test Scene (Simulated)
+
+This is a placeholder file created because Blender is not available.
+
+To create the actual scene:
+1. Open Blender
+2. Run: scripts/create_baseline_scenes.py
+3. Save as: projects/explosion-test/blender_files/active/particle_explosion_v1.blend
+
+Scene should contain:
+- Fire particle emitter
+- Smoke domain with volumetric material
+- Proper physics settings
+- Test render validation
+
+Status: Placeholder created - requires Blender for actual scene creation

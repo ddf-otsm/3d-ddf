@@ -1,0 +1,23 @@
+{
+  "timestamp": "20251007_1831",
+  "project": "explosion-test",
+  "project_description": "Explosion effects validation and testing",
+  "blend_file": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files/archived/geometry_tests/hybrid_quick_test.blend",
+  "quality_preset": "final",
+  "quality_settings": {
+    "samples": 512,
+    "resolution_x": 1920,
+    "resolution_y": 1080,
+    "denoising": true,
+    "description": "Maximum quality for final delivery"
+  },
+  "frame_range": [
+    1,
+    120
+  ],
+  "frame_count": 120,
+  "duration_seconds": 5.0,
+  "fps": 24,
+  "output_directory": "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/20251007_1831_production_explosion-test_final",
+  "render_start": "2025-10-07T18:31:04.976758"
+}

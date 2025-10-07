@@ -8,7 +8,7 @@ scene = bpy.context.scene
 # Configure Cycles with Metal GPU
 scene.render.engine = 'CYCLES'
 scene.cycles.device = 'GPU'
-scene.cycles.samples = 128
+scene.cycles.samples = 512
 
 # Enable Metal GPU on macOS
 preferences = bpy.context.preferences
@@ -34,25 +34,25 @@ if True:
 
 # Output settings
 scene.render.image_settings.file_format = 'PNG'
-scene.render.filepath = '${PROJECT_ROOT}/projects/dadosfera/renders/20251004_2025_production_fixed_scene_test/frame_'
+scene.render.filepath = '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251007_1830_production_dadosfera_final/frame_'
 scene.render.use_file_extension = True
 
 # Frame range
 scene.frame_start = 1
-scene.frame_end = 24
+scene.frame_end = 240
 
 # Print settings
 print("\n" + "=" * 70)
 print("🎬 PRODUCTION RENDER: DADOSFERA")
 print("=" * 70)
 print(f"Engine: CYCLES (Metal GPU)")
-print(f"Samples: 128")
+print(f"Samples: 512")
 print(f"Resolution: 1920x1080")
 print(f"Frames: {scene.frame_start}-{scene.frame_end} ({scene.frame_end - scene.frame_start + 1} frames)")
 print(f"FPS: {scene.render.fps}")
 print(f"Duration: {(scene.frame_end - scene.frame_start + 1) / scene.render.fps:.2f}s")
 print(f"Denoising: {scene.cycles.use_denoising}")
-print(f"Output: ${PROJECT_ROOT}/projects/dadosfera/renders/20251004_2025_production_fixed_scene_test")
+print(f"Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251007_1830_production_dadosfera_final")
 print("=" * 70 + "\n")
 
 # Render

@@ -44,7 +44,7 @@ import time
 # Project configurations
 PROJECTS = {
     'dadosfera': {
-        'blend_file': 'projects/dadosfera/blender_files/dadosfera_animation_v1_improved_explosions.blend',
+        'blend_file': 'projects/dadosfera/blender_files/archived/v1_original/dadosfera_animation_v1_improved_explosions.blend',
         'renders_dir': 'projects/dadosfera/renders',
         'exports_dir': 'projects/dadosfera/exports',
         'default_frames': (1, 240),
@@ -52,7 +52,7 @@ PROJECTS = {
         'description': 'Main 3D logo animation with improved particle explosions'
     },
     'explosion-test': {
-        'blend_file': 'projects/explosion-test/blender_files/hybrid_quick_test.blend',
+        'blend_file': 'projects/explosion-test/blender_files/archived/geometry_tests/hybrid_quick_test.blend',
         'renders_dir': 'projects/explosion-test/renders',
         'exports_dir': 'projects/explosion-test/exports',
         'default_frames': (1, 120),
@@ -101,16 +101,22 @@ def get_project_root():
 
 def get_blender_executable():
     """Get the Blender executable path."""
-    # macOS default
-    blender_path = Path("${BLENDER}/Contents/MacOS/Blender")
-    if blender_path.exists():
-        return str(blender_path)
-    
+    # macOS default locations
+    possible_paths = [
+        Path("/Applications/Blender.app/Contents/MacOS/Blender"),
+        Path("${BLENDER}/Contents/MacOS/Blender"),
+        Path("~/Applications/Blender.app/Contents/MacOS/Blender").expanduser()
+    ]
+
+    for blender_path in possible_paths:
+        if blender_path.exists():
+            return str(blender_path)
+
     # Check PATH
     result = subprocess.run(['which', 'blender'], capture_output=True, text=True)
     if result.returncode == 0:
         return result.stdout.strip()
-    
+
     raise FileNotFoundError("Blender executable not found. Install Blender or add to PATH.")
 
 
@@ -292,8 +298,9 @@ Examples:
     # Pre-render validation: Check scene for test elements
     print("🔍 Running pre-render validation...")
     validation_script = project_root / 'scripts/clean_production_scene.py'
+    blender_exe = get_blender_executable()
     validation_cmd = [
-        '${BLENDER}/Contents/MacOS/Blender',
+        blender_exe,
         str(blend_file),
         '--background',
         '--python', str(validation_script),
