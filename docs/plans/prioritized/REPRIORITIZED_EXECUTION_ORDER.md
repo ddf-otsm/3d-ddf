@@ -16,6 +16,12 @@ Minimal front-end to trigger Blender render of Dadosfera with realistic explosio
   - Scope: replace `/Users/luismartins` hardcodes; use `${PROJECT_ROOT}` detection and env overrides
   - Status: done for core scripts (`render_service.py`, `monitor_render.sh`, `encode_frames_to_video.sh`, `integrate_with_main_project.py`, `workflows/run.sh`)
 
+- DEP_2h_HIGH_move_non_plans_to_references
+  - importance: 5, urgency: 5, complexity: 1
+  - effort.ai_hours: 0.5, effort.human_hours: 1.5
+  - Move reference docs out of `docs/plans/active/` to `docs/plans/references/` and update links
+  - Status: complete
+
 - CB_4h_CRITICAL_frontend_trigger_route
   - importance: 5, urgency: 5, complexity: 2
   - effort.ai_hours: 1.0, effort.human_hours: 2.0
@@ -68,11 +74,12 @@ Minimal front-end to trigger Blender render of Dadosfera with realistic explosio
 
 ## Ordered Execution List
 1. QW_2h_HIGH_fix_path_hardcoding (done)
-2. CB_4h_CRITICAL_frontend_trigger_route (PoC in place)
-3. SEC_1h_HIGH_portability_env
-4. HI_8h_HIGH_text_to_3d_extrusion_pipeline
-5. TD_6h_MED_render_service_api_bridge
-6. DEP_3h_HIGH_explosion_preset_integration
-7. MED_2d_MED_job_queue_and_status
-8. LOW_4h_LOW_docs_cleanup_and_links
-9. EXP_1d_LOW_webgl_preview
+2. DEP_2h_HIGH_move_non_plans_to_references (done)
+3. CB_4h_CRITICAL_frontend_trigger_route (PoC in place)
+4. SEC_1h_HIGH_portability_env
+5. HI_8h_HIGH_text_to_3d_extrusion_pipeline
+6. TD_6h_MED_render_service_api_bridge
+7. DEP_3h_HIGH_explosion_preset_integration
+8. MED_2d_MED_job_queue_and_status
+9. LOW_4h_LOW_docs_cleanup_and_links
+10. EXP_1d_LOW_webgl_preview
