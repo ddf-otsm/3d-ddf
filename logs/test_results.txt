@@ -804,7 +804,7 @@ tests/unit/test_utility_scripts.py:46: in test_generate_report_output_file_creat
 E   AssertionError: 0 not greater than 0
 ----------------------------- Captured stdout call -----------------------------
 
-✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmpg4_2po_v/reports/20251007_020448_validation_report.txt
+✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmpodsskd_j/reports/20251007_022406_validation_report.txt
 ______________ TestMockBlenderOperations.test_mock_bpy_structure _______________
 tests/unit/test_utility_scripts.py:108: in test_mock_bpy_structure
     from explosions.create_production_explosion import MockBpy
