@@ -151,7 +151,7 @@ def validate_documentation(repo_root: Path) -> List[ValidationError]:
         path_parts = rel_path.parts
 
         # Skip venv directories and other excluded paths
-        if any(part in ["venv", ".venv", "env", ".env", "node_modules", "__pycache__"]
+        if any(part in ["venv", ".venv", "env", ".env", "node_modules", "__pycache__", ".cursor"]
                for part in path_parts):
             continue
 
