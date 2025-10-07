@@ -1,0 +1,4 @@
+tests/unit/test_text_renderer.py
+tests/unit/test_font_manager.py
+tests/integration/test_text_processing.py
+tests/e2e/test_text_to_3d_pipeline.py

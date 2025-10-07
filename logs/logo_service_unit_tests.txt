@@ -1,0 +1,64 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0
+rootdir: /Users/luismartins/local_repos/3d-ddf/services/logo-to-3d
+configfile: pyproject.toml
+plugins: langsmith-0.4.6, anyio-4.9.0, asyncio-1.1.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 0 items / 4 errors
+
+==================================== ERRORS ====================================
+____________ ERROR collecting tests/e2e/test_text_to_3d_pipeline.py ____________
+ImportError while importing test module '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/tests/e2e/test_text_to_3d_pipeline.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/e2e/test_text_to_3d_pipeline.py:7: in <module>
+    from src.text_processor.renderer import TextRenderer
+src/text_processor/renderer.py:7: in <module>
+    import freetype
+E   ModuleNotFoundError: No module named 'freetype'
+__________ ERROR collecting tests/integration/test_text_processing.py __________
+ImportError while importing test module '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/tests/integration/test_text_processing.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/integration/test_text_processing.py:7: in <module>
+    from src.text_processor.renderer import TextRenderer
+src/text_processor/renderer.py:7: in <module>
+    import freetype
+E   ModuleNotFoundError: No module named 'freetype'
+_______________ ERROR collecting tests/unit/test_font_manager.py _______________
+ImportError while importing test module '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/tests/unit/test_font_manager.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_font_manager.py:7: in <module>
+    from src.text_processor.font_manager import FontManager, FontMetrics, get_font_manager
+src/text_processor/font_manager.py:7: in <module>
+    import freetype
+E   ModuleNotFoundError: No module named 'freetype'
+______________ ERROR collecting tests/unit/test_text_renderer.py _______________
+ImportError while importing test module '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/tests/unit/test_text_renderer.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.11/3.11.13/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_text_renderer.py:7: in <module>
+    from src.text_processor.renderer import TextRenderer, get_text_renderer
+src/text_processor/renderer.py:7: in <module>
+    import freetype
+E   ModuleNotFoundError: No module named 'freetype'
+=========================== short test summary info ============================
+ERROR tests/e2e/test_text_to_3d_pipeline.py
+ERROR tests/integration/test_text_processing.py
+ERROR tests/unit/test_font_manager.py
+ERROR tests/unit/test_text_renderer.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!!
+============================== 4 errors in 0.11s ===============================

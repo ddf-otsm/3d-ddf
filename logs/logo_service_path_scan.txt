@@ -1,0 +1,191 @@
+./logo_to_3d.egg-info/PKG-INFO:136:export BLENDER_EXECUTABLE="/Applications/Blender.app/Contents/MacOS/Blender"
+./README.md:93:export BLENDER_EXECUTABLE="/Applications/Blender.app/Contents/MacOS/Blender"
+./.venv/bin/pyftsubset:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/dotenv:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/tifffile:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/ttx:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/pip3:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/imageio_remove_bin:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/activate.fish:36:set -gx VIRTUAL_ENV /Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv
+./.venv/bin/fonttools:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/mako-render:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/websockets:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/f2py:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/pip:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/imageio_download_bin:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/pip3.11:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/tiff2fsspec:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/uvicorn:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/alembic:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/activate:38:VIRTUAL_ENV=/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv
+./.venv/bin/celery:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/normalizer:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/tiffcomment:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/pyftmerge:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/watchfiles:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/lsm2bin:1:#!/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv/bin/python3.11
+./.venv/bin/activate.csh:11:setenv VIRTUAL_ENV /Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv
+./.venv/pyvenv.cfg:5:command = /opt/homebrew/opt/python@3.11/bin/python3.11 -m venv /Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/.venv
+./.venv/lib/python3.11/site-packages/networkx/algorithms/link_analysis/hits_alg.py:71:       http://www.cs.cornell.edu/home/kleinber/auth.pdf.
+./.venv/lib/python3.11/site-packages/networkx/algorithms/link_analysis/hits_alg.py:208:       http://www.cs.cornell.edu/home/kleinber/auth.pdf.
+./.venv/lib/python3.11/site-packages/networkx/algorithms/link_analysis/hits_alg.py:300:       http://www.cs.cornell.edu/home/kleinber/auth.pdf.
+./.venv/lib/python3.11/site-packages/networkx/algorithms/link_prediction.py:164:           http://www.cs.cornell.edu/home/kleinber/link-pred.pdf
+./.venv/lib/python3.11/site-packages/networkx/algorithms/link_prediction.py:231:           http://www.cs.cornell.edu/home/kleinber/link-pred.pdf
+./.venv/lib/python3.11/site-packages/networkx/algorithms/link_prediction.py:401:           http://www.cs.cornell.edu/home/kleinber/link-pred.pdf
+./.venv/lib/python3.11/site-packages/charset_normalizer-3.4.3.dist-info/METADATA:179:    "path": "/home/default/projects/charset_normalizer/data/sample.1.fr.srt",
+Binary file ./.venv/lib/python3.11/site-packages/markupsafe/_speedups.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/cv2/.dylibs/librav1e.0.6.3.dylib matches
+Binary file ./.venv/lib/python3.11/site-packages/cv2/cv2.abi3.so matches
+Binary file ./.venv/lib/python3.11/site-packages/fontTools/qu2cu/qu2cu.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/fontTools/misc/bezierTools.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/fontTools/cu2qu/cu2qu.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/fontTools/varLib/iup.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/fontTools/pens/momentsPen.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/fontTools/feaLib/lexer.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/websockets/speedups.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/sqlalchemy/cyextension/immutabledict.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/sqlalchemy/cyextension/collections.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/sqlalchemy/cyextension/resultproxy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/sqlalchemy/cyextension/util.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/sqlalchemy/cyextension/processors.cpython-311-darwin.so matches
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py:49:                "ca": "/home/gord/client-ssl/ca.pem",
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py:50:                "cert": "/home/gord/client-ssl/client-cert.pem",
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py:51:                "key": "/home/gord/client-ssl/client-key.pem"
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py:63:        "?ssl_ca=/home/gord/client-ssl/ca.pem"
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py:64:        "&ssl_cert=/home/gord/client-ssl/client-cert.pem"
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/mysqldb.py:65:        "&ssl_key=/home/gord/client-ssl/client-key.pem"
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/pymysql.py:38:        "?ssl_ca=/home/gord/client-ssl/ca.pem"
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/pymysql.py:39:        "&ssl_cert=/home/gord/client-ssl/client-cert.pem"
+./.venv/lib/python3.11/site-packages/sqlalchemy/dialects/mysql/pymysql.py:40:        "&ssl_key=/home/gord/client-ssl/client-key.pem"
+./.venv/lib/python3.11/site-packages/numpy/distutils/misc_util.py:396:    ``/home/username``
+./.venv/lib/python3.11/site-packages/numpy/distutils/tests/test_npy_pkg_config.py:61:        out.vars['prefix'] = '/Users/david'
+./.venv/lib/python3.11/site-packages/numpy/distutils/tests/test_npy_pkg_config.py:62:        assert_(out.cflags() == '-I/Users/david/include')
+Binary file ./.venv/lib/python3.11/site-packages/numpy/.dylibs/libgcc_s.1.1.dylib matches
+./.venv/lib/python3.11/site-packages/numpy/lib/utils.py:1070:    >>> np.safe_eval('open("/home/user/.ssh/id_dsa").read()')
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:14:- local files : '/home/guido/src/local/data.txt'
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:232:        >>> ds = np.DataSource('/home/guido')
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:236:        '/home/guido/www.google.com/index.html'
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:239:        >>> ds.open('/home/guido/foobar.txt')
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:240:        <open file '/home/guido.foobar.txt', mode 'r' at 0x91d4430>
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:241:        >>> ds.abspath('/home/guido/foobar.txt')
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:242:        '/tmp/.../home/guido/foobar.txt'
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:403:        #        path = /home/guido/datafile.txt
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:404:        #        destpath = /home/alex/
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:406:        #        upath == '/home/alex/home/guido/datafile.txt'
+./.venv/lib/python3.11/site-packages/numpy/lib/_datasource.py:564:        >>> repos = np.lib._datasource.Repository('/home/user/data/dir/')
+Binary file ./.venv/lib/python3.11/site-packages/httptools/parser/parser.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/httptools/parser/url_parser.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_imagingmorph.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_imagingtk.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_imagingmath.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_imaging.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_webp.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_imagingft.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/PIL/_imagingcms.cpython-311-darwin.so matches
+./.venv/lib/python3.11/site-packages/pip/_internal/utils/urls.py:42:    # On Windows, urlsplit parses the path as something like "/C:/Users/foo".
+Binary file ./.venv/lib/python3.11/site-packages/uvloop/loop.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/yaml/_yaml.cpython-311-darwin.so matches
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:109:    '/Users/trentm/Library/Application Support/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:113:    '/Users/trentm/Library/Caches/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:115:    '/Users/trentm/Library/Logs/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:117:    '/Users/trentm/Documents'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:119:    '/Users/trentm/Downloads'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:121:    '/Users/trentm/Pictures'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:123:    '/Users/trentm/Movies'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:125:    '/Users/trentm/Music'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:127:    '/Users/trentm/Desktop'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:129:    '/Users/trentm/Library/Caches/TemporaryItems/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:169:    '/home/trentm/.local/share/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:175:    '/home/trentm/.cache/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:177:    '/home/trentm/.local/state/SuperApp/log'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:179:    '/home/trentm/.config/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:181:    '/home/trentm/Documents'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:183:    '/home/trentm/Downloads'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:185:    '/home/trentm/Pictures'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:187:    '/home/trentm/Videos'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:189:    '/home/trentm/Music'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:191:    '/home/trentm/Desktop'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:243:    '/Users/trentm/Library/Application Support/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:247:    '/Users/trentm/Library/Caches/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:249:    '/Users/trentm/Library/Logs/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:251:    '/Users/trentm/Documents'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:253:    '/Users/trentm/Downloads'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:255:    '/Users/trentm/Pictures'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:257:    '/Users/trentm/Movies'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:259:    '/Users/trentm/Music'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:261:    '/Users/trentm/Desktop'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:263:    '/Users/trentm/Library/Caches/TemporaryItems/SuperApp'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:275:    '/Users/trentm/Library/Application Support/SuperApp/1.0'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:279:    '/Users/trentm/Library/Caches/SuperApp/1.0'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:281:    '/Users/trentm/Library/Logs/SuperApp/1.0'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:283:    '/Users/trentm/Documents'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:285:    '/Users/trentm/Downloads'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:287:    '/Users/trentm/Pictures'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:289:    '/Users/trentm/Movies'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:291:    '/Users/trentm/Music'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:293:    '/Users/trentm/Desktop'
+./.venv/lib/python3.11/site-packages/setuptools/_vendor/platformdirs-4.2.2.dist-info/METADATA:295:    '/Users/trentm/Library/Caches/TemporaryItems/SuperApp/1.0'
+./.venv/lib/python3.11/site-packages/setuptools/_distutils/tests/test_util.py:68:        assert convert_path('/home/to/my/stuff') == expected
+./.venv/lib/python3.11/site-packages/setuptools/_distutils/tests/test_util.py:69:        assert convert_path(pathlib.Path('/home/to/my/stuff')) == expected
+./.venv/lib/python3.11/site-packages/setuptools/_distutils/tests/test_util.py:144:            '/home/distutils',
+./.venv/lib/python3.11/site-packages/setuptools/_distutils/tests/test_util.py:149:            assert os.environ['HOME'] == '/home/distutils'
+./.venv/lib/python3.11/site-packages/setuptools/_distutils/tests/test_dir_util.py:100:            assert ensure_relative('/home/foo') == 'home/foo'
+./.venv/lib/python3.11/site-packages/setuptools/_distutils/compilers/C/unix.py:383:          /Applications/Xcode.app/Contents/Developer/Platforms/
+Binary file ./.venv/lib/python3.11/site-packages/psycopg2/_psycopg.cpython-311-darwin.so matches
+./.venv/lib/python3.11/site-packages/scipy/integrate/_quadpack_py.py:406:       lib = ctypes.CDLL('/home/.../testlib.*') #use absolute path
+Binary file ./.venv/lib/python3.11/site-packages/skimage/filters/_multiotsu.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/filters/rank/percentile_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/filters/rank/generic_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/filters/rank/bilateral_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_unwrap_3d.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_nl_means_denoising.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_rolling_ball_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_unwrap_1d.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_unwrap_2d.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_inpaint.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/restoration/_denoise_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/util/_remap.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/segmentation/_quickshift_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/segmentation/_watershed_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/segmentation/_slic.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/segmentation/_felzenszwalb_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/io/_plugins/_histograms.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/io/_plugins/_colormixer.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/graph/_ncut_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/graph/heap.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/graph/_mcp.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/.dylibs/libomp.dylib matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/measure/_moments_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/measure/_marching_cubes_lewiner_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/measure/_find_contours_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/measure/_ccomp.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/measure/_pnpoly.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/_shared/interpolation.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/_shared/fast_exp.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/morphology/_skeletonize_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/morphology/_grayreconstruct.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/morphology/_max_tree.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/morphology/_convex_hull.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/morphology/_extrema_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/morphology/_flood_fill_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/_cascade.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/corner_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/_canny_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/_haar.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/censure_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/_hoghistogram.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/_sift.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/orb_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/feature/_texture.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/transform/_radon_transform.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/transform/_hough_transform.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/transform/_warps_cy.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/skimage/draw/_draw.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/pydantic_core/_pydantic_core.cpython-311-darwin.so matches
+Binary file ./.venv/lib/python3.11/site-packages/watchfiles/_rust_notify.cpython-311-darwin.so matches
+./.venv/lib/python3.11/site-packages/watchfiles/filters.py:35:    Full paths to ignore, e.g. `/home/users/.cache` or `C:\\Users\\user\\.cache`.
+./services/logo-to-3d/.venv/bin/activate.bat:29:@for %%i in ("/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/services/logo-to-3d/.venv") do @set "VIRTUAL_ENV=%%~fi"
+./services/logo-to-3d/.venv/bin/activate.fish:82:set -gx VIRTUAL_ENV '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/services/logo-to-3d/.venv'
+./services/logo-to-3d/.venv/bin/activate:81:VIRTUAL_ENV='/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/services/logo-to-3d/.venv'
+./services/logo-to-3d/.venv/bin/activate.nu:71:    let virtual_env = '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/services/logo-to-3d/.venv'
+./services/logo-to-3d/.venv/bin/activate.csh:34:setenv VIRTUAL_ENV '/Users/luismartins/local_repos/3d-ddf/services/logo-to-3d/services/logo-to-3d/.venv'
