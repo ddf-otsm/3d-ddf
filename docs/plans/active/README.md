@@ -10,7 +10,7 @@ This directory contains active plans for key ongoing projects. Consolidations ha
 - Explosion Development Roadmap → [explosion-development-roadmap.md](explosion-development-roadmap.md)
 - Logo to 3D Service → [logo-to-3d-service.md](logo-to-3d-service.md)
 - Quality, Testing, and Validation (Consolidated) → [QUALITY_AND_VALIDATION_CONSOLIDATED.md](QUALITY_AND_VALIDATION_CONSOLIDATED.md)
-- Execution and Operations (Consolidated) → [EXECUTION_AND_OPERATIONS_CONSOLIDATED.md](EXECUTION_AND_OPERATIONS_CONSOLIDATED.md)
+- Execution and Operations (Consolidated) → [../references/EXECUTION_AND_OPERATIONS_CONSOLIDATED.md](../references/EXECUTION_AND_OPERATIONS_CONSOLIDATED.md)
 
 ### **Reference (Completed, for context)**
 - Jenkins Automation (Consolidated) → [../references/JENKINS_AUTOMATION_CONSOLIDATED.md](../references/JENKINS_AUTOMATION_CONSOLIDATED.md)
