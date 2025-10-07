@@ -47,6 +47,8 @@ Develop realistic explosion effects for the 3D-DDF project using a hybrid approa
 ### 🔗 References
 - Comparison set: `projects/dadosfera/analysis/render_comparison_20251004/`
 - Organize script: `scripts/organize_and_fresh_start.py`
+- Realism analysis: `scripts/analyze_explosion_realism.py`
+- Realism fixes & helpers: `scripts/fix_explosion_realism.py`
 
 ### ✅ Completed Actions
 1. ✅ Created comprehensive hybrid explosion implementation plan
