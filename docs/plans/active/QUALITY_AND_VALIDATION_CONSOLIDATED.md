@@ -427,7 +427,7 @@ Originally from: `docs/plans/active/VALIDATION_REMEDIATION_PLAN.completed`
 ### Patterns to Eliminate
 - Absolute user paths: `/Users/<name>/...`, `/home/<name>/...`
 - Application paths: `${BLENDER}/...`
-- Windows drive paths: `C:\\Program Files\\...`
+- Windows drive paths (example-only): `${PROGRAM_FILES}\Blender Foundation\...`
 - Repo-specific absolute roots: `${PROJECT_ROOT}` or similar
 
 ### Replacement Strategy

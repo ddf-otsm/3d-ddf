@@ -34,8 +34,9 @@ def find_blender_installations() -> List[Dict[str, str]]:
             str(Path.home() / 'Applications' / 'blender'),
         ],
         'Windows': [
-            'C:\\Program Files\\Blender Foundation\\Blender*\\blender.exe',
-            'C:\\Program Files (x86)\\Blender Foundation\\Blender*\\blender.exe',
+            # Example patterns; prefer $Env:BLENDER or PATH on Windows
+            str(Path(os.environ.get('PROGRAMFILES', 'C:/Program Files')) / 'Blender Foundation' / 'Blender*' / 'blender.exe'),
+            str(Path(os.environ.get('ProgramFiles(x86)', 'C:/Program Files (x86)')) / 'Blender Foundation' / 'Blender*' / 'blender.exe'),
             str(Path.home() / 'AppData' / 'Local' / 'Programs' / 'Blender Foundation'),
         ]
     }

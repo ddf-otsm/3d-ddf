@@ -40,7 +40,7 @@ which blender
 # Check common installation locations
 ls -la /usr/bin/blender
 ls -la /usr/local/bin/blender
-ls -la ~/Applications/blender*
+ls -la "${HOME}/Applications/blender*"  # example-only
 
 # Check version
 blender --version
@@ -55,8 +55,11 @@ Open PowerShell and run:
 Get-Command blender -ErrorAction SilentlyContinue
 
 # Check common installation locations
-Test-Path "C:\Program Files\Blender Foundation\Blender*"
-Test-Path "C:\Program Files (x86)\Blender Foundation\Blender*"
+# Example paths; prefer $Env:BLENDER or add to PATH via installer
+$programFiles = $Env:PROGRAMFILES
+$programFilesX86 = $Env:ProgramFiles(x86)
+Test-Path "$programFiles\Blender Foundation\Blender*"
+Test-Path "$programFilesX86\Blender Foundation\Blender*"
 
 # Check version
 blender --version
@@ -126,7 +129,7 @@ blender --version
 
 # If not in PATH, add manually:
 # System Properties > Environment Variables > Path > Edit
-# Add: C:\Program Files\Blender Foundation\Blender 4.x
+# Add (example-only): $Env:PROGRAMFILES\Blender Foundation\Blender 4.x
 ```
 
 ### Option 2: Package Managers
