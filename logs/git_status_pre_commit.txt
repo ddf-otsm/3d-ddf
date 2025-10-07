@@ -1,4 +1,5 @@
  M logs/git_status_pre_commit.txt
 M  logs/integration_tests_result.txt
 M  logs/logo_service_commit_confirmation.txt
+M  logs/logo_service_unit_tests.txt
 M  logs/path_replacement_diff.txt
