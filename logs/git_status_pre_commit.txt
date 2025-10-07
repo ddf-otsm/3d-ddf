@@ -1,8 +1,4 @@
-M  data/logos/AGENTS.md
-M  docs/plans/prioritized/REPRIORITIZED_EXECUTION_ORDER.md
-M  logs/explosion_tests_result.txt
  M logs/git_status_pre_commit.txt
+M  logs/integration_tests_result.txt
+M  logs/logo_service_commit_confirmation.txt
 M  logs/path_replacement_diff.txt
-M  renders/20251003_1018_explosions/AGENTS.md
-M  renders/AGENTS.md
-M  scripts/validate_paths.py
