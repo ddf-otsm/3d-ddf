@@ -1,6 +1,6 @@
 # Archived Geometry Test Files
 
-**Archived on**: 2025-10-06 19:04  
+**Archived on**: 2025-10-07 15:34  
 **Reason**: These files used simple geometry, not real particle systems
 
 ## Files Archived

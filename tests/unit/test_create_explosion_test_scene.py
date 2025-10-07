@@ -25,6 +25,9 @@ class MockColorRamp:
 
     def new(self, position):
         return MockColorRampElement()
+    
+    def __getitem__(self, index):
+        return self.elements[index]
 
 class MockNodeInputs:
     def __init__(self):
@@ -42,13 +45,35 @@ class MockNodeInputs:
         self.Detail.default_value = 0.0
         self.Roughness = Mock()
         self.Roughness.default_value = 0.0
+    
+    def __getitem__(self, key):
+        # Return a mock input for any key
+        mock_input = Mock()
+        mock_input.default_value = 0.0
+        return mock_input
+
+class MockNodeOutputs:
+    def __init__(self):
+        self.Generated = Mock()
+        self.Color = Mock()
+        self.Fac = Mock()
+        self.Vector = Mock()
+    
+    def __getitem__(self, key):
+        # Return a mock output for any key
+        mock_output = Mock()
+        return mock_output
 
 class MockNode:
     def __init__(self, node_type='UNKNOWN'):
         self.type = node_type
         self.location = (0, 0)
         self.inputs = MockNodeInputs()
-        self.outputs = [Mock()]
+        # Create proper outputs with subscripting support
+        self.outputs = MockNodeOutputs()
+        # Add color_ramp support for ColorRamp nodes
+        if node_type == 'VALTORGB' or node_type == 'ShaderNodeValToRGB':
+            self.color_ramp = MockColorRamp()
 
 class MockNodeTree:
     def __init__(self):
@@ -69,6 +94,10 @@ class MockObject:
         self.scale = (1, 1, 1)
         self.data = Mock()
         self.data.materials = []
+    
+    def keyframe_insert(self, data_path, frame):
+        # Mock keyframe insertion
+        pass
 
 class MockBpy:
     class context:
@@ -259,6 +288,22 @@ class TestCreateExplosionTestScene(unittest.TestCase):
             mock_bpy.data.materials.new = Mock(side_effect=[
                 fire_material, debris_material, smoke_material
             ])
+            
+            # Mock node creation for materials
+            def mock_new(node_type):
+                return MockNode(node_type)
+            
+            fire_material.node_tree.nodes.new = mock_new
+            fire_material.node_tree.nodes.clear = Mock()
+            fire_material.node_tree.links.new = Mock()
+            
+            debris_material.node_tree.nodes.new = mock_new
+            debris_material.node_tree.nodes.clear = Mock()
+            debris_material.node_tree.links.new = Mock()
+            
+            smoke_material.node_tree.nodes.new = mock_new
+            smoke_material.node_tree.nodes.clear = Mock()
+            smoke_material.node_tree.links.new = Mock()
 
             # Call the function
             objects = create_explosion_test_scene.create_explosion_objects(

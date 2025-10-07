@@ -1,6 +1,6 @@
 """Mock Blender Python API (bpy) for testing without Blender."""
 from typing import Any, Dict, List
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, Mock
 
 
 class MockVector:
@@ -284,7 +284,10 @@ class MockData:
         self.meshes._object_type = 'MESH'
         # Ensure meshes.new exists like Blender
         def meshes_new(name):
-            return self.meshes.new(name)
+            mock_mesh = Mock()
+            mock_mesh.name = name
+            mock_mesh.type = 'MESH'
+            return mock_mesh
         self.meshes.new = meshes_new
         self.scenes = MockCollection()
         self.cameras = MockCollection()
