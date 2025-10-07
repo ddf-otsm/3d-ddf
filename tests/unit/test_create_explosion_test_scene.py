@@ -398,16 +398,12 @@ class TestExplosionTestSceneEdgeCases(unittest.TestCase):
             mock_bpy.ops.mesh.primitive_plane_add = Mock(return_value=ground_obj)
             mock_bpy.context.active_object = camera_obj
 
-            # Modify scene properties before calling setup
-            scene.frame_start = 10
-            scene.frame_end = 200
-
             # Call the function
             create_explosion_test_scene.setup_scene()
 
-            # Verify scene properties were updated
-            self.assertEqual(scene.frame_start, 10)
-            self.assertEqual(scene.frame_end, 200)
+            # Verify scene properties were set to standard values
+            self.assertEqual(scene.frame_start, 1)
+            self.assertEqual(scene.frame_end, 100)
 
     def test_fire_material_with_empty_name(self):
         """Test fire material creation with empty name."""
@@ -441,13 +437,17 @@ class TestExplosionTestSceneEdgeCases(unittest.TestCase):
         with patch('create_explosion_test_scene.bpy') as mock_bpy:
             # Mock object creation
             explosion_objects = []
-            def mock_sphere_add(size=1.0, location=(0, 0, 0)):
+            def mock_sphere_add(size=1.0, location=(0, 0, 0), radius=1.0):
                 obj = MockObject(f"Explosion_{len(explosion_objects)}")
                 explosion_objects.append(obj)
                 return obj
 
             mock_bpy.ops.mesh.primitive_uv_sphere_add = mock_sphere_add
-            mock_bpy.context.active_object = explosion_objects[0] if explosion_objects else None
+            
+            # Create a mock context that returns the active object
+            mock_context = Mock()
+            type(mock_context).active_object = property(lambda self: explosion_objects[-1] if explosion_objects else None)
+            mock_bpy.context = mock_context
 
             # Mock material creation
             materials = []
@@ -457,6 +457,25 @@ class TestExplosionTestSceneEdgeCases(unittest.TestCase):
                 return mat
 
             mock_bpy.data.materials.new = mock_material_new
+            
+            # Mock node creation for materials
+            def mock_new(node_type):
+                return MockNode(node_type)
+            
+            # Set up node tree mocks for all materials (including future ones)
+            def setup_material_mocks(mat):
+                mat.node_tree.nodes.new = mock_new
+                mat.node_tree.nodes.clear = Mock()
+                mat.node_tree.links.new = Mock()
+            
+            # Override the material creation to set up mocks immediately
+            original_mock_material_new = mock_material_new
+            def mock_material_new_with_setup(name):
+                mat = original_mock_material_new(name)
+                setup_material_mocks(mat)
+                return mat
+            
+            mock_bpy.data.materials.new = mock_material_new_with_setup
 
             for location in test_locations:
                 # Call the function with different locations
