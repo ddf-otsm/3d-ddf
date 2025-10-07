@@ -270,7 +270,7 @@ def create_lighting_report():
 
 def save_enhanced_scene():
     """Save the lighting-enhanced scene"""
-    output_path = "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files/ultra_realistic_explosion_enhanced.blend"
+    output_path = "${PROJECT_ROOT}/projects/explosion-test/blender_files/ultra_realistic_explosion_enhanced.blend"
     bpy.ops.wm.save_as_mainfile(filepath=output_path)
     print(f"💾 Saved enhanced scene: {output_path}")
     return output_path

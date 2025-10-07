@@ -17,7 +17,7 @@ print("="*70)
 print("LOADING DADOSFERA SCENE")
 print("="*70)
 
-blend_file = "/Users/luismartins/local_repos/3d-ddf/Untitled.blend"
+blend_file = "${PROJECT_ROOT}/Untitled.blend"
 if not os.path.exists(blend_file):
     print(f"❌ ERROR: Scene file not found: {blend_file}")
     sys.exit(1)
@@ -42,7 +42,7 @@ for obj in scene.objects:
 ENGINE = sys.argv[-1] if len(sys.argv) > 1 and sys.argv[-1] in ['EEVEE', 'CYCLES', 'BLENDER_EEVEE_NEXT'] else 'CYCLES'
 
 # Output configuration
-PROJECT_ROOT = Path("/Users/luismartins/local_repos/3d-ddf")
+PROJECT_ROOT = Path("${PROJECT_ROOT}")
 FRAMES_DIR = PROJECT_ROOT / "projects/dadosfera/renders/frames_cycles_photorealistic"
 FRAMES_DIR.mkdir(parents=True, exist_ok=True)
 

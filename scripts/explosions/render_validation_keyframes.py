@@ -37,7 +37,7 @@ def get_blender_executable() -> str:
     blender_paths = [
         os.environ.get('BLENDER'),
         os.environ.get('BLENDER_EXECUTABLE'),
-        '/Applications/Blender.app/Contents/MacOS/Blender',  # macOS default
+        '${BLENDER}/Contents/MacOS/Blender',  # macOS default
         '/usr/bin/blender',  # Linux default
         'blender'  # In PATH
     ]

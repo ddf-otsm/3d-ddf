@@ -24,8 +24,8 @@ blender --version    # All platforms
 ```
 ✅ Found 1 Blender installation(s):
 [1] Blender 4.0.2
-    Path:       /Applications/Blender.app
-    Executable: /Applications/Blender.app/Contents/MacOS/Blender
+    Path:       ${BLENDER}
+    Executable: ${BLENDER}/Contents/MacOS/Blender
 ```
 
 **If Blender is not found**, follow the **[Blender Installation Guide](./blender-installation.md)** first.

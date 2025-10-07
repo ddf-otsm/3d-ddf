@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   deployer-jenkins-cicd:
-    image: jenkins/jenkins:lts-jdk17
+    build:
+      context: ..
+      dockerfile: docker/jenkins-controller.Dockerfile
     container_name: deployer-jenkins-cicd
     ports:
       - "${JENKINS_PORT:-8080}:8080"

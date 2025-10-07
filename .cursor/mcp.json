@@ -4,7 +4,7 @@
             "command": "uv",
             "args": [
                 "--directory",
-                "/Users/luismartins/local_repos/3d-ddf/blender-mcp",
+                "${PROJECT_ROOT}/blender-mcp",
                 "run",
                 "blender-mcp"
             ]

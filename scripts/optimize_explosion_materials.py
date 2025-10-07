@@ -207,7 +207,7 @@ def create_performance_report():
 
 def save_optimized_scene():
     """Save the optimized scene"""
-    output_path = "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files/ultra_realistic_explosion_optimized.blend"
+    output_path = "${PROJECT_ROOT}/projects/explosion-test/blender_files/ultra_realistic_explosion_optimized.blend"
     bpy.ops.wm.save_as_mainfile(filepath=output_path)
     print(f"💾 Saved optimized scene: {output_path}")
     return output_path

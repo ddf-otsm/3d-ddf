@@ -23,12 +23,12 @@
 3. **If installed but not in PATH:**
    ```bash
    # Option A: Add to PATH (macOS)
-   echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
+   echo 'export PATH="${BLENDER}/Contents/MacOS:$PATH"' >> ~/.zshrc
    source ~/.zshrc
    
    # Option B: Use .env file (recommended for cross-platform)
    cp .env.example .env
-   # Edit .env and set: BLENDER=/Applications/Blender.app/Contents/MacOS/Blender
+   # Edit .env and set: BLENDER=${BLENDER}/Contents/MacOS/Blender
    
    # Verify
    which blender
@@ -94,7 +94,7 @@
    ```
 
 2. **Common path patterns:**
-   - macOS: `BLENDER=/Applications/Blender.app/Contents/MacOS/Blender`
+   - macOS: `BLENDER=${BLENDER}/Contents/MacOS/Blender`
    - Linux: `BLENDER=/usr/bin/blender` or `/opt/blender/blender`
    - Windows: `BLENDER="C:\Program Files\Blender Foundation\Blender\blender.exe"`
 

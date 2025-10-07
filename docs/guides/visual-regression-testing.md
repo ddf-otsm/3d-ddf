@@ -300,6 +300,6 @@ Planned improvements:
 ## Related Documentation
 
 - [Rendering Guide](rendering-guide.md)
-- [Quality Presets](../project/quality-presets.md)
-- [Taxonomy Standards](../project/taxonomy.md)
+- [Quality Presets](../project/README.md)
+- [Taxonomy Standards](../project/TAXONOMY.md)
 - [CI/CD Pipeline](../setup/jenkins.md)

@@ -6,6 +6,7 @@ Run this after user approves the fresh start approach
 
 import os
 import shutil
+import argparse
 from pathlib import Path
 from datetime import datetime
 
@@ -194,17 +195,23 @@ def main():
     print("=" * 60)
     
     # Check if we should proceed
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("-y", "--yes", action="store_true", help="Run non-interactively and proceed without prompt")
+    args, _ = parser.parse_known_args()
+
     print("\n⚠️  This will:")
     print("  1. Move all current active files to archived/")
     print("  2. Clear active/ folders")
     print("  3. Create placeholder files for new baseline scenes")
     print("\nOriginal files will be preserved in archived/ folders.")
-    
-    response = input("\n🤔 Proceed? (yes/no): ").strip().lower()
-    
-    if response not in ['yes', 'y']:
-        print("\n❌ Cancelled. No changes made.")
-        return
+
+    if not args.yes and os.environ.get("ORGANIZE_ASSUME_YES", "").lower() not in ("1", "true", "yes", "y"):
+        response = input("\n🤔 Proceed? (yes/no): ").strip().lower()
+        if response not in ['yes', 'y']:
+            print("\n❌ Cancelled. No changes made.")
+            return
+    else:
+        print("\n✅ Proceeding non-interactively")
     
     # Execute organization
     organize_dadosfera()

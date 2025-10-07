@@ -95,7 +95,7 @@ pytestmark = pytest.mark.blender  # Mark all tests in module
 ## 📚 New Documentation Created
 
 ### 1. **Blender Installation & Detection Guide**
-**File**: `docs/setup/blender-installation.md`  
+**File**: `../setup/blender-installation.md`  
 **Contents**:
 - ✅ Check if Blender is installed
 - ✅ Install Blender (all platforms)
@@ -121,8 +121,8 @@ python scripts/detect_blender.py
 ```
 ✅ Found 1 Blender installation(s):
 [1] Blender 4.5.3
-    Path:       /Applications/Blender.app
-    Executable: /Applications/Blender.app/Contents/MacOS/Blender
+    Path:       ${BLENDER}
+    Executable: ${BLENDER}/Contents/MacOS/Blender
     Source:     System
 ```
 
@@ -171,9 +171,9 @@ pytest tests/ -v -m "blender"
 ### Main Files
 - ✅ `README.md` - Added Blender detection quick start
 - ✅ `QUICKSTART.md` - Added Blender installation check
-- ✅ `docs/setup/installation.md` - Added prerequisite verification
-- ✅ `docs/setup/troubleshooting.md` - Added "Blender Not Found" section
-- ✅ `docs/setup/blender-installation.md` - **NEW** comprehensive guide
+- ✅ `../setup/installation.md` - Added prerequisite verification
+- ✅ `../setup/troubleshooting.md` - Added "Blender Not Found" section
+- ✅ `../setup/blender-installation.md` - **NEW** comprehensive guide
 
 ---
 
@@ -187,10 +187,10 @@ pytest tests/ -v -m "blender"
    python scripts/detect_blender.py
    ```
 
-2. ✅ If not installed, see [Blender Installation Guide](docs/setup/blender-installation.md)
+2. ✅ If not installed, see [Blender Installation Guide](../setup/blender-installation.md)
 
 **After Blender Installation**:
-3. ✅ Install Blender MCP Addon (see [Installation Guide](docs/setup/installation.md))
+3. ✅ Install Blender MCP Addon (see [Installation Guide](../setup/installation.md))
 4. ✅ Start MCP Server in Blender
 5. ✅ Restart Cursor
 6. ✅ Look for 🔨 icon
@@ -213,7 +213,7 @@ pytest tests/ -v -m "not blender"
 python scripts/detect_blender.py
 
 # If found, add to PATH (macOS)
-echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
+echo 'export PATH="${BLENDER}/Contents/MacOS:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -325,9 +325,9 @@ Use pytest markers to separate tests:
 ## 📞 Support
 
 **Documentation**:
-- [Installation Guide](docs/setup/installation.md)
-- [Blender Installation](docs/setup/blender-installation.md)
-- [Troubleshooting](docs/setup/troubleshooting.md)
+- [Installation Guide](../setup/installation.md)
+- [Blender Installation](../setup/blender-installation.md)
+- [Troubleshooting](../setup/troubleshooting.md)
 - [Quick Start](QUICKSTART.md)
 
 **Commands**:

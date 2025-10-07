@@ -83,19 +83,19 @@ The enhancement process created a complete pipeline of optimized scenes:
 cd ${PROJECT_ROOT}
 
 # 1. Create base ultra-realistic explosion
-/Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/fix_explosion_realism.py
+${BLENDER}/Contents/MacOS/Blender --background --python scripts/fix_explosion_realism.py
 
 # 2. Optimize materials for performance
-/Applications/Blender.app/Contents/MacOS/Blender ultra_realistic_explosion.blend --background --python scripts/optimize_explosion_materials.py
+${BLENDER}/Contents/MacOS/Blender ultra_realistic_explosion.blend --background --python scripts/optimize_explosion_materials.py
 
 # 3. Refine animations for realism
-/Applications/Blender.app/Contents/MacOS/Blender ultra_realistic_explosion_optimized.blend --background --python scripts/refine_explosion_animations.py
+${BLENDER}/Contents/MacOS/Blender ultra_realistic_explosion_optimized.blend --background --python scripts/refine_explosion_animations.py
 
 # 4. Enhance lighting dramatically
-/Applications/Blender.app/Contents/MacOS/Blender ultra_realistic_explosion_refined.blend --background --python scripts/adjust_explosion_lighting.py
+${BLENDER}/Contents/MacOS/Blender ultra_realistic_explosion_refined.blend --background --python scripts/adjust_explosion_lighting.py
 
 # 5. Add cinematic camera work
-/Applications/Blender.app/Contents/MacOS/Blender ultra_realistic_explosion_enhanced.blend --background --python scripts/add_explosion_camera_work.py
+${BLENDER}/Contents/MacOS/Blender ultra_realistic_explosion_enhanced.blend --background --python scripts/add_explosion_camera_work.py
 ```
 
 ## 📈 **Realism Improvements Achieved**

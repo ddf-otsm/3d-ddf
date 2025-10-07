@@ -121,15 +121,21 @@ def create_explosion_sequence(config: ExplosionConfig) -> List[str]:
     print(f"🎨 Quality: {config.quality_preset.value}")
 
     # Performance optimizations
-    # Get camera for distance calculations
-    camera = bpy.context.scene.camera
-    if camera:
-        # Calculate average distance from camera path (simplified)
-        avg_distance = sum(config.location) / 3.0  # Proxy for distance
-        lod_factor = max(0.5, 1.0 - (avg_distance / 10.0))  # Reduce beyond 10 units
-        config.fire_particle_count = int(config.fire_particle_count * lod_factor)
-        config.debris_particle_count = int(config.debris_particle_count * lod_factor)
-        print(f"🔧 LOD applied: {lod_factor:.2f} (particles reduced for distance)")
+    # Get camera for distance calculations (robust for mocked contexts)
+    lod_factor = 1.0
+    try:
+        camera = getattr(getattr(bpy.context, 'scene', object()), 'camera', None)
+        if camera is not None:
+            # Calculate average distance from camera path (simplified)
+            avg_distance = sum(config.location) / 3.0  # Proxy for distance
+            lod_factor = max(0.5, 1.0 - (avg_distance / 10.0))  # Reduce beyond 10 units
+            config.fire_particle_count = int(config.fire_particle_count * lod_factor)
+            config.debris_particle_count = int(config.debris_particle_count * lod_factor)
+            print(f"🔧 LOD applied: {lod_factor:.2f} (particles reduced for distance)")
+        else:
+            print("🔧 No camera in scene; skipping LOD adjustments")
+    except Exception:
+        print("🔧 Environment lacks scene camera; using default LOD")
 
     # Initialize materials manager
     if lod_factor < 0.8:

@@ -48,13 +48,13 @@ Note: Versions below should be validated in the dev environment before upgrading
 
 ### macOS (Blender and FFmpeg)
 ```bash
-/Applications/Blender.app/Contents/MacOS/Blender --version
+${BLENDER}/Contents/MacOS/Blender --version
 ffmpeg -version | head -1
 ```
 
 If Blender is not on PATH, consider exporting it for convenience:
 ```bash
-export BLENDER="/Applications/Blender.app/Contents/MacOS/Blender"
+export BLENDER="${BLENDER}/Contents/MacOS/Blender"
 "$BLENDER" --version
 ```
 

@@ -665,8 +665,8 @@ void main() {
 - **Lead Developer**: Physics Simulation Team
 - **Advisors**: VFX Team, Rendering Team
 - **Related Plans**: 
-  - [Explosion Development Roadmap](./explosion-development-roadmap.md)
-  - [Explosion Realism Improvements](./explosion-realism-improvements.md)
+  - [Explosion Development Roadmap](../active/explosion-development-roadmap.md)
+  - [Explosion Realism Improvements](../active/explosion-realism-improvements.md)
 - **Documentation**: [Explosion Creation Guide](../../guides/explosion-creation.md)
 
 ---

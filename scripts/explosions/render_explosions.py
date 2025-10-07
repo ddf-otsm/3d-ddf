@@ -74,7 +74,7 @@ def render_explosions(
         # Outside: subprocess call
         from subprocess import run
         blender_cmd = [
-            "/Applications/Blender.app/Contents/MacOS/Blender",
+            "${BLENDER}/Contents/MacOS/Blender",
             blend_file,
             "--background",
             "-o", f"{output_dir}/####",

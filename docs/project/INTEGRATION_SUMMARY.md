@@ -281,27 +281,27 @@ platform_manager = CustomPlatformManager()
 ## 📚 **Documentation**
 
 ### **Phase 1 Documentation**
-- [Quick Start Guide](phase1/docs/phase1-quickstart.md)
-- [Implementation Summary](phase1/docs/phase1-implementation-summary.md)
-- [README](phase1/README.md)
+- [Quick Start Guide](../../integrations/phase1/README.md)
+- [Implementation Summary](phase1-implementation-summary.md)
+- [README](../../integrations/phase1/README.md)
 
 ### **Phase 2 Documentation**
-- [README](phase2/README.md)
-- [Configuration Guide](phase2/config/platforms.json)
+- [README](../../integrations/phase2/README.md)
+- [Configuration Guide](../../integrations/phase2/README.md)
 
 ### **Phase 3 Documentation**
-- [README](phase3/README.md)
-- [Configuration Guide](phase3/config/platforms.json)
+- [README](../../integrations/phase3/README.md)
+- [Configuration Guide](../../integrations/phase3/README.md)
 
 ### **Phase 4 Documentation**
-- [README](phase4/README.md)
-- [Configuration Guide](phase4/config/platforms.json)
+- [README](../../integrations/phase4/README.md)
+- [Configuration Guide](../../integrations/phase4/README.md)
 
 ### **Advanced Features Documentation**
-- [README](advanced/README.md)
-- [AI Recommendations](advanced/src/ai_asset_recommender.py)
-- [Batch Processing](advanced/src/batch_processor.py)
-- [Custom Platforms](advanced/src/custom_platform_integration.py)
+- [README](../../integrations/advanced/README.md)
+- [AI Recommendations](../../integrations/advanced/src/README.md)
+- [Batch Processing](../../integrations/advanced/src/README.md)
+- [Custom Platforms](../../integrations/advanced/src/README.md)
 
 ### **System Documentation**
 - [3D Asset Platforms Roadmap](../../docs/guides/3d-asset-platforms-roadmap.md)

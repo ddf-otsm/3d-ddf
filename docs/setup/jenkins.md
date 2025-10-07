@@ -329,7 +329,7 @@ For feature branch validation:
 3. Configure:
    - **Name**: `gpu-agent-mid-gpu`
    - **Type**: Permanent Agent
-   - **Remote root directory**: `/home/ubuntu/jenkins-agent`
+   - **Remote root directory**: `${HOME}/jenkins-agent`
    - **Labels**: `gpu gpu-a10 ml-inference cuda nvidia`
    - **Usage**: "Only build jobs with label expressions matching this node"
    - **Launch method**: "Launch agents via SSH"
@@ -547,7 +547,7 @@ environment {
 sudo -u jenkins ssh -i ~/.ssh/gpu-agent-key ubuntu@<GPU_IP> "hostname"
 
 # Check Jenkins agent logs on GPU instance
-tail -f /home/ubuntu/jenkins-agent/remoting/logs/remoting.log
+tail -f ${HOME}/jenkins-agent/remoting/logs/remoting.log
 ```
 
 **Error**: `Agent doesn't stop after idle`
@@ -889,7 +889,7 @@ environment {
 - [Two-Instance Architecture Guide](../infrastructure/jenkins-two-instance-architecture.md)
 - [Jenkins Deployment Strategy](../deployment/JENKINS_DEPLOYMENT_STRATEGY.md)
 - [Local Jenkins Overview](../infrastructure/local-jenkins-overview.md)
-- [Terraform GPU Production Module](../../../terraform/oci/gpu-production)
+- [Terraform GPU Production Module](See terraform documentation for OCI GPU production setup)
 
 ---
 

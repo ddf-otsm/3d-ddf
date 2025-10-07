@@ -102,7 +102,7 @@ def get_project_root():
 def get_blender_executable():
     """Get the Blender executable path."""
     # macOS default
-    blender_path = Path("/Applications/Blender.app/Contents/MacOS/Blender")
+    blender_path = Path("${BLENDER}/Contents/MacOS/Blender")
     if blender_path.exists():
         return str(blender_path)
     
@@ -293,7 +293,7 @@ Examples:
     print("🔍 Running pre-render validation...")
     validation_script = project_root / 'scripts/clean_production_scene.py'
     validation_cmd = [
-        '/Applications/Blender.app/Contents/MacOS/Blender',
+        '${BLENDER}/Contents/MacOS/Blender',
         str(blend_file),
         '--background',
         '--python', str(validation_script),

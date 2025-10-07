@@ -21,9 +21,16 @@ requests>=2.25.0
 beautifulsoup4>=4.9.0
 lxml>=4.6.0
 
+# Logo-to-3D service dependencies
+freetype-py>=2.3.0
+Pillow>=9.0.0
+
 # Advanced features (optional)
 scikit-learn>=1.0.0
 joblib>=1.0.0
+
+# JSON schema validation
+jsonschema>=4.0.0
 
 # Note: Blender's 'bpy' module is not available via pip
 # It's only accessible within Blender's Python environment

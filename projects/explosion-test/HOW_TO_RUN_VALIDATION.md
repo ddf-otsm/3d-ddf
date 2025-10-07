@@ -21,14 +21,14 @@ Renders 10 strategic keyframes to validate:
 # Check Blender is in PATH or set environment variable
 $BLENDER --version
 # OR
-/Applications/Blender.app/Contents/MacOS/Blender --version
+${BLENDER}/Contents/MacOS/Blender --version
 ```
 
 **Set environment variable** (recommended):
 ```bash
-export BLENDER="/Applications/Blender.app/Contents/MacOS/Blender"
+export BLENDER="${BLENDER}/Contents/MacOS/Blender"
 # OR add to .env file
-echo 'BLENDER=/Applications/Blender.app/Contents/MacOS/Blender' >> .env
+echo 'BLENDER=${BLENDER}/Contents/MacOS/Blender' >> .env
 ```
 
 ---
@@ -36,7 +36,7 @@ echo 'BLENDER=/Applications/Blender.app/Contents/MacOS/Blender' >> .env
 ### Step 2: Run Validation Renders
 
 ```bash
-cd ${PROJECT_ROOT}  # e.g., ~/local_repos/3d-ddf
+cd ${PROJECT_ROOT}  # e.g., ~${PROJECT_ROOT}3d-ddf
 
 # Option A: Render all 10 validation keyframes (recommended)
 python3 scripts/explosions/render_validation_keyframes.py \
@@ -160,19 +160,19 @@ See: `projects/explosion-test/VALIDATION_CHECKLIST.md`
 ### "Blender not found"
 ```bash
 # Option 1: Set BLENDER environment variable
-export BLENDER="/Applications/Blender.app/Contents/MacOS/Blender"
+export BLENDER="${BLENDER}/Contents/MacOS/Blender"
 
 # Option 2: Add to PATH
-export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"
+export PATH="${BLENDER}/Contents/MacOS:$PATH"
 
 # Option 3: Use .env file
-echo 'BLENDER=/Applications/Blender.app/Contents/MacOS/Blender' >> .env
+echo 'BLENDER=${BLENDER}/Contents/MacOS/Blender' >> .env
 ```
 
 ### "Blend file not found"
 ```bash
 # Make sure you're in project root
-cd ~/local_repos/3d-ddf
+cd ~${PROJECT_ROOT}3d-ddf
 
 # Check if blend file exists
 ls -lh projects/explosion-test/blender_files/*.blend

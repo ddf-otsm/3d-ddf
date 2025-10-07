@@ -3,7 +3,7 @@
   "project": "dadosfera",
   "exports": [
     {
-      "filename": "dadosfera_stable_20251001_1080p_final.mp4",
+      "filename": "20251001_0000_dadosfera_stable_1080p_final.mp4",
       "version": "stable",
       "date": "2025-10-01",
       "time": "21:21",
@@ -30,7 +30,7 @@
       "status": "published"
     },
     {
-      "filename": "dadosfera_alpha_20251001_1080p_preview.mp4",
+      "filename": "20251001_0000_dadosfera_alpha_1080p_preview.mp4",
       "version": "alpha",
       "date": "2025-10-01",
       "time": "14:09",
@@ -55,7 +55,7 @@
       "status": "archived"
     },
     {
-      "filename": "dadosfera_alpha_20250930_1080p_partial_8sec.mp4",
+      "filename": "20250930_0000_dadosfera_alpha_1080p_partial_8sec.mp4",
       "version": "alpha",
       "date": "2025-09-30",
       "resolution": "1920x1080",

@@ -131,7 +131,7 @@ Complete remaining high and medium priority items from the Top 10 execution plan
 **What Was Done**:
 - Added new Jenkins pipeline stage: "Check Hardcoded Paths"
 - Created `scripts/validate_paths.py` (203 lines)
-  - Detects hardcoded `/Users/`, `/Applications/`, `C:\`, `/home/`, `/local_repos/` paths
+  - Detects hardcoded `/Users/`, `/Applications/`, `C:\`, `/home/`, `${PROJECT_ROOT}` paths
   - Skips cache directories (.mypy_cache, .pytest_cache, etc.)
   - Skips example files (.env.example, AGENTS.md)
   - Checks markdown, Python, shell, JSON, YAML files
@@ -145,7 +145,7 @@ Complete remaining high and medium priority items from the Top 10 execution plan
 - macOS app paths: `/Applications/...`
 - Windows drive paths: `C:\...`
 - Linux user paths: `/home/[username]`
-- Specific directory names: `/local_repos/`
+- Specific directory names: `${PROJECT_ROOT}`
 
 **Impact**:
 - Prevents regressions on path portability

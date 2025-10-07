@@ -31,7 +31,7 @@ To add a new guide:
 4. Test the guide with actual users
 
 ## Related Documentation
-- [Project Overview](../../project/overview.md)
+- [Project Overview](../project/README.md)
 - [Setup Instructions](../setup/installation.md)
 - [Troubleshooting Guide](../setup/troubleshooting.md)
 

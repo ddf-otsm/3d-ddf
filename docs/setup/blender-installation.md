@@ -21,14 +21,14 @@ Open Terminal and run:
 which blender
 
 # Method 2: Check default application path
-ls -la /Applications/Blender.app
+ls -la ${BLENDER}
 
 # Method 3: Search for Blender in all common locations
 find /Applications -name "Blender.app" -maxdepth 2 2>/dev/null
 ```
 
 **Expected Output:**
-- ✅ If installed: Shows path like `/Applications/Blender.app`
+- ✅ If installed: Shows path like `${BLENDER}`
 - ❌ If not installed: No output or "command not found"
 
 ### Linux
@@ -83,10 +83,10 @@ blender --version
 # 1. Double-click the .dmg file
 # 2. Drag Blender.app to Applications folder
 # 3. Verify installation
-open /Applications/Blender.app
+open ${BLENDER}
 
 # Optional: Add to PATH for command line access
-echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
+echo 'export PATH="${BLENDER}/Contents/MacOS:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 
 # Verify
@@ -198,7 +198,7 @@ def find_blender_installations() -> List[Dict[str, str]]:
     # Common installation paths by OS
     search_paths = {
         'Darwin': [  # macOS
-            '/Applications/Blender.app',
+            '${BLENDER}',
             '/Applications/Blender*.app',
             str(Path.home() / 'Applications' / 'Blender.app'),
             '/usr/local/bin/blender',
@@ -377,7 +377,7 @@ python scripts/detect_blender.py
 # 1. Ensure Blender is installed (see above)
 
 # 2. Open Blender
-open /Applications/Blender.app  # macOS
+open ${BLENDER}  # macOS
 # Or: blender  # Linux/Windows
 
 # 3. In Blender:
@@ -407,7 +407,7 @@ BLENDER_PORT=9876
 BLENDER_TIMEOUT=30
 
 # Optional: Explicit Blender executable path
-BLENDER_EXECUTABLE=/Applications/Blender.app/Contents/MacOS/Blender
+BLENDER_EXECUTABLE=${BLENDER}/Contents/MacOS/Blender
 ```
 
 ---
@@ -449,10 +449,10 @@ python tests/integration/test_blender_mcp_cube.py
 **Fix (macOS)**:
 ```bash
 # Find Blender
-ls /Applications/Blender.app
+ls ${BLENDER}
 
 # Add to PATH permanently
-echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
+echo 'export PATH="${BLENDER}/Contents/MacOS:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 
 # Verify

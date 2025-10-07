@@ -2,7 +2,7 @@ import sys
 import os
 
 # Add project root to path
-project_root = '/Users/luismartins/local_repos/3d-ddf'
+project_root = '${PROJECT_ROOT}'
 sys.path.insert(0, project_root)
 
 # Change to project root

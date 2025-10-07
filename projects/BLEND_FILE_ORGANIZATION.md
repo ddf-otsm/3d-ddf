@@ -183,14 +183,14 @@ Keep current active files but improve them:
 ### Move Files to New Structure
 ```bash
 # Dadosfera - archive old versions
-cd /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/blender_files
+cd ${PROJECT_ROOT}/projects/dadosfera/blender_files
 mkdir -p archived/v1_original
 mv active/dadosfera_animation_v1.blend archived/v1_original/
 mv archive/dadosfera_animation_v1_improved_explosions.blend archived/v1_original/
 mv backups/* archived/v1_original/
 
 # Explosion-Test - archive geometry tests
-cd /Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files
+cd ${PROJECT_ROOT}/projects/explosion-test/blender_files
 mkdir -p archived/geometry_tests
 mv active/ultra_realistic_explosion_refined.blend archived/geometry_tests/
 mv archive/* archived/geometry_tests/

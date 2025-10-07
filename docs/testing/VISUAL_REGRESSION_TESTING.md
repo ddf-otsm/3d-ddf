@@ -304,7 +304,7 @@ python3 scripts/visual_regression_test.py --project PROJECT --test --threshold 0
 
 - [Render Production Guide](../guides/rendering-guide.md)
 - [Quality Presets](../guides/explosion-creation.md#quality-presets)
-- [Taxonomy Standards](../../TAXONOMY.md)
+- [Taxonomy Standards](../project/TAXONOMY.md)
 - [CI/CD Pipeline](../setup/jenkins.md)
 
 ---

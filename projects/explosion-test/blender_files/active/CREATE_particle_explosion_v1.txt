@@ -1,0 +1,18 @@
+# Create: particle_explosion_v1.blend
+
+This file should be created with:
+
+1. Quick Smoke particle emitter
+2. Fire + Smoke domain configuration
+3. Volumetric material setup
+4. Proper resolution settings for baking
+5. Test render to validate realism
+
+Estimated time: 3-4 hours
+
+See BLEND_FILE_ORGANIZATION.md for detailed steps.
+
+References:
+- Blender Quick Smoke tutorial
+- Volumetric rendering best practices
+- Production optimization for smoke sims

@@ -380,7 +380,7 @@ To re-apply: Run integration script on v2 blend and save as v3.
 2. **Full Render**: `scripts/render_service.py --quality final --engine CYCLES`
 3. **Output**: Frames to `renders/`, video to `exports/dadosfera_v2_*.mp4`
 
-See [../../docs/guides/explosion-creation.md](../docs/guides/explosion-creation.md) for details.
+See [../../../docs/guides/explosion-creation.md](../../docs/guides/explosion-creation.md) for details.
 
 ### Validation Results
 - ✅ Explosions visible and timed correctly

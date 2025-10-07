@@ -42,4 +42,4 @@ This roadmap outlines the integration of various 3D asset platforms into the 3D 
 ## Related Documentation
 - [Complete System Summary](../project/COMPLETE_SYSTEM_SUMMARY.md)
 - [Integration Summary](../project/INTEGRATION_SUMMARY.md)
-- [Active Plans](../../plans/active/)
+- [Active Plans](../plans/active/)

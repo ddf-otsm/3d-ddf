@@ -121,4 +121,4 @@ Example: `dadosfera_stable_20251001_1080p_final.mp4`
 - Render pipeline setup
 - Alpha video exports
 
-For full release notes, see [explosion-development-roadmap.md](plans/active/explosion-development-roadmap.md).
+For full release notes, see [explosion-development-roadmap.md](../plans/active/explosion-development-roadmap.md).

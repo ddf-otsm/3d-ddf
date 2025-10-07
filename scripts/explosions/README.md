@@ -192,7 +192,7 @@ for config in configs:
 python scripts/detect_blender.py
 
 # Add to PATH (macOS)
-echo 'export PATH="/Applications/Blender.app/Contents/MacOS:$PATH"' >> ~/.zshrc
+echo 'export PATH="${BLENDER}/Contents/MacOS:$PATH"' >> ~/.zshrc
 ```
 
 #### "ModuleNotFoundError: No module named 'bpy'"
@@ -246,7 +246,7 @@ exec(open('scripts/create_explosion_video.py').read())
 
 ## 🔗 Related Projects
 
-- **Dadosfera**: Main 3D branding project ([dadosfera/README.md](../dadosfera/README.md))
+- **Dadosfera**: Main 3D branding project ([dadosfera/README.md](../../projects/dadosfera/README.md))
 - **Integration Tests**: System integration validation ([tests/integration/README.md](../../tests/integration/README.md))
 - **Asset Platforms**: 3D asset integration roadmap ([docs/guides/3d-asset-platforms-roadmap.md](../../docs/guides/3d-asset-platforms-roadmap.md))
 

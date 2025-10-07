@@ -7,6 +7,6 @@
     "imported": 0,
     "exports": 0
   },
-  "integration_path": "/Users/luismartins/local_repos/3d-ddf/integrations/phase1",
-  "assets_path": "/Users/luismartins/local_repos/3d-ddf/integrations/phase1/assets"
+  "integration_path": "${PROJECT_ROOT}/integrations/phase1",
+  "assets_path": "${PROJECT_ROOT}/integrations/phase1/assets"
 }

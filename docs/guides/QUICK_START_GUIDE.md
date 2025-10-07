@@ -116,9 +116,9 @@ cd integrations/phase4 && python main.py test
 
 ## 📚 Documentation
 
-- [Phase 1 README](phase1/README.md)
-- [Phase 2 README](phase2/README.md)
-- [Phase 3 README](phase3/README.md)
-- [Phase 4 README](phase4/README.md)
-- [Advanced Features README](advanced/README.md)
-- [Integration Summary](INTEGRATION_SUMMARY.md)
+- [Phase 1 README](../../integrations/phase1/README.md)
+- [Phase 2 README](../../integrations/phase2/README.md)
+- [Phase 3 README](../../integrations/phase3/README.md)
+- [Phase 4 README](../../integrations/phase4/README.md)
+- [Advanced Features README](../../integrations/advanced/README.md)
+- [Integration Summary](../project/INTEGRATION_SUMMARY.md)

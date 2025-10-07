@@ -132,7 +132,7 @@ python main.py setup
 
 - [Phase 1 Quick Start](phase1/docs/phase1-quickstart.md)
 - [Phase 1 Implementation Summary](phase1/docs/phase1-implementation-summary.md)
-- [3D Asset Platforms Roadmap](../../docs/guides/3d-asset-platforms-roadmap.md)
+- [3D Asset Platforms Roadmap](../docs/guides/3d-asset-platforms-roadmap.md)
 
 ## 🎉 Success Metrics
 

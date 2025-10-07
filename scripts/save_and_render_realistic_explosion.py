@@ -5,7 +5,7 @@ import bpy
 
 # Save the realistic explosion scene
 bpy.ops.wm.save_as_mainfile(
-    filepath="/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files/realistic_explosion_test.blend")
+    filepath="${PROJECT_ROOT}/projects/explosion-test/blender_files/realistic_explosion_test.blend")
 
 print("✅ Realistic explosion scene saved!")
 print("File: realistic_explosion_test.blend")
@@ -23,7 +23,7 @@ else:
     print("❌ No camera found!")
 
 # Set output path
-scene.render.filepath = "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/renders/realistic_explosion_frame_020"
+scene.render.filepath = "${PROJECT_ROOT}/projects/explosion-test/renders/realistic_explosion_frame_020"
 scene.render.image_settings.file_format = 'PNG'
 scene.render.image_settings.color_mode = 'RGBA'
 

@@ -7,7 +7,7 @@
 ## Quick Access
 Open comparison files:
 ```bash
-cd /Users/luismartins/local_repos/3d-ddf
+cd ${PROJECT_ROOT}
 open projects/dadosfera/analysis/render_comparison_20251004/*.jpg
 open projects/dadosfera/analysis/render_comparison_20251004/*.png
 ```

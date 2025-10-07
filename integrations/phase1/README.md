@@ -46,14 +46,14 @@ python scripts/run_phase1_workflow.py
 ```
 
 ### 3. Check Documentation
-- [Phase 1 Quickstart](../../../docs/guides/phase1-quickstart.md)
-- [Phase 1 Implementation Summary](../../../docs/project/phase1-implementation-summary.md)
-- [3D Asset Platforms Roadmap](../../../docs/guides/3d-asset-platforms-roadmap.md)
-- [Active Plans](../../../docs/plans/active/)
-- [Complete System Summary](../../../docs/project/COMPLETE_SYSTEM_SUMMARY.md)
-- [Integration Summary](../../../docs/project/INTEGRATION_SUMMARY.md)
-- [Quick Start Guide](../../../QUICKSTART.md)
-- [Setup Guide](../../../docs/setup/installation.md)
+- [Phase 1 Quickstart](../../docs/guides/phase1-quickstart.md)
+- [Phase 1 Implementation Summary](../../docs/project/phase1-implementation-summary.md)
+- [3D Asset Platforms Roadmap](../../docs/guides/3d-asset-platforms-roadmap.md)
+- [Active Plans](../../docs/plans/active/)
+- [Complete System Summary](../../docs/project/COMPLETE_SYSTEM_SUMMARY.md)
+- [Integration Summary](../../docs/project/INTEGRATION_SUMMARY.md)
+- [Quick Start Guide](../../QUICKSTART.md)
+- [Setup Guide](../../docs/setup/installation.md)
 
 ### 4. Check Results
 - Assets downloaded to: `assets/opengameart/` and `assets/free3d/`

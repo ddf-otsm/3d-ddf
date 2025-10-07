@@ -97,16 +97,28 @@ def validate_metadata_consistency(file_path: Path) -> Optional[str]:
                 return f"Referenced file does not exist: {filename}"
 
             # Check filename matches metadata
+            # New format: YYYYMMDD_HHMM_project_version_quality_descriptor.mp4
+            # Old format: project_version_YYYYMMDD_quality_descriptor.mp4
             parts = filename.replace(".mp4", "").split("_")
-            if len(parts) >= 4:
+            if len(parts) >= 5:
                 meta_version = export.get("version")
                 meta_quality = export.get("quality")
+                
+                # Detect format by checking if first part is a date (8 digits)
+                if parts[0].isdigit() and len(parts[0]) == 8:
+                    # New timestamp-first format: YYYYMMDD_HHMM_project_version_quality_...
+                    version_idx = 3
+                    quality_idx = 4
+                else:
+                    # Old format: project_version_YYYYMMDD_quality_...
+                    version_idx = 1
+                    quality_idx = 3
 
-                if meta_version and parts[1] != meta_version:
-                    return f"Version mismatch in {filename}: filename has '{parts[1]}', metadata has '{meta_version}'"
+                if meta_version and len(parts) > version_idx and parts[version_idx] != meta_version:
+                    return f"Version mismatch in {filename}: filename has '{parts[version_idx]}', metadata has '{meta_version}'"
 
-                if meta_quality and parts[3] != meta_quality:
-                    return f"Quality mismatch in {filename}: filename has '{parts[3]}', metadata has '{meta_quality}'"
+                if meta_quality and len(parts) > quality_idx and parts[quality_idx] != meta_quality:
+                    return f"Quality mismatch in {filename}: filename has '{parts[quality_idx]}', metadata has '{meta_quality}'"
 
         return None
     except Exception as e:

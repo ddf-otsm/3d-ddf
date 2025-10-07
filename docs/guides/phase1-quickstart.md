@@ -154,7 +154,7 @@ python scripts/run_phase1_workflow.py --debug
 
 - [OpenGameArt.org](https://opengameart.org) - Browse assets manually
 - [Free3D](https://free3d.com) - Quick asset downloads
-- [Blender MCP Documentation](../blender-mcp-usage.md)
+- [Blender MCP Documentation](blender-mcp-usage.md)
 - [Phase 2 Guide](phase2-quickstart.md) - Next phase
 
 ## 🎉 Success Criteria

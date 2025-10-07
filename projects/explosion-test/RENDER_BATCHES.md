@@ -51,7 +51,7 @@ This balances visual fidelity with performance for the 10-second Dadosfera anima
 - Enable GPU (MetalRT) for 20% speedup
 - For optimization: Implement LOD for background explosions
 
-See [../../docs/guides/explosion-creation.md](../docs/guides/explosion-creation.md) for full implementation details.
+See [../../../docs/guides/explosion-creation.md](../../docs/guides/explosion-creation.md) for full implementation details.
 
 ---
 

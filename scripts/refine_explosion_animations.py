@@ -312,7 +312,7 @@ def create_animation_report():
 
 def save_refined_scene():
     """Save the animation-refined scene"""
-    output_path = "/Users/luismartins/local_repos/3d-ddf/projects/explosion-test/blender_files/ultra_realistic_explosion_refined.blend"
+    output_path = "${PROJECT_ROOT}/projects/explosion-test/blender_files/ultra_realistic_explosion_refined.blend"
     bpy.ops.wm.save_as_mainfile(filepath=output_path)
     print(f"💾 Saved refined scene: {output_path}")
     return output_path

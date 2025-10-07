@@ -21,7 +21,7 @@ def find_blender_installations() -> List[Dict[str, str]]:
     # Common installation paths by OS
     search_paths = {
         'Darwin': [  # macOS
-            '/Applications/Blender.app',
+            '${BLENDER}',
             '/Applications/Blender*.app',
             str(Path.home() / 'Applications' / 'Blender.app'),
             '/usr/local/bin/blender',

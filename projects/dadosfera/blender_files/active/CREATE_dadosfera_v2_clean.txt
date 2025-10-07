@@ -1,0 +1,14 @@
+# Create: dadosfera_v2_clean.blend
+
+This file should be created with:
+
+1. Dadosfera 3D text/logo (clean import)
+2. Professional metallic/glass material
+3. Studio floor (concrete or similar PBR texture)
+4. 3-point lighting + HDRI environment
+5. Proper camera setup
+6. NO explosion objects yet (add those later from explosion-test)
+
+Estimated time: 2-3 hours
+
+See BLEND_FILE_ORGANIZATION.md for detailed steps.

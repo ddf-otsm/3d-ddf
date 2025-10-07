@@ -18,7 +18,7 @@
         "properties": {
           "filename": {
             "type": "string",
-            "pattern": "^[a-z]+_(alpha|beta|rc|stable|deprecated)_\\d{8}_(270p|360p|480p|720p|1080p|1440p|4k)_[a-z0-9_]+\\.mp4$"
+            "pattern": "^\\d{8}_\\d{4}_[a-z]+_(alpha|beta|rc|stable|deprecated)_(270p|360p|480p|720p|1080p|1440p|4k)_[a-z0-9_]+\\.mp4$"
           },
           "version": {
             "type": "string",

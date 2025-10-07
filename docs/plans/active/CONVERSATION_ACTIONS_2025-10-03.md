@@ -38,7 +38,7 @@
 - Run Blender-based validations
   - Use Blender CLI to execute scripts:
     ```bash
-    /Applications/Blender.app/Contents/MacOS/Blender \
+    ${BLENDER}/Contents/MacOS/Blender \
       --background \
       --python scripts/render_service.py -- \
       --engine cycles --quality preview --materials standard \
