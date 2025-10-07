@@ -183,4 +183,4 @@ FAILED tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_a
 FAILED tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_clear_all_explosions
 FAILED tests/unit/test_fix_explosion_realism.py::TestFixExplosionRealism::test_create_advanced_particle_system
 FAILED tests/unit/test_fix_explosion_realism.py::TestMaterialCreationEdgeCases::test_particle_system_with_zero_values
-======================== 12 failed, 43 passed in 0.18s =========================
+======================== 12 failed, 43 passed in 0.15s =========================
