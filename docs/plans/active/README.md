@@ -10,20 +10,22 @@ This directory contains active plans for key ongoing projects. Consolidations ha
 - Explosion Development Roadmap → [explosion-development-roadmap.md](explosion-development-roadmap.md)
 - Logo to 3D Service → [logo-to-3d-service.md](logo-to-3d-service.md)
 - Quality, Testing, and Validation (Consolidated) → [QUALITY_AND_VALIDATION_CONSOLIDATED.md](QUALITY_AND_VALIDATION_CONSOLIDATED.md)
+- Execution and Operations (Consolidated) → [EXECUTION_AND_OPERATIONS_CONSOLIDATED.md](EXECUTION_AND_OPERATIONS_CONSOLIDATED.md)
 
 ### **Reference (Completed, for context)**
 - Jenkins Automation (Consolidated) → [JENKINS_AUTOMATION_CONSOLIDATED.md](JENKINS_AUTOMATION_CONSOLIDATED.md)
 - Taxonomy and Optimization (Consolidated) → [TAXONOMY_CONSOLIDATED.md](TAXONOMY_CONSOLIDATED.md)
+- Modernization Report → [MODERNIZATION_REPORT.md](MODERNIZATION_REPORT.md)
+- Dependency Map → [DEPENDENCY_MAP.md](DEPENDENCY_MAP.md)
 
 ## 📊 **Plan Status Summary**
 
 | Plan | Status | Priority | Next Milestone |
 |------|--------|----------|----------------|
 | Explosion Development | 🔄 Active | High | Integrate with name pipeline |
-| Logo to 3D Service | 🔄 Planning | High | Architecture completion |
+| Logo to 3D Service | 🔄 Active | High | Architecture completion |
 | Quality & Validation | 🔄 Active | High | 100% pass rate |
-| Jenkins Automation | ✅ Complete | Low | Production migration planning |
-| Taxonomy | ✅ Complete | Low | Ongoing validation via CI |
+| Execution & Operations | 🔄 Active | High | Weekly rollup |
 
 ## 🔗 **Related Documentation**
 
@@ -40,13 +42,3 @@ This directory contains active plans for key ongoing projects. Consolidations ha
 
 ### **Bi-directional References**
 - See also: `docs/plans/ACTIVE_PLANS_SUMMARY.md`
-
-## Dependencies
-- Depends on: `docs/plans/ACTIVE_PLANS_SUMMARY.md`
-- Required by: `docs/plans/active/MODERNIZATION_REPORT.md`
-
-## 📅 **Review Schedule**
-- Weekly: High-priority plans
-- Monthly: All active plans
-- Quarterly: Strategic planning and roadmap updates
-- Annual: Comprehensive assessment and roadmap
