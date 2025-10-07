@@ -711,7 +711,7 @@ tests/unit/test_utility_scripts.py:46: in test_generate_report_output_file_creat
 E   AssertionError: 0 not greater than 0
 ----------------------------- Captured stdout call -----------------------------
 
-✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmpvb2rditi/reports/20251007_080355_validation_report.txt
+✅ Report generated: /var/folders/g0/xkf_ksy5401czl9sn5lr4mk00000gn/T/tmpuv_8803i/reports/20251007_080823_validation_report.txt
 ________ TestFileSizeValidationEdgeCases.test_file_size_boundary_values ________
 tests/unit/test_validate_file_sizes.py:324: in test_file_size_boundary_values
     self.assertEqual(stats["large_files"], 2)
@@ -807,4 +807,4 @@ FAILED tests/unit/test_utility_scripts.py::TestGenerateReport::test_generate_rep
 FAILED tests/unit/test_validate_file_sizes.py::TestFileSizeValidationEdgeCases::test_file_size_boundary_values
 FAILED tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_invalid_schema
 FAILED tests/unit/test_validate_json.py::TestValidateJsonSchema::test_validate_json_schema_valid_schema
-================ 61 failed, 149 passed, 28 deselected in 0.72s =================
+================ 61 failed, 149 passed, 28 deselected in 0.77s =================
