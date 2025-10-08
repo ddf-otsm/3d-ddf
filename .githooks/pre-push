@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "🔍 Validating active plan summaries..."
+python3 scripts/validate_active_summaries.py || {
+  echo ""
+  echo "❌ Push blocked due to invalid active summary filenames."
+  echo "   Fix by running: python3 scripts/cleanup_active_summaries.py --fix"
+  exit 1
+}
+
+exit 0
+
+

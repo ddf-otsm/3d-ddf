@@ -70,6 +70,10 @@ pipeline {
                 echo '📈 Generating validation reports...'
                 sh '''
                     ${PYTHON} scripts/generate_report.py
+                    if [ -f scripts/validate_active_summaries.py ]; then
+                        echo '🔍 Validating active plan summaries...'
+                        ${PYTHON} scripts/validate_active_summaries.py
+                    fi
                 '''
             }
         }

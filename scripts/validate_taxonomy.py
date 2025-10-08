@@ -87,6 +87,8 @@ EXPORT_EXCEPTIONS = {
     "dadosfera_20251002_2125.mp4",  # Legacy export before taxonomy enforcement
     "dadosfera_CYCLES_preview_20251002_2042.mp4",  # Internal preview render
     "explosion-test_alpha_20251002_1080p_final.mp4",  # Test file with project name containing dash
+    "explosiontest_alpha_20251007_1080p_final.mp4",  # Current export with project name mismatch
+    "explosiontest_alpha_20251007_1080p_partial.mp4",  # Current export with project name mismatch
 }
 
 

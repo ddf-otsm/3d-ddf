@@ -116,6 +116,11 @@ cmd_validate() {
 cmd_validate_docs() {
     print_info "Validating documentation..."
     ${PYTHON} "${SCRIPTS_DIR}/validate_docs.py"
+    # Validate active summary filenames
+    if [ -f "${SCRIPTS_DIR}/validate_active_summaries.py" ]; then
+        print_info "Validating active plan summaries..."
+        ${PYTHON} "${SCRIPTS_DIR}/validate_active_summaries.py"
+    fi
 }
 
 cmd_validate_taxonomy() {
