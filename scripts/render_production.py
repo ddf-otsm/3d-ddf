@@ -44,12 +44,12 @@ import time
 # Project configurations
 PROJECTS = {
     'dadosfera': {
-        'blend_file': 'projects/dadosfera/blender_files/archived/v1_original/dadosfera_animation_v1_improved_explosions.blend',
+        'blend_file': 'projects/dadosfera/blender_files/active/dadosfera_metallic_materials.blend',
         'renders_dir': 'projects/dadosfera/renders',
         'exports_dir': 'projects/dadosfera/exports',
         'default_frames': (1, 240),
         'fps': 24,
-        'description': 'Main 3D logo animation with improved particle explosions'
+        'description': 'Main 3D logo animation with metallic materials'
     },
     'explosion-test': {
         'blend_file': 'projects/explosion-test/blender_files/archived/geometry_tests/hybrid_quick_test.blend',
