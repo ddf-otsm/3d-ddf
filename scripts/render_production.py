@@ -424,8 +424,11 @@ Examples:
             exports_dir = project_root / project_config['exports_dir']
             exports_dir.mkdir(parents=True, exist_ok=True)
             
-            # Timestamp-first naming for export
-            video_name = f"{timestamp}_{description}_{quality['resolution_y']}p.mp4"
+            # Project taxonomy naming: project_version_date_quality_type
+            # Use 'alpha' as default version for new renders
+            version = "alpha"
+            type_suffix = args.description if args.description else args.quality
+            video_name = f"{args.project}_{version}_{timestamp.split('_')[0]}_{quality['resolution_y']}p_{type_suffix}.mp4"
             output_video = exports_dir / video_name
             
             if encode_video(output_dir, output_video, project_config['fps']):

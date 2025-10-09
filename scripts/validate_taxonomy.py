@@ -46,7 +46,7 @@ EXPECTED_STRUCTURE = {
 
 # Export naming pattern: {project}_{version}_{date}_{quality}_{type}.mp4
 EXPORT_PATTERN = re.compile(
-    r'^(?P<project>[a-z]+)_'
+    r'^(?P<project>[a-z\-]+)_'  # Allow hyphens in project names
     r'(?P<version>[a-z]+)_'
     r'(?P<date>\d{8})_'
     r'(?P<quality>\d+p)_'
