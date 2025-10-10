@@ -1,0 +1,29 @@
+{
+  "timestamp": "20251009_1008",
+  "project": "dadosfera",
+  "project_description": "Main 3D logo animation with metallic materials",
+  "blend_file": "/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/blender_files/active/dadosfera_metallic_materials.blend",
+  "quality_preset": "final",
+  "quality_settings": {
+    "samples": 512,
+    "resolution_x": 1920,
+    "resolution_y": 1080,
+    "denoising": true,
+    "description": "Maximum quality for final delivery"
+  },
+  "frame_range": [
+    1,
+    240
+  ],
+  "frame_count": 240,
+  "duration_seconds": 10.0,
+  "fps": 24,
+  "output_directory": "/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251009_1008_production_atomic_metallic",
+  "render_start": "2025-10-09T10:08:21.300610",
+  "render_end": "2025-10-09T10:34:59.728657",
+  "render_duration_seconds": 1598.426707983017,
+  "render_duration_minutes": 26.64044513305028,
+  "average_seconds_per_frame": 6.66011128326257,
+  "output_video": "/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/exports/20251009_1008_dadosfera_final_1080p.mp4",
+  "video_size_mb": 0.2799510955810547
+}

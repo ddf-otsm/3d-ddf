@@ -1,3 +1,9 @@
+# DEPRECATED: Use Shared Local Jenkins Instance (http://localhost:17843)
+# This Docker Compose file is for legacy/isolated testing only.
+# For daily development, follow ~/vars/JENKINS_LOCAL_HANDOFF.md and use the centralized non-Docker Jenkins.
+# To run (if needed): docker-compose up -d
+# Migrate pipelines to shared instance for unified CI/CD.
+
 version: '3.8'
 
 services:
@@ -7,12 +13,12 @@ services:
       dockerfile: docker/jenkins-controller.Dockerfile
     container_name: deployer-jenkins-cicd
     ports:
-      - "${JENKINS_PORT:-8080}:8080"
+      - "${JENKINS_PORT:-8080}:8080"  # Deprecated port; shared uses 17843
       - "${JENKINS_AGENT_PORT:-50000}:50000"
     volumes:
       - jenkins-cicd-data:/var/jenkins_home
     environment:
-      - JENKINS_OPTS=--httpPort=8080
+      - JENKINS_OPTS=--httpPort=8080  # Update to 17843 if adapting
       - JAVA_OPTS=-Xms1g -Xmx4g
     networks:
       - jenkins-cicd-network
@@ -31,7 +37,7 @@ services:
     ports:
       - "${JENKINS_WEBHOOK_PORT:-9000}:9000"
     environment:
-      - JENKINS_URL=http://deployer-jenkins-cicd:8080
+      - JENKINS_URL=http://deployer-jenkins-cicd:8080  # Update to http://localhost:17843 for shared
       - JENKINS_USER=${JENKINS_USER:-admin}
       - JENKINS_TOKEN=${JENKINS_TOKEN:-}
       - WEBHOOK_SECRET=${WEBHOOK_SECRET:-}

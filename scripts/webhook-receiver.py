@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 # Configuration from environment variables
-JENKINS_URL = os.getenv('JENKINS_URL', 'http://localhost:8080')
+JENKINS_URL = os.getenv('JENKINS_URL', 'http://localhost:17843')
 JENKINS_USER = os.getenv('JENKINS_USER', 'admin')
 JENKINS_TOKEN = os.getenv('JENKINS_TOKEN', '')
 WEBHOOK_SECRET = os.getenv('WEBHOOK_SECRET', '')

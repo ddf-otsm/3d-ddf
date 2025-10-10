@@ -1,79 +1,115 @@
-# Local Jenkins Controller Reference - Advanced Multi-Architecture
+# Local Jenkins Controller Reference - Shared Instance Priority
 
-## Overview
-- **Purpose**: Development and testing environment for 3D-DDF CI/CD pipelines
-- **Architecture**: Local Docker-based Jenkins with optional webhook integration
-- **Install Method**: Docker Compose (recommended) for easy testing and development
+## 🚨 IMPORTANT: Use Shared Local Jenkins Instance
+
+**Recommendation**: For local development across all repositories (including 3d-ddf), use the centralized shared Jenkins LTS instance instead of the Docker-based setup below. This provides unified CI/CD with lower overhead.
+
+### Shared Instance Details (Preferred)
+- **URL**: http://localhost:17843
+- **Admin Password**: See `~/vars/jenkins_admin_password_port17843.txt` (initial: `d1ec460e7187404daaa37de5f9547bce`)
+- **Configuration**: Centralized in `~/vars/JENKINS_LOCAL_HANDOFF.md` and `~/vars/jenkins_config.sh`
+- **Supported Projects**: budget-ddf, planner-ddf-floor-2, deployer-ddf-mod-open-llms, 3d-ddf
+- **Pipeline Name for 3d-ddf**: `3d-ddf-local`
+- **Setup**: Follow quick start in `~/vars/JENKINS_LOCAL_HANDOFF.md` > Quick Start for New Projects
+- **Benefits**: Single maintenance, shared resources (~800MB RAM), no Docker overhead
+
+**When to Use Docker Setup Below**:
+- Testing Docker-specific pipelines
+- Isolated environments for advanced debugging
+- Legacy compatibility (not recommended for daily use)
+
+---
+
+## Overview (Docker-Based - Deprecated for Local Dev)
+- **Purpose**: Development and testing environment for 3D-DDF CI/CD pipelines (use shared instance instead)
+- **Architecture**: Local Docker-based Jenkins with optional webhook integration (deprecated)
+- **Install Method**: Docker Compose (only for specific testing)
 - **Primary Use Cases**:
-  - Pipeline development and testing (Jenkinsfile validation)
-  - Webhook integration testing (GitHub triggers)
+  - Pipeline development and testing (Jenkinsfile validation) - prefer shared instance
+  - Webhook integration testing (GitHub triggers) - update webhook to point to localhost:17843
   - Cost-effective development environment ($0/month)
   - Advanced architecture testing before production deployment
 
-## Infrastructure
+## Infrastructure (Updated for Compatibility)
 | Component | Details |
 |-----------|---------|
-| **Container** | `deployer-jenkins-cicd` (Jenkins LTS) |
-| **Webhook** | `deployer-jenkins-webhook` (Python Flask) |
-| **Ports** | 8080 (Jenkins UI), 50000 (agents), 9000 (webhook) |
+| **Container** | `deployer-jenkins-cicd` (Jenkins LTS) - **Deprecated: Use shared instance** |
+| **Webhook** | `deployer-jenkins-webhook` (Python Flask) - Update to trigger shared instance |
+| **Ports** | 8080 (Jenkins UI - deprecated), 50000 (agents), 9000 (webhook) - **Use 17843 for shared** |
 | **Network** | `jenkins-cicd-network` (isolated) |
 | **Storage** | Docker volume `jenkins-cicd-data` |
-| **Access** | http://localhost:8080 (local only) |
+| **Access** | http://localhost:17843 (shared instance recommended) |
 
-## Architecture Options
+## Architecture Options (Updated)
 
-### Option 1: Local Docker (Development)
+### Option 1: Shared Local Instance (Recommended)
+See `~/vars/JENKINS_LOCAL_HANDOFF.md` for setup. No Docker needed.
+
+### Option 2: Local Docker (Development - Deprecated)
 ```bash
-# Start complete Jenkins environment
+# Start complete Jenkins environment (only if needed for isolation)
 docker-compose -f docker/docker-compose.jenkins.yml up -d
 
 # Services started:
-# - deployer-jenkins-cicd (Jenkins controller)
-# - deployer-jenkins-webhook (Webhook receiver)
+# - deployer-jenkins-cicd (Jenkins controller) - **Point to shared instead**
+# - deployer-jenkins-webhook (Webhook receiver) - Update env to JENKINS_URL=http://localhost:17843
 # - jenkins-cicd-network (isolated network)
 ```
 
-### Option 2: Production Two-Instance (Recommended)
+### Option 3: Production Two-Instance (Recommended)
 - **Controller**: OCI bastion instance (always-on, ~$10-15/month)
 - **GPU Agent**: OCI GPU instance (on-demand, ~$5-10/month)
-- **Migration Path**: Local → Production (documented in deployment strategy)
+- **Migration Path**: Shared Local → Production (documented in deployment strategy)
 
-## Local Development Setup
+## Local Development Setup (Updated)
 
-### Quick Start Commands
+### Quick Start Commands (Shared Instance Priority)
 
+**Preferred: Use Shared Instance**
+```bash
+# Source shared config
+source ~/vars/jenkins_config.sh
+
+# Verify Jenkins is running
+curl -s -o /dev/null -w "HTTP %{http_code}\n" $JENKINS_URL
+
+# Access UI
+open $JENKINS_URL
+
+# For 3d-ddf pipeline: Create '3d-ddf-local' as per handoff doc
+```
+
+**Docker Fallback (If Needed)**:
 ```bash
 # 1. Start Docker Desktop (if not running)
 open -a Docker  # macOS
 
-# 2. Launch Jenkins locally
+# 2. Launch Jenkins locally (deprecated)
 docker-compose -f docker/docker-compose.jenkins.yml up -d
 
 # 3. Wait for Jenkins to initialize
 echo "⏳ Waiting for Jenkins to start..."
 sleep 60
 
-# 4. Get initial admin password
+# 4. Get initial admin password (for Docker only)
 docker exec deployer-jenkins-cicd cat /var/jenkins_home/secrets/initialAdminPassword
 
-# 5. Access Jenkins UI
-open http://localhost:8080
+# 5. Access Jenkins UI (use shared instead)
+open http://localhost:8080  # Deprecated - use http://localhost:17843
 ```
 
-### Initial Configuration
-
-1. **Enter admin password** from step 4 above
+### Initial Configuration (Shared Instance)
+1. **Enter admin password** from `~/vars/jenkins_admin_password_port17843.txt`
 2. **Install suggested plugins** (Pipeline, Git, Credentials Binding, etc.)
 3. **Create admin user** with secure credentials
-4. **Skip instance configuration** (use default localhost:8080)
+4. **Skip instance configuration** (use default localhost:17843)
 
-### Webhook Integration (Optional)
-
+### Webhook Integration (Updated for Shared)
 ```bash
-# Test webhook endpoint locally
-curl http://localhost:9000/health
+# Test webhook endpoint (update script to use port 17843)
+curl http://localhost:9000/health  # If using Docker webhook, update env
 
-# Trigger pipeline via webhook
+# Trigger pipeline via webhook (point to shared Jenkins)
 curl http://localhost:9000/webhook \
   -H "Content-Type: application/json" \
   -d '{"repository": {"name": "3d-ddf"}, "ref": "refs/heads/main"}'

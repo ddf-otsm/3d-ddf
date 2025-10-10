@@ -1,30 +1,53 @@
-# Jenkins CI/CD Setup - Advanced Multi-Architecture
+# Jenkins CI/CD Setup - Shared Local Instance Priority
 
-This document explains how to setup Jenkins for automated 3D-DDF project validation using modern, cost-optimized architectures.
+This document explains how to setup Jenkins for automated 3D-DDF project validation using modern, cost-optimized architectures. **For local development, prioritize the shared Jenkins instance.**
 
-## 🚀 Quick Start Options
+## 🚀 Quick Start Options (Updated)
 
-### Option 1: Local Docker (Development/Testing)
+### Option 1: Shared Local Instance (Recommended for Development/Testing)
+A centralized Jenkins LTS instance is available for all local repos.
+
 ```bash
-# Start Jenkins locally for testing
-docker-compose -f docker/docker-compose.jenkins.yml up -d
+# Source shared config
+source ~/vars/jenkins_config.sh
 
-# Access at: http://localhost:8080
-# Get password: docker exec deployer-jenkins-cicd cat /var/jenkins_home/secrets/initialAdminPassword
+# Verify running
+curl -s -o /dev/null -w "HTTP %{http_code}\n" $JENKINS_URL  # http://localhost:17843
+
+# Access: http://localhost:17843
+# Admin Password: cat ~/vars/jenkins_admin_password_port17843.txt
+# Full Setup: See ~/vars/JENKINS_LOCAL_HANDOFF.md
 ```
 
-### Option 2: Two-Instance Architecture (Production)
+- **Pipeline Name**: `3d-ddf-local`
+- **Repository URL**: `file:///Users/luismartins/local_repos/3d-ddf`
+- **Script Path**: `Jenkinsfile`
+
+### Option 2: Local Docker (Deprecated for Daily Use)
+```bash
+# Start Jenkins locally for testing (use shared instead)
+docker-compose -f docker/docker-compose.jenkins.yml up -d
+
+# Access at: http://localhost:8080 (deprecated)
+# Get password: docker exec deployer-jenkins-cicd cat /var/jenkins_home/secrets/initialAdminPassword
+# **Recommendation**: Migrate to shared instance at http://localhost:17843
+```
+
+### Option 3: Two-Instance Architecture (Production)
 - **Controller**: Lightweight bastion instance (always-on, ~$10-15/month)
 - **GPU Agent**: On-demand GPU instance (~$5-10/month, 2-4 hours/week)
 - **Cost Savings**: 95% reduction vs always-on GPU Jenkins
 
-### Option 3: Existing OCI Instance
+### Option 4: Existing OCI Instance
 - Check existing Jenkins at: http://140.238.181.119:8080
 - Admin password: `e3e1a3cdf81e441b83ad45f5eba07667`
 
-## Prerequisites
+## Prerequisites (Updated)
+### For Shared Local Instance
+- Access to `~/vars/JENKINS_LOCAL_HANDOFF.md`
+- Jenkins running (see handoff doc for start/stop)
 
-### For Local Docker Setup
+### For Local Docker Setup (Deprecated)
 - Docker Desktop/Engine 24.x
 - Git repository access
 - 8GB+ RAM recommended
@@ -58,33 +81,30 @@ docker-compose -f docker/docker-compose.jenkins.yml up -d
 | **Two-Instance (Recommended)** | $15-25/month | 95% cost reduction |
 | **Local Docker** | $0/month | Development/testing only |
 
-## Quick Setup
+## Quick Setup (Updated)
 
-### 1. Create Jenkins Pipeline Job
-
-1. Log into Jenkins
+### 1. Create Jenkins Pipeline Job (Shared Instance)
+1. Log into shared Jenkins: http://localhost:17843
 2. Click "New Item"
-3. Enter name: `3d-ddf-validation`
+3. Enter name: `3d-ddf-local`
 4. Select "Pipeline"
 5. Click OK
 
-### 2. Configure Pipeline
-
+### 2. Configure Pipeline (Shared)
 **Pipeline Configuration:**
 - **Definition**: Pipeline script from SCM
 - **SCM**: Git
-- **Repository URL**: Your git repository URL
+- **Repository URL**: `file:///Users/luismartins/local_repos/3d-ddf` (local path for shared)
 - **Branch**: `*/main` (or your main branch)
 - **Script Path**: `Jenkinsfile`
 
-### 3. Configure Build Triggers
-
+### 3. Configure Build Triggers (Updated)
 Choose one or more:
 
-**Option A: Webhook (Recommended)**
+**Option A: Webhook (Recommended - Update to Shared)**
 - Check "GitHub hook trigger for GITScm polling"
-- Or configure webhook in your Git server
-- Webhook service available at: `http://localhost:9000/webhook` (local) or OCI equivalent
+- Configure webhook to trigger shared instance (update scripts/webhook-receiver.py to use port 17843)
+- Webhook service: Update to point to shared Jenkins URL
 
 **Option B: Poll SCM**
 ```
@@ -99,11 +119,10 @@ H/15 * * * *  # Poll every 15 minutes
 H 2 * * *  # Daily at 2 AM for GPU tests
 ```
 
-### 4. Save and Test
-
+### 4. Save and Test (Shared)
 1. Click "Save"
 2. Click "Build Now"
-3. Check console output
+3. Check console output (uses existing Jenkinsfile for validation stages)
 
 ## Pipeline Stages
 
@@ -593,37 +612,16 @@ chmod +x scripts/*.py
 - Cache dependencies
 - Run only changed file validation
 
-## Local Testing
+## Local Testing (Updated)
 
-Test the pipeline locally before pushing:
-
-### Lightweight Tests (Controller)
+### Local Jenkins Testing (Shared Priority)
 ```bash
-# Run all validators
-python3 scripts/validate_taxonomy.py
-python3 scripts/validate_links.py
-python3 scripts/validate_json.py
-python3 scripts/validate_file_sizes.py
+# Use shared instance for pipeline testing
+source ~/vars/jenkins_config.sh
+open $JENKINS_URL
 
-# Or use pre-commit hook
-.git/hooks/pre-commit
-```
-
-### GPU Tests (Local Development)
-```bash
-# Test GPU functionality locally
-nvidia-smi
-python3 -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
-python3 scripts/validate_blender_renders.py
-```
-
-### Local Jenkins Testing
-```bash
-# Start local Jenkins for pipeline testing
-docker-compose -f docker/docker-compose.jenkins.yml up -d
-
-# Access at: http://localhost:8080
-# Test webhook: curl http://localhost:9000/webhook
+# Test webhook: Update script and curl to use $JENKINS_URL
+curl http://localhost:9000/webhook  # If using webhook, ensure it points to 17843
 ```
 
 ## Integration with Git
