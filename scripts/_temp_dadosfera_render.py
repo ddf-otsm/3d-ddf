@@ -34,7 +34,7 @@ if True:
 
 # Output settings
 scene.render.image_settings.file_format = 'PNG'
-scene.render.filepath = '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251007_2336_production_dadosfera_final/frame_'
+scene.render.filepath = '/Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251009_1008_production_atomic_metallic/frame_'
 scene.render.use_file_extension = True
 
 # Frame range
@@ -52,7 +52,7 @@ print(f"Frames: {scene.frame_start}-{scene.frame_end} ({scene.frame_end - scene.
 print(f"FPS: {scene.render.fps}")
 print(f"Duration: {(scene.frame_end - scene.frame_start + 1) / scene.render.fps:.2f}s")
 print(f"Denoising: {scene.cycles.use_denoising}")
-print(f"Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251007_2336_production_dadosfera_final")
+print(f"Output: /Users/luismartins/local_repos/3d-ddf/projects/dadosfera/renders/20251009_1008_production_atomic_metallic")
 print("=" * 70 + "\n")
 
 # Render
